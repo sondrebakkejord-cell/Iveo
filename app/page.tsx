@@ -86,10 +86,9 @@ export default function Home() {
         <div className="relative max-w-5xl mx-auto mt-20 animate-fade-up" style={{ animationDelay: "0.4s", opacity: 0 }}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-3xl blur-3xl opacity-30" />
           <div className="relative glass rounded-3xl p-8 md:p-12 border border-white/60 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { label: "Leveringstid", value: "2–4 uker", icon: "⚡" },
-                { label: "Oppetid", value: "99.9%", icon: "🛡️" },
+                { label: "Leveringstid", value: "Innen en uke", icon: "⚡" },
                 { label: "Support", value: "24/7", icon: "💬" },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
