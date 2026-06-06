@@ -119,23 +119,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                icon: "🎨",
-                title: "Nettsider",
-                desc: "Skreddersydde, moderne nettsider bygget med nyeste teknologi. Raske, responsive og bygget for å konvertere.",
-                features: ["Custom design", "Mobiloptimalisert", "SEO-vennlig"],
-              },
-              {
-                icon: "☁️",
-                title: "Hosting",
-                desc: "Pålitelig hosting på toppmoderne infrastruktur. Vi sørger for at siden din alltid er online og lynrask.",
-                features: ["99.9% oppetid", "SSL inkludert", "Daglig backup"],
+                icon: "🚀",
+                title: "Nettsider & Hosting",
+                desc: "Skreddersydde, moderne nettsider bygget med nyeste teknologi — og pålitelig hosting i samme pakke. Vi tar hånd om alt fra design til drift.",
+                features: ["Custom design", "Mobiloptimalisert", "SEO-vennlig", "99.9% oppetid", "SSL inkludert", "Daglig backup"],
               },
               {
                 icon: "🤖",
-                title: "AI-løsninger",
+                title: "AI-løsninger (kommer)",
                 desc: "Snart kommer skreddersydde AI-produkter som automatiserer arbeidet og gir bedriften din et forsprang.",
                 features: ["Chatbots", "Automatisering", "Skreddersydde modeller"],
                 badge: "Kommer snart",
