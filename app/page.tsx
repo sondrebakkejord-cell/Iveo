@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Chatbot from "./Chatbot";
+import { LogoMark, LogoFull } from "./Logo";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,11 +20,8 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-all">
-              I
-            </div>
-            <span className="text-xl font-bold tracking-tight">Iveo</span>
+          <a href="#" className="flex items-center group hover:scale-105 transition-transform">
+            <LogoFull size={40} />
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#tjenester" className="text-sm font-medium hover:text-indigo-600 transition">Tjenester</a>
@@ -278,12 +276,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative py-12 px-6 border-t border-gray-200/50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">
-              I
-            </div>
-            <span className="font-bold">Iveo</span>
-          </div>
+          <LogoFull size={32} />
           <div className="text-sm text-gray-500">
             © {new Date().getFullYear()} Iveo. Bygger fremtidens nettsider.
           </div>
