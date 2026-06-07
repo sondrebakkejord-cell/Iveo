@@ -8,6 +8,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: "bot", text: "Hei! 👋 Jeg er Iveo-assistenten. Hvordan kan jeg hjelpe deg i dag?" },
   ]);
@@ -22,30 +23,27 @@ export default function Chatbot() {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     const text = input.trim();
-    if (!text) return;
-    setMessages((m) => [...m, { role: "user", text }]);
+    if (!text || loading) return;
+    const newMessages = [...messages, { role: "user" as const, text }];
+    setMessages(newMessages);
     setInput("");
+    setLoading(true);
 
-    setTimeout(() => {
-      const lower = text.toLowerCase();
-      let reply = "Takk for meldingen! En av oss tar kontakt så snart som mulig. Du kan også ringe oss på 484 72 586 eller sende e-post til kontakt@iveo.no.";
-
-      if (lower.includes("pris") || lower.includes("kost")) {
-        reply = "Prisene våre tilpasses prosjektet. Book gjerne et gratis møte så finner vi riktig løsning for deg!";
-      } else if (lower.includes("hei") || lower.includes("hallo") || lower.includes("hi")) {
-        reply = "Hei! Hyggelig å høre fra deg 😊 Hva kan jeg hjelpe med?";
-      } else if (lower.includes("ai") || lower.includes("kunstig")) {
-        reply = "AI-løsningene våre kommer snart! Vi jobber med chatbots, automatisering og skreddersydde modeller.";
-      } else if (lower.includes("hosting")) {
-        reply = "Vi tilbyr pålitelig hosting med 99.9% oppetid, SSL og daglig backup — alt inkludert når vi bygger nettsiden din.";
-      } else if (lower.includes("møte") || lower.includes("book")) {
-        reply = "Så hyggelig! Du kan ringe 484 72 586 eller sende oss en e-post på kontakt@iveo.no, så finner vi et tidspunkt.";
-      }
-
-      setMessages((m) => [...m, { role: "bot", text: reply }]);
-    }, 700);
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+      const data = await res.json();
+      setMessages((m) => [...m, { role: "bot", text: data.reply }]);
+    } catch {
+      setMessages((m) => [...m, { role: "bot", text: "Beklager, noe gikk galt. Ring oss på 484 72 586." }]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -108,7 +106,7 @@ export default function Chatbot() {
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`max-w-[80%] px-4 py-2 rounded-2xl text-sm ${
+                  className={`max-w-[80%] px-4 py-2 rounded-2xl text-sm whitespace-pre-wrap ${
                     m.role === "user"
                       ? "bg-gradient-to-br from-indigo-600 to-cyan-500 text-white rounded-br-sm"
                       : "bg-white text-gray-800 rounded-bl-sm shadow-sm"
@@ -118,6 +116,15 @@ export default function Chatbot() {
                 </div>
               </div>
             ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm flex gap-1">
+                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                </div>
+              </div>
+            )}
             <div ref={endRef} />
           </div>
 
