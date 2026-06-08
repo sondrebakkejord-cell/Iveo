@@ -25,6 +25,18 @@ export default function KafeSite() {
         </div>
       </nav>
 
+      {/* Open status bar */}
+      <div className="bg-rose-200/60 border-b border-rose-200 px-6 py-2.5">
+        <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 text-sm" style={{ fontFamily: "system-ui, sans-serif" }}>
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600" />
+          </span>
+          <span className="font-semibold text-rose-900">Åpent nå</span>
+          <span className="text-rose-900/60">— stenger 18:00</span>
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="relative px-6 py-20 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -145,6 +157,44 @@ export default function KafeSite() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Lokale leverandører */}
+      <section className="py-20 px-6 bg-rose-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-sm uppercase tracking-[0.35em] text-rose-700 mb-4" style={{ fontFamily: "system-ui, sans-serif" }}>— Hvor det kommer fra —</p>
+          <h2 className="text-5xl md:text-6xl font-medium mb-12" style={{ letterSpacing: "-0.02em" }}>Lokale leverandører</h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Melken",
+                supplier: "Eli og Tor på Hadeland",
+                desc: "Fra Tunet Gård, 40 minutter unna. 18 kuer, ekte gress.",
+              },
+              {
+                title: "Kaffebønnene",
+                supplier: "Talor & Jørgen Coffee",
+                desc: "Brent i Pilestredet hver onsdag morgen. Direkte-handel med små farmer i Etiopia og Colombia.",
+              },
+              {
+                title: "Smøret",
+                supplier: "Rørosmeieriet",
+                desc: "Tradisjonelt kjernet. Vi bruker det i alt — kanelbollene merker du forskjellen på.",
+              },
+            ].map((l) => (
+              <div key={l.title} className="bg-white rounded-3xl p-7 border border-rose-200">
+                <p className="text-xs uppercase tracking-widest text-rose-700 font-semibold mb-2" style={{ fontFamily: "system-ui, sans-serif" }}>{l.title}</p>
+                <h3 className="text-2xl font-medium mb-3 italic">{l.supplier}</h3>
+                <p className="text-rose-900/75 leading-relaxed">{l.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center mt-10 text-rose-900/65 italic max-w-2xl mx-auto">
+            Vi tror på å vite hvor maten kommer fra. Spør oss gjerne — vi forteller gjerne mer.
+          </p>
         </div>
       </section>
 

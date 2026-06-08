@@ -99,6 +99,87 @@ export default function SnekkerSite() {
         </div>
       </section>
 
+      {/* Prosess */}
+      <section className="py-24 px-6 bg-stone-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Slik jobber vi</h2>
+          <p className="text-lg text-stone-700 mb-16 max-w-2xl">Fra første samtale til ferdig montert — du vet alltid hvor vi står.</p>
+
+          <div className="grid md:grid-cols-4 gap-6 relative">
+            {[
+              { n: "01", title: "Befaring", desc: "Vi kommer hjem til deg, måler opp, hører ønsker. Gratis i Oslo." },
+              { n: "02", title: "Tegning og tilbud", desc: "Skreddersydd skisse og skriftlig tilbud — vanligvis innen en uke." },
+              { n: "03", title: "Produksjon", desc: "Vi bygger i vårt verksted. Du får billedoppdateringer underveis." },
+              { n: "04", title: "Montering", desc: "Vi monterer, ferdigstiller, rydder. Du får 5 års garanti på alt arbeid." },
+            ].map((s) => (
+              <div key={s.n} className="bg-white rounded-2xl p-7 border border-amber-900/15">
+                <p className="text-3xl font-bold text-amber-900/30 mb-3 font-mono">{s.n}</p>
+                <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+                <p className="text-stone-700 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Materialer */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Materialer vi jobber med</h2>
+          <p className="text-lg text-stone-700 mb-16 max-w-2xl">Tre er ikke bare tre. Riktig valg holder i generasjoner.</p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Eik",
+                latin: "Quercus robur",
+                desc: "Hardt, lyst og elegant. Standardvalg for kjøkken og møbler som skal vare. Tåler fukt godt med riktig behandling.",
+                use: "Kjøkken · Bord · Trapper",
+                color: "from-amber-100 to-amber-50",
+              },
+              {
+                name: "Valnøtt",
+                latin: "Juglans regia",
+                desc: "Mørkt, premium-uttrykk. Stabilt og lett å bearbeide. Praktisk talt unikt i nyanser — ingen to plater er like.",
+                use: "Spesialmøbler · Bokhyller · Detaljer",
+                color: "from-amber-900 to-amber-800",
+              },
+              {
+                name: "Lerk",
+                latin: "Larix decidua",
+                desc: "Norsk klassiker for utearbeider. Naturlig motstandsdyktig mot råte og insekter — krever lite vedlikehold.",
+                use: "Terrasser · Fasader · Hytter",
+                color: "from-orange-200 to-amber-200",
+              },
+            ].map((m) => (
+              <div key={m.name} className="bg-white rounded-2xl overflow-hidden border border-amber-900/15">
+                <div className={`h-32 bg-gradient-to-br ${m.color}`} />
+                <div className="p-7">
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <h3 className="text-2xl font-bold">{m.name}</h3>
+                    <span className="text-sm italic text-stone-500">{m.latin}</span>
+                  </div>
+                  <p className="text-stone-700 leading-relaxed mb-4">{m.desc}</p>
+                  <p className="text-sm text-amber-900 font-semibold">Brukes til: {m.use}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 bg-amber-50 border border-amber-200 rounded-2xl p-7 flex flex-col md:flex-row items-start md:items-center gap-5">
+            <div className="w-14 h-14 rounded-xl bg-amber-900 text-amber-50 flex items-center justify-center flex-shrink-0">
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-1">FSC-sertifisert tre fra norske skoger</h3>
+              <p className="text-stone-700">Vi henter materialene fra Mjøsen Skog og Skogeierforbundet — sporbar fra trestubben til ferdig produkt. Aldri tropisk hardtre.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tilbud */}
       <section id="tilbud" className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">

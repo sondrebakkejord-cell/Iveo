@@ -182,6 +182,84 @@ export default function RorSite() {
         </div>
       </section>
 
+      {/* Slik fungerer en utrykning */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Slik fungerer en akuttutrykning</h2>
+          <p className="text-lg text-slate-600 mb-12 max-w-2xl">Fra du ringer til vi går — du vet alltid hva som skjer.</p>
+
+          <div className="grid md:grid-cols-4 gap-5">
+            {[
+              { step: "1", title: "Du ringer", time: "0 min", desc: "Vi tar telefonen 24/7. Beskriver problemet kort, vi vurderer hva som trengs." },
+              { step: "2", title: "Vi rykker ut", time: "Innen 60 min", desc: "Nærmeste ledige rørlegger setter seg i bilen — med komplett verktøy og delelager." },
+              { step: "3", title: "Fast pris før vi starter", time: "På stedet", desc: "Vi inspiserer, gir deg skriftlig pris. Du sier ja eller nei før vi rører noe." },
+              { step: "4", title: "Ferdig og ryddet", time: "Samme dag", desc: "Vi rydder etter oss og dokumenterer arbeidet. Garanti i 2 år på alt vi gjør." },
+            ].map((s, i) => (
+              <div key={s.step} className="relative">
+                <div className="bg-white rounded-2xl p-6 border border-slate-200 h-full">
+                  <div className="flex items-baseline gap-3 mb-3">
+                    <span className="text-3xl font-black text-blue-700">{s.step}</span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-blue-700 bg-blue-50 px-2 py-1 rounded">{s.time}</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+                </div>
+                {i < 3 && (
+                  <svg className="hidden md:block absolute top-1/2 -right-3 w-6 h-6 text-slate-300 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Vanlige spørsmål</h2>
+          <p className="text-lg text-slate-600 mb-10">Det vi får oftest av kunder før vi rykker ut.</p>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: "Hva gjør jeg ved akutt vannlekkasje før dere kommer?",
+                a: "Steng hovedstoppekran umiddelbart (vanligvis i kjeller eller bod). Fjern verdisaker fra området. Ring oss på 22 33 44 55 — vi guider deg gjennom resten på telefon mens vi er på vei.",
+              },
+              {
+                q: "Hvor mye koster en akuttutrykning?",
+                a: "Fra 2 290 kr på kveld/helg, inkluderer fremmøte og første time. Vi gir deg alltid skriftlig fast pris på selve reparasjonen før vi starter — ingen åpne timepriser som ruser i taket.",
+              },
+              {
+                q: "Dekker forsikringen min utgiftene?",
+                a: "Ved akutt skade dekker husforsikringen normalt utbedring av skadevolder (lekkasje) og følgeskader. Vi dokumenterer alt med foto og skriftlig rapport så forsikringssaken går lett.",
+              },
+              {
+                q: "Er dere medlem av Rørentreprenørene Norge (NRL)?",
+                a: "Ja. Alle rørleggerne våre har fagbrev, og vi er sertifisert mesterbedrift med 10 millioner i ansvarsforsikring.",
+              },
+              {
+                q: "Kan dere garantere arbeidet?",
+                a: "Vi gir 2 års garanti på alt utført arbeid. På materialer følger vi produsentens garanti (typisk 5–10 år på blandebatterier og berederen).",
+              },
+            ].map((item) => (
+              <details key={item.q} className="group bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-50 transition-colors flex items-center justify-between">
+                  <span>{item.q}</span>
+                  <svg className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Kontakt */}
       <section id="kontakt" className="py-20 px-6 bg-blue-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
@@ -201,9 +279,18 @@ export default function RorSite() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 text-slate-400 py-8 px-6 text-center text-sm">
+      <footer className="bg-slate-950 text-slate-400 py-8 px-6 text-center text-sm pb-24 md:pb-8">
         © {new Date().getFullYear()} Bakkejord Rør AS · Org.nr 999 888 777 · Storgata 22, Oslo
       </footer>
+
+      {/* Sticky mobile akutt button */}
+      <a
+        href="tel:+4722334455"
+        className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-red-600 text-white text-center py-4 rounded-full font-bold text-lg shadow-2xl shadow-red-600/40 flex items-center justify-center gap-2"
+      >
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+        Akutt? Ring 22 33 44 55
+      </a>
     </div>
   );
 }

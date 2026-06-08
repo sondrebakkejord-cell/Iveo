@@ -49,6 +49,22 @@ export default function PizzaSite() {
               Se menyen
             </a>
           </div>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-amber-100">
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-yellow-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11.49 3.17c.18-.42.79-.42.97 0l2.13 4.97 5.4.42c.46.04.65.62.3.92l-4.1 3.5 1.25 5.27c.1.45-.4.8-.79.56l-4.61-2.81-4.61 2.81c-.4.24-.89-.11-.79-.56l1.25-5.27-4.1-3.5c-.35-.3-.16-.88.3-.92l5.4-.42 2.13-4.97z" /></svg>
+                ))}
+              </div>
+              <span className="font-semibold">4,8</span>
+              <span className="text-amber-200">— 487 Google-anmeldelser</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-amber-200">Vi leverer også via</span>
+              <span className="bg-amber-50/10 border border-amber-50/20 px-3 py-1 rounded-full text-xs font-semibold">Foodora</span>
+              <span className="bg-amber-50/10 border border-amber-50/20 px-3 py-1 rounded-full text-xs font-semibold">Wolt</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -60,16 +76,19 @@ export default function PizzaSite() {
 
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             {[
-              { name: "Margherita", desc: "San Marzano-tomat, mozzarella di bufala, fersk basilikum, ekstra virgin olje.", price: "189" },
-              { name: "Diavola", desc: "Sterk salami, pikante chili, mozzarella, hvitløk.", price: "219" },
-              { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, parmesan, taleggio.", price: "229" },
-              { name: "Prosciutto e Funghi", desc: "Prosciutto cotto, sjampinjong, mozzarella, oregano.", price: "229" },
-              { name: "Capricciosa", desc: "Prosciutto, artisjokk, sopp, oliven, mozzarella.", price: "239" },
-              { name: "Calabrese", desc: "Nduja, capocollo, mozzarella, kalabriske oliven.", price: "249" },
+              { name: "Margherita", desc: "San Marzano-tomat, mozzarella di bufala, fersk basilikum, ekstra virgin olje.", price: "189", tags: ["V"] },
+              { name: "Diavola", desc: "Sterk salami, pikante chili, mozzarella, hvitløk.", price: "219", tags: [] },
+              { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, parmesan, taleggio.", price: "229", tags: ["V"] },
+              { name: "Prosciutto e Funghi", desc: "Prosciutto cotto, sjampinjong, mozzarella, oregano.", price: "229", tags: [] },
+              { name: "Capricciosa", desc: "Prosciutto, artisjokk, sopp, oliven, mozzarella.", price: "239", tags: [] },
+              { name: "Calabrese", desc: "Nduja, capocollo, mozzarella, kalabriske oliven.", price: "249", tags: [] },
             ].map((p) => (
               <div key={p.name} className="border-b border-amber-200 pb-4">
                 <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="text-2xl font-bold">{p.name}</h3>
+                  <div className="flex items-baseline gap-3">
+                    <h3 className="text-2xl font-bold">{p.name}</h3>
+                    {p.tags.includes("V") && <span className="text-[10px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded" title="Vegetarisk">V</span>}
+                  </div>
                   <div className="flex items-baseline gap-1">
                     <span className="text-xl font-bold text-red-700">{p.price}</span>
                     <span className="text-sm text-amber-800/60">kr</span>
@@ -80,9 +99,38 @@ export default function PizzaSite() {
             ))}
           </div>
 
-          <p className="text-center mt-12 text-amber-900/70 italic">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-amber-900/70">
+            <span className="flex items-center gap-1.5"><span className="text-[10px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded">V</span> Vegetarisk</span>
+            <span>Glutenfri bunn +20 kr</span>
+            <span>Laktosefri ost +15 kr</span>
+          </div>
+
+          <p className="text-center mt-8 text-amber-900/70 italic">
             Alle pizzaer bakes i steinovn ved 450°C i 90 sekunder.
           </p>
+
+          {/* Pizza of the week */}
+          <div className="mt-16 bg-red-700 text-amber-50 rounded-3xl p-8 md:p-10 grid md:grid-cols-3 gap-6 items-center">
+            <div className="md:col-span-2">
+              <p className="text-xs uppercase tracking-[0.3em] text-amber-300 mb-2">— Ukens pizza —</p>
+              <h3 className="text-3xl md:text-4xl font-bold mb-3" style={{ letterSpacing: "-0.02em" }}>Pera e Gorgonzola</h3>
+              <p className="text-amber-100 leading-relaxed mb-4">
+                Karamellisert pære, gorgonzola dolce, valnøtt, honning og fersk timian. Vår
+                signaturpizza denne uken — kun 50 om dagen.
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-bold">249</span>
+                <span className="text-amber-200">kr — bestill før den tar slutt</span>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="inline-block bg-amber-50 text-red-700 rounded-2xl p-6">
+                <p className="text-xs uppercase tracking-widest mb-1">Uke 23</p>
+                <p className="text-5xl font-bold">28</p>
+                <p className="text-sm">pizzaer igjen i dag</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

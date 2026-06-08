@@ -125,6 +125,84 @@ export default function TannlegeSite() {
         </div>
       </section>
 
+      {/* Symptom-finner */}
+      <section className="py-20 px-6 bg-teal-50/40">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 text-slate-900" style={{ letterSpacing: "-0.025em" }}>Hva trenger du hjelp med?</h2>
+          <p className="text-lg text-slate-600 mb-10 max-w-2xl">Velg det som passer, så bestiller vi riktig type time for deg.</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            {[
+              { label: "Tannverk", time: "I dag", urgent: true },
+              { label: "Sjekk og rens", time: "Innen 2 uker" },
+              { label: "Synlig hull", time: "Innen uka" },
+              { label: "Mistet fylling", time: "Innen 3 dager" },
+              { label: "Sensitive tenner", time: "Innen 2 uker" },
+              { label: "Hvitere tenner", time: "Når du vil" },
+              { label: "Skadet tann", time: "I dag", urgent: true },
+              { label: "Tannkjøtt blør", time: "Innen uka" },
+              { label: "Vurderer implantat", time: "Konsultasjon" },
+              { label: "Bare en sjekk", time: "Innen 2 uker" },
+            ].map((s) => (
+              <button
+                key={s.label}
+                className={`text-left p-4 rounded-xl border transition-all hover:-translate-y-0.5 ${
+                  s.urgent
+                    ? "bg-orange-50 border-orange-200 hover:border-orange-400 hover:shadow-md"
+                    : "bg-white border-slate-200 hover:border-teal-400 hover:shadow-md"
+                }`}
+              >
+                <p className={`font-bold text-sm mb-1 ${s.urgent ? "text-orange-700" : "text-slate-900"}`}>{s.label}</p>
+                <p className={`text-xs ${s.urgent ? "text-orange-600" : "text-slate-500"}`}>{s.time}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tannlegeskrekk */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+          <div className="md:col-span-3">
+            <p className="text-sm uppercase tracking-widest text-teal-700 font-semibold mb-3">For deg som gruer deg</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900" style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              Du er ikke alene.<br />
+              Vi tar oss tid.
+            </h2>
+            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+              Tannlegeskrekk rammer 1 av 4 voksne nordmenn. Vi behandler det ikke som en svakhet —
+              vi tilpasser oss.
+            </p>
+            <ul className="space-y-3 text-slate-700">
+              {[
+                "Du kan be om å se utstyret før vi starter",
+                "Vi tar pauser når du trenger dem — alltid",
+                "Sedasjon med lystgass tilgjengelig",
+                "Du har et &quot;stopp-tegn&quot; vi alltid respekterer",
+                "Første konsultasjon er kun samtale, ingen behandling",
+              ].map((p, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span dangerouslySetInnerHTML={{ __html: p }} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-2 bg-teal-50 rounded-2xl p-7 border border-teal-100">
+            <p className="text-5xl font-bold text-teal-700 mb-2">1 av 4</p>
+            <p className="text-sm text-slate-600 mb-6">norske voksne har tannlegeskrekk i en eller annen form*</p>
+            <p className="text-sm text-slate-700 italic leading-relaxed">
+              &ldquo;Jeg hadde ikke vært hos tannlege på 8 år. Anne tok seg tid, forklarte alt før hun
+              gjorde noe. Nå går jeg jevnlig.&rdquo;
+            </p>
+            <p className="text-xs text-slate-500 mt-3">— Marianne, 42</p>
+            <p className="text-xs text-slate-400 mt-6">*Folkehelseinstituttet 2023</p>
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       <section id="team" className="py-20 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto">
