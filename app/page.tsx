@@ -250,13 +250,13 @@ export default function Home() {
                 slug: "ror",
                 name: "Bakkejord Rør",
                 industry: "Rørlegger",
-                img: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80",
+                img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80",
               },
               {
                 slug: "snekker",
                 name: "Bakkejord Snekker",
                 industry: "Snekker",
-                img: "https://images.unsplash.com/photo-1572297870735-3a6816f6cef9?auto=format&fit=crop&w=800&q=80",
+                img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80",
               },
               {
                 slug: "tannlege",

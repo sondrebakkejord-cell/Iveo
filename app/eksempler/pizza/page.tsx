@@ -90,9 +90,10 @@ export default function PizzaSite() {
       <section id="historie" className="py-20 px-6 bg-stone-900 text-amber-50">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <img
-            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
+            src="https://images.unsplash.com/photo-1571066811602-716837d681de?auto=format&fit=crop&w=1000&q=80"
             alt="Pizzaiolo som lager pizza"
-            className="rounded-2xl"
+            className="rounded-2xl w-full h-full object-cover"
+            loading="lazy"
           />
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-amber-300 mb-4">— La nostra storia —</p>
@@ -124,7 +125,7 @@ export default function PizzaSite() {
               </div>
               <div>
                 <dt className="text-amber-800/60 text-sm uppercase tracking-widest mb-1">Åpningstider</dt>
-                <dd>Tirs–tor 16–22<br />Fre–lør 14–23<br />Søn 14–21<br />Mandager stengt</dd>
+                <dd>Man–tor 15–22<br />Fre–lør 14–23<br />Søn 14–21</dd>
               </div>
               <div>
                 <dt className="text-amber-800/60 text-sm uppercase tracking-widest mb-1">Telefon</dt>

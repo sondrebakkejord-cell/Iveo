@@ -25,11 +25,12 @@ export default function SnekkerSite() {
       </nav>
 
       {/* Hero */}
-      <section className="relative h-[75vh] min-h-[600px] flex items-end overflow-hidden">
+      <section className="relative h-[75vh] min-h-[600px] flex items-end overflow-hidden bg-stone-900">
         <img
-          src="https://images.unsplash.com/photo-1572297870735-3a6816f6cef9?auto=format&fit=crop&w=2000&q=85"
+          src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=2000&q=85"
           alt="Snekker som jobber med tre"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-6 pb-16 text-amber-50">
@@ -80,11 +81,11 @@ export default function SnekkerSite() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80", label: "Kjøkken i hvit eik", place: "Bygdøy, 2025" },
-              { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80", label: "Bad med integrert servant", place: "Frogner, 2025" },
-              { img: "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?auto=format&fit=crop&w=900&q=80", label: "Terrasse i kjerneved", place: "Nesodden, 2024" },
-              { img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80", label: "Skreddersydd bokhylle", place: "Grünerløkka, 2024" },
-              { img: "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80", label: "Anneks i Hvaler", place: "Hvaler, 2024" },
-              { img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80", label: "Restaurering av loftshus", place: "Holmenkollen, 2023" },
+              { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=80", label: "Bad med integrert servant", place: "Frogner, 2025" },
+              { img: "https://images.unsplash.com/photo-1572276965237-7c2517d35e22?auto=format&fit=crop&w=900&q=80", label: "Terrasse i kjerneved", place: "Nesodden, 2024" },
+              { img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80", label: "Skreddersydd bokhylle", place: "Grünerløkka, 2024" },
+              { img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80", label: "Anneks i Hvaler", place: "Hvaler, 2024" },
+              { img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80", label: "Restaurering av loftshus", place: "Holmenkollen, 2023" },
             ].map((p, i) => (
               <div key={i} className="group">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3">

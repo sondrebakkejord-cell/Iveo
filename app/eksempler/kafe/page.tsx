@@ -130,9 +130,9 @@ export default function KafeSite() {
 
           <div className="grid md:grid-cols-3 gap-6 text-left">
             {[
-              { img: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80", title: "Kardemommeboller", desc: "Med ekte kardemomme, fersk gjær og smør fra Røros." },
-              { img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80", title: "Bringebærsnitter", desc: "Sprøtt mørdeig-bunn, hjemmelaget bringebærsyltetøy, glaze." },
-              { img: "https://images.unsplash.com/photo-1568827999250-3f6afff96e66?auto=format&fit=crop&w=800&q=80", title: "Sitronkake", desc: "Saftig, syrlig, med drysset av flormelis." },
+              { img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80", title: "Kardemommeboller", desc: "Med ekte kardemomme, fersk gjær og smør fra Røros." },
+              { img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80", title: "Bringebærsnitter", desc: "Sprøtt mørdeig-bunn, hjemmelaget bringebærsyltetøy, glaze." },
+              { img: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80", title: "Sitronkake", desc: "Saftig, syrlig, med drysset av flormelis." },
             ].map((d) => (
               <div key={d.title} className="bg-rose-50 rounded-3xl overflow-hidden">
                 <div className="aspect-square">

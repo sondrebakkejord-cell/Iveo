@@ -73,11 +73,12 @@ export default function RorSite() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-square rounded-2xl overflow-hidden">
+          <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-200">
             <img
-              src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=85"
               alt="Rørlegger på jobb"
               className="w-full h-full object-cover"
+              loading="eager"
             />
           </div>
         </div>
@@ -94,8 +95,8 @@ export default function RorSite() {
               {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />,
                 title: "Akutt rørleggervakt",
-                desc: "Vannlekkasje? Tette rør? Vi rykker ut innen 60 minutter, døgnet rundt — også i ferier.",
-                price: "Fra 1 490,-",
+                desc: "Vannlekkasje? Tette rør? Vi rykker ut innen 60 minutter, døgnet rundt — også i helger og ferier.",
+                price: "Fra 2 290,-",
                 urgent: true,
               },
               {
@@ -108,13 +109,13 @@ export default function RorSite() {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />,
                 title: "Service og vedlikehold",
                 desc: "Årlig sjekk, kran-bytte, pakninger, vannlås. Forebygg lekkasje før den oppstår.",
-                price: "Fra 990,-",
+                price: "Fra 1 290,-",
               },
               {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />,
                 title: "Tette avløp",
                 desc: "Høytrykksspyling, kamerakontroll, rotfjerning fra avløpsrør og hovedledning.",
-                price: "Fra 1 290,-",
+                price: "Fra 1 790,-",
               },
               {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />,

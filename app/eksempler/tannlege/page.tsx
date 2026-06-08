@@ -103,7 +103,7 @@ export default function TannlegeSite() {
               },
               {
                 title: "Barnetannlege",
-                desc: "Egen rolig behandlingsstol for barn. Gratis for alle under 18 år, akkurat som hos det offentlige.",
+                desc: "Egen rolig behandlingsstol for barn. Skånsom og pedagogisk tilnærming — også for de minste.",
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />,
               },
               {
@@ -133,9 +133,9 @@ export default function TannlegeSite() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Anne Bakkejord", role: "Tannlege, spesialist endodonti", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80", since: "Klinikk-eier siden 2008" },
-              { name: "Lars Eriksen", role: "Tannlege", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80", since: "Hos oss siden 2015" },
-              { name: "Maria Nygård", role: "Tannpleier", img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80", since: "Hos oss siden 2019" },
+              { name: "Anne Bakkejord", role: "Tannlege, spesialist endodonti", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80", since: "Klinikk-eier siden 2008" },
+              { name: "Lars Eriksen", role: "Tannlege", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80", since: "Hos oss siden 2015" },
+              { name: "Maria Nygård", role: "Tannpleier", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80", since: "Hos oss siden 2019" },
             ].map((p) => (
               <div key={p.name} className="bg-white rounded-2xl overflow-hidden shadow-sm">
                 <div className="aspect-square overflow-hidden">
@@ -175,7 +175,7 @@ export default function TannlegeSite() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-slate-500 mt-4">Vi har avtale med HELFO. Barn under 18 år gratis.</p>
+          <p className="text-sm text-slate-500 mt-4">Vi har refusjonsavtale med HELFO på utvalgte behandlinger. Barn 0–18 år dekkes av Den offentlige tannhelsetjenesten (DOT).</p>
         </div>
       </section>
 
