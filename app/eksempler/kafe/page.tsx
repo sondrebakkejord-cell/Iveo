@@ -93,7 +93,7 @@ export default function KafeSite() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-medium mb-6 text-rose-900 italic">Til kaken</h3>
+              <h3 className="text-3xl font-medium mb-6 text-rose-900 italic">Fra ovnen</h3>
               <ul className="space-y-4">
                 {[
                   ["Kanelbolle (dagens)", "45"],
