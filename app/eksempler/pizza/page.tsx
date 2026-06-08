@@ -1,0 +1,154 @@
+import Link from "next/link";
+
+export default function PizzaSite() {
+  return (
+    <div className="min-h-screen bg-amber-50 text-stone-900" style={{ fontFamily: "'Georgia', serif" }}>
+      <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-amber-50">
+        <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
+        <span className="mx-2 opacity-50">·</span>
+        <span>Eksempel: Bakkejord Pizza</span>
+      </div>
+
+      {/* Nav */}
+      <nav className="sticky top-0 z-40 bg-amber-50/95 backdrop-blur-sm border-b border-stone-200">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div>
+            <div className="text-2xl font-bold tracking-tight text-red-700">Bakkejord</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-stone-600 -mt-1">Pizzeria · 1995</div>
+          </div>
+          <div className="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#meny" className="hover:text-red-700">Meny</a>
+            <a href="#historie" className="hover:text-red-700">Vår historie</a>
+            <a href="#besok" className="hover:text-red-700">Besøk oss</a>
+            <a href="#bestill" className="px-4 py-2 bg-red-700 text-amber-50 rounded-full hover:bg-red-800 transition-colors">Bestill</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=2000&q=85"
+          alt="Italiensk pizza"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/50 to-transparent" />
+        <div className="relative max-w-6xl mx-auto px-6 text-amber-50">
+          <p className="text-sm uppercase tracking-[0.4em] text-amber-300 mb-6">— Autentisk italiensk siden 1995 —</p>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6" style={{ letterSpacing: "-0.02em", lineHeight: 0.95 }}>
+            Steinovnsbakt.<br /><em className="italic font-normal">Hjemmelaget.</em>
+          </h1>
+          <p className="text-xl md:text-2xl text-amber-100 max-w-xl mb-8 leading-relaxed">
+            En liten familiedrevet pizzeria med oppskrifter rett fra Napoli. Surdeig, hele 36 timers heving, ekte mozzarella di bufala.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href="#bestill" className="px-8 py-4 bg-red-700 text-white rounded-full font-semibold text-lg hover:bg-red-800 transition-colors">
+              Bestill nå →
+            </a>
+            <a href="#meny" className="px-8 py-4 border-2 border-amber-100 text-amber-50 rounded-full font-semibold text-lg hover:bg-amber-50 hover:text-stone-900 transition-colors">
+              Se menyen
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Meny */}
+      <section id="meny" className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-sm uppercase tracking-[0.4em] text-red-700 mb-4 text-center">Il Menu</p>
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-16" style={{ letterSpacing: "-0.025em" }}>Pizze classiche</h2>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {[
+              { name: "Margherita", desc: "San Marzano-tomat, mozzarella di bufala, fersk basilikum, ekstra virgin olje.", price: "189" },
+              { name: "Diavola", desc: "Sterk salami, pikante chili, mozzarella, hvitløk.", price: "219" },
+              { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, parmesan, taleggio.", price: "229" },
+              { name: "Prosciutto e Funghi", desc: "Prosciutto cotto, sjampinjong, mozzarella, oregano.", price: "229" },
+              { name: "Capricciosa", desc: "Prosciutto, artisjokk, sopp, oliven, mozzarella.", price: "239" },
+              { name: "Calabrese", desc: "Nduja, capocollo, mozzarella, kalabriske oliven.", price: "249" },
+            ].map((p) => (
+              <div key={p.name} className="border-b border-stone-200 pb-4">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-2xl font-bold">{p.name}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-xl font-bold text-red-700">{p.price}</span>
+                    <span className="text-sm text-stone-500">kr</span>
+                  </div>
+                </div>
+                <p className="text-stone-600 italic">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center mt-12 text-stone-600 italic">
+            Alle pizzaer bakes i steinovn ved 450°C i 90 sekunder.
+          </p>
+        </div>
+      </section>
+
+      {/* Historie */}
+      <section id="historie" className="py-20 px-6 bg-stone-900 text-amber-50">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <img
+            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
+            alt="Pizzaiolo som lager pizza"
+            className="rounded-2xl"
+          />
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-amber-300 mb-4">— La nostra storia —</p>
+            <h2 className="text-5xl font-bold mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
+              Tre generasjoner.<br /><em className="italic font-normal">Én oppskrift.</em>
+            </h2>
+            <p className="text-lg text-amber-100/90 leading-relaxed mb-4">
+              Nonno Giuseppe åpnet pizzeriet i 1995 etter å ha tatt med seg oppskriftene fra
+              Napoli til Norge. I dag drives stedet av sønnesønnen Marco — men ovnen, deigen
+              og hjertet er det samme.
+            </p>
+            <p className="text-lg text-amber-100/90 leading-relaxed italic">
+              "Ekte pizza er ikke komplisert. Den krever bare tid, ekte råvarer og kjærlighet."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Besøk */}
+      <section id="besok" className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-red-700 mb-4">— Besøk oss —</p>
+            <h2 className="text-5xl font-bold mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>Velkommen<br />til bordet.</h2>
+            <dl className="space-y-4 text-lg">
+              <div>
+                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Adresse</dt>
+                <dd>Storgata 14, 0182 Oslo</dd>
+              </div>
+              <div>
+                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Åpningstider</dt>
+                <dd>Tirs–tor 16–22<br />Fre–lør 14–23<br />Søn 14–21<br />Mandager stengt</dd>
+              </div>
+              <div>
+                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Telefon</dt>
+                <dd className="text-3xl font-bold text-red-700">22 12 34 56</dd>
+              </div>
+            </dl>
+          </div>
+          <div id="bestill" className="bg-red-700 text-amber-50 rounded-2xl p-10">
+            <h3 className="text-3xl font-bold mb-4">Bestill take-away</h3>
+            <p className="mb-6 text-amber-100">Klar til avhenting på 20 minutter.</p>
+            <a href="tel:+4722123456" className="block w-full bg-amber-50 text-red-700 text-center py-4 rounded-full font-bold text-xl hover:bg-amber-100 transition-colors mb-3">
+              Ring 22 12 34 56
+            </a>
+            <a href="#" className="block w-full border-2 border-amber-50 text-amber-50 text-center py-4 rounded-full font-bold text-lg hover:bg-amber-50/10 transition-colors">
+              Bestill online
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-stone-900 text-amber-100/70 py-8 px-6 text-center">
+        <p className="text-sm">© {new Date().getFullYear()} Bakkejord Pizzeria · Storgata 14, Oslo</p>
+        <p className="text-xs mt-1 italic">Buon appetito 🍕</p>
+      </footer>
+    </div>
+  );
+}

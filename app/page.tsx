@@ -23,6 +23,7 @@ export default function Home() {
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#hva-vi-gjor" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hva vi gjør</a>
+            <a href="/eksempler" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Eksempler</a>
             <a href="#hvem-vi-er" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hvem vi er</a>
             <a href="#kontakt" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Kontakt</a>
             <a
@@ -48,6 +49,7 @@ export default function Home() {
         {menuOpen && (
           <div className="md:hidden glass border-t border-slate-200/40 px-6 py-4 flex flex-col gap-4">
             <a href="#hva-vi-gjor" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hva vi gjør</a>
+            <a href="/eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Eksempler</a>
             <a href="#hvem-vi-er" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hvem vi er</a>
             <a href="#kontakt" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Kontakt</a>
             <a href="#book" onClick={() => setMenuOpen(false)} className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold text-center">
