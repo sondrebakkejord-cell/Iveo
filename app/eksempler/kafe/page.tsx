@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function KafeSite() {
   return (
-    <div className="min-h-screen bg-rose-50 text-stone-900" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+    <div className="min-h-screen bg-rose-50 text-rose-950" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-rose-50" style={{ fontFamily: "system-ui, sans-serif" }}>
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>
@@ -14,9 +14,9 @@ export default function KafeSite() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
             <div className="text-3xl italic font-medium text-rose-900">Bakkejord</div>
-            <div className="text-[10px] uppercase tracking-[0.35em] text-stone-600 -mt-1" style={{ fontFamily: "system-ui, sans-serif" }}>kafé · siden 2018</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-rose-900/65 -mt-1" style={{ fontFamily: "system-ui, sans-serif" }}>kafé · siden 2018</div>
           </div>
-          <div className="hidden md:flex items-center gap-7 text-sm text-stone-700" style={{ fontFamily: "system-ui, sans-serif" }}>
+          <div className="hidden md:flex items-center gap-7 text-sm text-rose-900/75" style={{ fontFamily: "system-ui, sans-serif" }}>
             <a href="#meny" className="hover:text-rose-900">Meny</a>
             <a href="#dagens" className="hover:text-rose-900">Dagens</a>
             <a href="#besok" className="hover:text-rose-900">Besøk oss</a>
@@ -33,7 +33,7 @@ export default function KafeSite() {
             <h1 className="text-7xl md:text-9xl font-medium mb-6" style={{ letterSpacing: "-0.02em", lineHeight: 0.95 }}>
               Latte,<br /><em className="italic">kanelbolle</em>,<br />god prat.
             </h1>
-            <p className="text-xl md:text-2xl text-stone-700 leading-relaxed max-w-md">
+            <p className="text-xl md:text-2xl text-rose-900/75 leading-relaxed max-w-md">
               Et lite, varmt sted i Grünerløkka. Hjemmebakt hver morgen, kaffe brent av små
               norske brennerier, og bord du gjerne sitter ved en hel ettermiddag.
             </p>
@@ -140,7 +140,7 @@ export default function KafeSite() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-medium mb-2 italic">{d.title}</h3>
-                  <p className="text-stone-700">{d.desc}</p>
+                  <p className="text-rose-900/75">{d.desc}</p>
                 </div>
               </div>
             ))}
@@ -185,7 +185,7 @@ export default function KafeSite() {
 
       <footer className="bg-rose-100 text-rose-900/70 py-8 px-6 text-center text-sm" style={{ fontFamily: "system-ui, sans-serif" }}>
         <p>© {new Date().getFullYear()} Bakkejord Kafé · Markveien 39, Oslo</p>
-        <p className="text-xs mt-1 italic" style={{ fontFamily: "Georgia, serif" }}>vi ses i morgen ☕</p>
+        <p className="text-xs mt-1 italic" style={{ fontFamily: "Georgia, serif" }}>vi ses i morgen</p>
       </footer>
     </div>
   );

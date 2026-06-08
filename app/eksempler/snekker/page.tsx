@@ -19,7 +19,7 @@ export default function SnekkerSite() {
           <div className="hidden md:flex gap-7 text-sm font-medium">
             <a href="#tjenester" className="hover:text-amber-900">Tjenester</a>
             <a href="#prosjekter" className="hover:text-amber-900">Prosjekter</a>
-            <a href="#tilbud" className="px-5 py-2.5 bg-amber-900 text-stone-50 rounded-lg hover:bg-amber-950 transition-colors">Be om tilbud</a>
+            <a href="#tilbud" className="px-5 py-2.5 bg-amber-900 text-amber-50 rounded-lg hover:bg-amber-950 transition-colors">Be om tilbud</a>
           </div>
         </div>
       </nav>
@@ -44,25 +44,27 @@ export default function SnekkerSite() {
       </section>
 
       {/* Tjenester */}
-      <section id="tjenester" className="py-24 px-6">
+      <section id="tjenester" className="py-24 px-6 bg-amber-950 text-amber-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Hva vi bygger</h2>
-          <p className="text-lg text-stone-600 mb-16 max-w-2xl">Fra små reparasjoner til komplette renoveringer. Vi tar oppdrag der vi kan stå inne for resultatet.</p>
+          <p className="text-lg text-amber-100/70 mb-16 max-w-2xl">Vi tar oppdrag der vi kan stå inne for resultatet. Smått som stort.</p>
 
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
             {[
-              { num: "01", title: "Kjøkken", desc: "Skreddersydde kjøkken i massiv eik, ask, valnøtt eller bjørk. Designet for ditt rom, bygget i vårt verksted.", time: "6–10 uker" },
-              { num: "02", title: "Bad og våtrom", desc: "Komplette bad-renoveringer med våre samarbeidspartnere på rør og elektro. Vi koordinerer alt.", time: "3–6 uker" },
-              { num: "03", title: "Terrasse og uteplass", desc: "Terrasser i kjerneved av furu, lerk eller ipe. Levebbeskyttet, vedlikeholdsfritt design.", time: "2–4 uker" },
-              { num: "04", title: "Innredning og møbler", desc: "Bokhyller, garderober, bord, benker, trapper. Tegnet sammen med deg, bygget på mål.", time: "Varierer" },
-              { num: "05", title: "Hytter og tilbygg", desc: "Nye hytter, anneks, tilbygg og restaurering. Hele prosessen fra tegning til ferdig.", time: "3–9 mnd" },
-              { num: "06", title: "Restaurering", desc: "Gamle hus og hytter som trenger ny pust. Vi respekterer det opprinnelige håndverket.", time: "Varierer" },
+              { title: "Kjøkken", desc: "Skreddersydde kjøkken i massiv eik, ask, valnøtt eller bjørk. Tegnet sammen med deg, bygget i vårt verksted i Maridalen.", time: "6–10 uker", material: "Massiv eik · Ask · Valnøtt" },
+              { title: "Bad og våtrom", desc: "Komplette bad-renoveringer med faste samarbeidspartnere på rør og elektro. Vi tar koordineringen — du forholder deg til oss.", time: "3–6 uker", material: "Membranklassen og fliser etter ønske" },
+              { title: "Terrasse og uteplass", desc: "Terrasser bygget i kjerneved av furu, lerk eller ipe. Vi monterer skjult, så ingen skruer titter opp.", time: "2–4 uker", material: "Kjerneved furu · Lerk · Ipe" },
+              { title: "Innredning og møbler", desc: "Bokhyller, garderober, langbord, trapper. Vi tegner først, du godkjenner — så kappes treet.", time: "Varierer", material: "Massiv eller finert" },
+              { title: "Hytter og tilbygg", desc: "Anneks, tilbygg, nybygg. Hele prosessen fra arkitekttegning til ferdig nøkkel.", time: "3–9 mnd", material: "Norsk tre, lokal entreprenør" },
+              { title: "Restaurering", desc: "Gamle hus som trenger nytt liv. Vi respekterer det opprinnelige håndverket — moderniserer kun det som må.", time: "Varierer", material: "Originalmaterialer der mulig" },
             ].map((s) => (
-              <div key={s.num} className="border-t border-stone-300 pt-6">
-                <p className="text-sm font-mono text-amber-900 mb-3">{s.num}</p>
-                <h3 className="text-3xl font-bold mb-3" style={{ letterSpacing: "-0.015em" }}>{s.title}</h3>
-                <p className="text-stone-700 mb-4 leading-relaxed">{s.desc}</p>
-                <p className="text-sm uppercase tracking-widest text-stone-500">Leveringstid: {s.time}</p>
+              <div key={s.title} className="border-t border-amber-900/30 pt-6">
+                <h3 className="text-3xl font-bold mb-3 text-amber-50" style={{ letterSpacing: "-0.015em" }}>{s.title}</h3>
+                <p className="text-amber-100/80 mb-4 leading-relaxed">{s.desc}</p>
+                <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+                  <span className="text-amber-300/90"><span className="text-amber-200/50">Leveres på:</span> {s.time}</span>
+                  <span className="text-amber-300/90"><span className="text-amber-200/50">Materialer:</span> {s.material}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -102,12 +104,12 @@ export default function SnekkerSite() {
           <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
             Har du et prosjekt?
           </h2>
-          <p className="text-xl text-stone-700 mb-10 leading-relaxed">
+          <p className="text-xl text-stone-800 mb-10 leading-relaxed">
             Send oss en kort beskrivelse, gjerne med bilder. Vi tar gratis befaring i Oslo og
             omegn innen en uke.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="mailto:post@bakkejordsnekker.no" className="px-7 py-4 bg-amber-900 text-stone-50 rounded-lg font-bold text-lg hover:bg-amber-950 transition-colors">
+            <a href="mailto:post@bakkejordsnekker.no" className="px-7 py-4 bg-amber-900 text-amber-50 rounded-lg font-bold text-lg hover:bg-amber-950 transition-colors">
               post@bakkejordsnekker.no
             </a>
             <a href="tel:+4722556677" className="px-7 py-4 border-2 border-stone-900 text-stone-900 rounded-lg font-bold text-lg hover:bg-stone-900 hover:text-stone-50 transition-colors">

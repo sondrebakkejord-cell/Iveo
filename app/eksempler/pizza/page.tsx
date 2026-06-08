@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PizzaSite() {
   return (
-    <div className="min-h-screen bg-amber-50 text-stone-900" style={{ fontFamily: "'Georgia', serif" }}>
+    <div className="min-h-screen bg-amber-50 text-amber-950" style={{ fontFamily: "'Georgia', serif" }}>
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-amber-50">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>
@@ -10,7 +10,7 @@ export default function PizzaSite() {
       </div>
 
       {/* Nav */}
-      <nav className="sticky top-0 z-40 bg-amber-50/95 backdrop-blur-sm border-b border-stone-200">
+      <nav className="sticky top-0 z-40 bg-amber-50/95 backdrop-blur-sm border-b border-amber-200">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
             <div className="text-2xl font-bold tracking-tight text-red-700">Bakkejord</div>
@@ -45,7 +45,7 @@ export default function PizzaSite() {
             <a href="#bestill" className="px-8 py-4 bg-red-700 text-white rounded-full font-semibold text-lg hover:bg-red-800 transition-colors">
               Bestill nå →
             </a>
-            <a href="#meny" className="px-8 py-4 border-2 border-amber-100 text-amber-50 rounded-full font-semibold text-lg hover:bg-amber-50 hover:text-stone-900 transition-colors">
+            <a href="#meny" className="px-8 py-4 border-2 border-amber-100 text-amber-50 rounded-full font-semibold text-lg hover:bg-amber-50 hover:text-amber-950 transition-colors">
               Se menyen
             </a>
           </div>
@@ -67,20 +67,20 @@ export default function PizzaSite() {
               { name: "Capricciosa", desc: "Prosciutto, artisjokk, sopp, oliven, mozzarella.", price: "239" },
               { name: "Calabrese", desc: "Nduja, capocollo, mozzarella, kalabriske oliven.", price: "249" },
             ].map((p) => (
-              <div key={p.name} className="border-b border-stone-200 pb-4">
+              <div key={p.name} className="border-b border-amber-200 pb-4">
                 <div className="flex items-baseline justify-between mb-2">
                   <h3 className="text-2xl font-bold">{p.name}</h3>
                   <div className="flex items-baseline gap-1">
                     <span className="text-xl font-bold text-red-700">{p.price}</span>
-                    <span className="text-sm text-stone-500">kr</span>
+                    <span className="text-sm text-amber-800/60">kr</span>
                   </div>
                 </div>
-                <p className="text-stone-600 italic">{p.desc}</p>
+                <p className="text-amber-900/70 italic">{p.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-center mt-12 text-stone-600 italic">
+          <p className="text-center mt-12 text-amber-900/70 italic">
             Alle pizzaer bakes i steinovn ved 450°C i 90 sekunder.
           </p>
         </div>
@@ -119,15 +119,15 @@ export default function PizzaSite() {
             <h2 className="text-5xl font-bold mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>Velkommen<br />til bordet.</h2>
             <dl className="space-y-4 text-lg">
               <div>
-                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Adresse</dt>
+                <dt className="text-amber-800/60 text-sm uppercase tracking-widest mb-1">Adresse</dt>
                 <dd>Storgata 14, 0182 Oslo</dd>
               </div>
               <div>
-                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Åpningstider</dt>
+                <dt className="text-amber-800/60 text-sm uppercase tracking-widest mb-1">Åpningstider</dt>
                 <dd>Tirs–tor 16–22<br />Fre–lør 14–23<br />Søn 14–21<br />Mandager stengt</dd>
               </div>
               <div>
-                <dt className="text-stone-500 text-sm uppercase tracking-widest mb-1">Telefon</dt>
+                <dt className="text-amber-800/60 text-sm uppercase tracking-widest mb-1">Telefon</dt>
                 <dd className="text-3xl font-bold text-red-700">22 12 34 56</dd>
               </div>
             </dl>
@@ -147,7 +147,7 @@ export default function PizzaSite() {
 
       <footer className="bg-stone-900 text-amber-100/70 py-8 px-6 text-center">
         <p className="text-sm">© {new Date().getFullYear()} Bakkejord Pizzeria · Storgata 14, Oslo</p>
-        <p className="text-xs mt-1 italic">Buon appetito 🍕</p>
+        <p className="text-xs mt-1 italic">Buon appetito</p>
       </footer>
     </div>
   );
