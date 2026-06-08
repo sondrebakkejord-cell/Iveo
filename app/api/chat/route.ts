@@ -15,7 +15,7 @@ const SYSTEM_PROMPT = `Du er "Iver" — den vennlige, smarte AI-assistenten på 
   1. **Nettsider** — moderne, futuristiske, skreddersydde
   2. **Hosting** — inkludert i nettside-pakkene
   3. **AI-løsninger** — kommer snart (chatbots, automatisering, AI-resepsjonister)
-- Telefon: 484 72 586
+- Telefon: +47 484 72 586
 - E-post: sondrebakkejord@gmail.com
 
 ## TJENESTER (DETALJERT)
@@ -212,7 +212,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Chat error:", error);
     return NextResponse.json(
-      { reply: "Beklager, noe gikk galt på min side. Ring oss på 484 72 586 eller send e-post til sondrebakkejord@gmail.com 😊" },
+      { reply: "Beklager, noe gikk galt på min side. Ring oss på +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com 😊" },
       { status: 500 }
     );
   }

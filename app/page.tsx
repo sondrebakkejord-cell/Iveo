@@ -27,10 +27,11 @@ export default function Home() {
             <a href="#hvem-vi-er" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hvem vi er</a>
             <a href="#kontakt" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Kontakt</a>
             <a
-              href="#book"
-              className="px-5 py-2 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
+              href="tel:+4748472586"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
             >
-              Book et møte
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              +47 484 72 586
             </a>
           </div>
           <button
@@ -52,8 +53,8 @@ export default function Home() {
             <a href="#eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Eksempler</a>
             <a href="#hvem-vi-er" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hvem vi er</a>
             <a href="#kontakt" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Kontakt</a>
-            <a href="#book" onClick={() => setMenuOpen(false)} className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold text-center">
-              Book et møte
+            <a href="tel:+4748472586" onClick={() => setMenuOpen(false)} className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold text-center">
+              +47 484 72 586
             </a>
           </div>
         )}
@@ -98,13 +99,11 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
             <a
-              href="#book"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors group"
+              href="tel:+4748472586"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
             >
-              Book et gratis møte
-              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              Ring +47 484 72 586
             </a>
             <a
               href="#hva-vi-gjor"
@@ -360,30 +359,28 @@ export default function Home() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                  Gratis møte.
+                  Ring oss.
                   <br />
                   Uten salgsprat.
                 </h2>
                 <p className="text-slate-300 text-lg leading-relaxed">
-                  30 minutter. Vi hører hva du trenger, du hører om vi er riktige.
+                  Vi hører hva du trenger, du hører om vi er riktige.
                   Ingen forventning, ingen forpliktelse.
                 </p>
               </div>
               <div className="flex flex-col gap-3">
                 <a
-                  href="#kontakt"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-colors group"
+                  href="tel:+4748472586"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-colors"
                 >
-                  Book et møte
-                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  Ring +47 484 72 586
                 </a>
                 <a
-                  href="tel:+4748472586"
+                  href="mailto:sondrebakkejord@gmail.com"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/15 transition-colors"
                 >
-                  Eller ring 484 72 586
+                  Eller send e-post
                 </a>
               </div>
             </div>
@@ -417,7 +414,7 @@ export default function Home() {
                 </div>
                 <span className="text-sm text-slate-500 font-medium">Ring oss</span>
               </div>
-              <p className="text-2xl font-bold text-slate-900">484 72 586</p>
+              <p className="text-2xl font-bold text-slate-900">+47 484 72 586</p>
               <p className="text-sm text-slate-500 mt-1">man–fre · 09–17</p>
             </a>
 

@@ -91,7 +91,7 @@ export default function Chatbot() {
     } catch {
       setMessages((m) => [
         ...m,
-        { role: "bot", text: "Beklager, noe gikk galt 😕 Ring oss på 484 72 586 eller send e-post til sondrebakkejord@gmail.com." },
+        { role: "bot", text: "Beklager, noe gikk galt 😕 Ring oss på +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com." },
       ]);
     } finally {
       setLoading(false);
