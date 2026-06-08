@@ -23,7 +23,7 @@ export default function Home() {
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#hva-vi-gjor" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hva vi gjør</a>
-            <a href="/eksempler" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Eksempler</a>
+            <a href="#eksempler" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Eksempler</a>
             <a href="#hvem-vi-er" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hvem vi er</a>
             <a href="#kontakt" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Kontakt</a>
             <a
@@ -49,7 +49,7 @@ export default function Home() {
         {menuOpen && (
           <div className="md:hidden glass border-t border-slate-200/40 px-6 py-4 flex flex-col gap-4">
             <a href="#hva-vi-gjor" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hva vi gjør</a>
-            <a href="/eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Eksempler</a>
+            <a href="#eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Eksempler</a>
             <a href="#hvem-vi-er" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hvem vi er</a>
             <a href="#kontakt" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Kontakt</a>
             <a href="#book" onClick={() => setMenuOpen(false)} className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold text-center">
@@ -214,6 +214,93 @@ export default function Home() {
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      {/* Examples — five industry mockups, prominent */}
+      <section id="eksempler" className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
+                Slik ser det ut hos kundene våre.
+              </h2>
+              <p className="text-lg text-slate-600">
+                Fem ekte eksempler på nettsider vi kan bygge — én for hver bransje. Klikk på et
+                eksempel for å se hele siden.
+              </p>
+            </div>
+            <a
+              href="/eksempler"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors whitespace-nowrap"
+            >
+              Se alle fem →
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              {
+                slug: "pizza",
+                name: "Bakkejord Pizza",
+                industry: "Restaurant",
+                img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                slug: "ror",
+                name: "Bakkejord Rør",
+                industry: "Rørlegger",
+                img: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                slug: "snekker",
+                name: "Bakkejord Snekker",
+                industry: "Snekker",
+                img: "https://images.unsplash.com/photo-1572297870735-3a6816f6cef9?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                slug: "tannlege",
+                name: "Tannlege Bakkejord",
+                industry: "Tannlege",
+                img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                slug: "kafe",
+                name: "Bakkejord Kafé",
+                industry: "Kafé",
+                img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+              },
+            ].map((e) => (
+              <a
+                key={e.slug}
+                href={`/eksempler/${e.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-400 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-[4/5] relative overflow-hidden bg-slate-100">
+                  <img
+                    src={e.img}
+                    alt={e.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <p className="text-[10px] uppercase tracking-widest opacity-80 mb-0.5">{e.industry}</p>
+                    <p className="font-bold text-sm leading-tight">{e.name}</p>
+                  </div>
+                </div>
+                <div className="px-3 py-2.5 flex items-center justify-between">
+                  <span className="text-xs font-semibold text-slate-700 group-hover:text-indigo-600 transition-colors">Se eksempel</span>
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <p className="text-sm text-slate-500 text-center mt-10">
+            Dette er reelle design — bygget på faktisk kode, ikke statiske bilder. Akkurat slik vi bygger nettsiden din.
+          </p>
         </div>
       </section>
 
