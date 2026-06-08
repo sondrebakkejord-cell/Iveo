@@ -1,6 +1,6 @@
 export function LogoMark({ size = 36 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <svg width={size} height={size} viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#4f46e5" />
@@ -21,8 +21,8 @@ export function LogoFull({ size = 36 }: { size?: number }) {
     <div className="flex items-center gap-2.5">
       <LogoMark size={size} />
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-extrabold tracking-tight">iveo</span>
-        <span className="text-[8px] font-semibold tracking-[0.3em] text-gray-500 mt-0.5">N · O · R · W · A · Y</span>
+        <span className="text-xl font-extrabold tracking-tight text-slate-900">iveo</span>
+        <span className="text-[8px] font-semibold tracking-[0.28em] text-slate-500 mt-0.5">N · O · R · W · A · Y</span>
       </div>
     </div>
   );

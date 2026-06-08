@@ -194,10 +194,10 @@ export default function Chatbot() {
 
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm border border-gray-100 flex gap-1">
-                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                  <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100 flex gap-1.5">
+                  <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse-soft" style={{ animationDuration: "1.2s" }} />
+                  <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse-soft" style={{ animationDuration: "1.2s", animationDelay: "200ms" }} />
+                  <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse-soft" style={{ animationDuration: "1.2s", animationDelay: "400ms" }} />
                 </div>
               </div>
             )}
