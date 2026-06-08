@@ -258,7 +258,7 @@ export default function Home() {
             </a>
 
             <a
-              href="mailto:kontakt@iveo.no"
+              href="mailto:sondrebakkejord@gmail.com"
               className="group glass rounded-3xl p-8 border border-white/60 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1 transition-all"
             >
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/30">
@@ -267,7 +267,7 @@ export default function Home() {
                 </svg>
               </div>
               <div className="text-sm text-gray-500 mb-1">E-post</div>
-              <div className="text-2xl font-bold group-hover:text-indigo-600 transition">kontakt@iveo.no</div>
+              <div className="text-2xl font-bold group-hover:text-indigo-600 transition">sondrebakkejord@gmail.com</div>
             </a>
           </div>
         </div>

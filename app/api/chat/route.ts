@@ -15,7 +15,7 @@ OM IVEO:
 - AI-løsninger kommer snart (chatbots, automatisering, skreddersydde modeller)
 - Etablert 2026, holder til i Norge
 - Telefon: 484 72 586
-- E-post: kontakt@iveo.no
+- E-post: sondrebakkejord@gmail.com
 
 TJENESTER:
 - Nettsider & Hosting (samlet pakke): Custom design, mobiloptimalisert, SEO-vennlig, 99.9% oppetid, SSL, daglig backup
