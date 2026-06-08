@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LogoFull } from "./Logo";
+import Chatbot from "./Chatbot";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -360,6 +361,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <Chatbot />
     </div>
   );
 }
