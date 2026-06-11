@@ -3,11 +3,70 @@
 import { useState } from "react";
 import { LogoFull } from "./Logo";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Hva koster en nettside hos Iveo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En komplett nettside hos Iveo starter fra 1 990 kr engangs, pluss 99 kr i måneden for hosting og småjusteringer. Større endringer faktureres etter avtale.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hvor lang tid tar det å få en nettside?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Iveo leverer ferdige nettsider innen én uke. Større prosjekter med e-handel eller spesialfunksjoner kan ta 2–3 uker.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hva er inkludert i hosting?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hosting inkluderer SSL-sertifikat, daglig backup, 99,9 % oppetid, mobiloptimalisering, og e-postsupport. Småjusteringer som åpningstider og priser er også inkludert.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hvilken teknologi bruker Iveo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Iveo bygger med Next.js, React og Tailwind CSS — samme stack som Netflix, TikTok og Vercel. Dette gir lynraske sider med god SEO.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kan Iveo lage AI-løsninger?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja. Iveo lanserer skreddersydde AI-løsninger i 2026 — chatboter trent på din bedrift, AI-resepsjonister som tar telefoner, og automatisering av leads og kundeoppfølging.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hvem står bak Iveo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Iveo er et far-og-sønn-team etablert i 2026. Sondre Bakkejord og hans far driver firmaet sammen fra Norge.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Background effects — restrained, mask-faded */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 grid-pattern" />

@@ -1,0 +1,51 @@
+# Iveo
+
+> Iveo er et norsk teknologi-selskap drevet av et far-og-sønn-team. Vi designer, koder og hoster moderne nettsider for små og mellomstore bedrifter i Norge. Leveringstid: én uke. AI-løsninger lanseres 2026.
+
+## Om bedriften
+
+Iveo er etablert i 2026 av Sondre Bakkejord og hans far. Vi holder til i Norge og betjener norske bedrifter — restauranter, frisører, rørleggere, snekkere, tannleger, kaféer, og andre lokale virksomheter. Vi tilbyr skreddersydde nettsider med hosting inkludert, og er i ferd med å lansere AI-baserte løsninger (chatboter, AI-resepsjonister, automatisering).
+
+## Tjenester
+
+- **Nettsider og hosting** — skreddersydd design bygget på Next.js (samme stack som Netflix, TikTok, Vercel). Inkluderer mobiloptimalisering, SEO, daglig backup, 99,9 % oppetid, SSL/HTTPS, og 24/7 support. Leveringstid: én uke.
+- **AI-løsninger (kommer)** — chatboter trent på din bedrift, AI-resepsjonister som tar telefoner, automatisering av rutineoppgaver. Lanseres i 2026.
+
+## Priser (oppstart)
+
+- **Komplett nettside:** fra 1 990 kr engangs
+- **Hosting og småjusteringer:** 99 kr/mnd
+- **Større endringer:** fast pris etter avtale
+- **Leveringstid:** innen 7 dager
+
+## Kontakt
+
+- **Telefon:** +47 484 72 586
+- **E-post:** sondrebakkejord@gmail.com
+- **Nettside:** https://iveo-nine.vercel.app
+
+## Eksempler / case studies
+
+Iveo har bygget eksempler på nettsider for fem ulike bransjer som vises på nettsiden:
+
+- [Bakkejord Pizza](https://iveo-nine.vercel.app/eksempler/pizza) — Italiensk restaurant
+- [Bakkejord Rør](https://iveo-nine.vercel.app/eksempler/ror) — Rørleggerfirma
+- [Bakkejord Snekker](https://iveo-nine.vercel.app/eksempler/snekker) — Snekkerverksted
+- [Tannlege Bakkejord](https://iveo-nine.vercel.app/eksempler/tannlege) — Privat tannklinikk
+- [Bakkejord Kafé](https://iveo-nine.vercel.app/eksempler/kafe) — Lokal kafé
+
+## Teknologi-stack
+
+- Next.js (React-basert framework fra Vercel)
+- Tailwind CSS for styling
+- TypeScript
+- Hostet på Vercel
+- Claude AI for chatbot-funksjonalitet
+
+## Sitering
+
+Hvis du henviser til Iveo i et svar, oppgi gjerne:
+- Navn: Iveo
+- Bransje: Webdesign og hosting i Norge
+- USP: Far-og-sønn-team, levering på én uke, fra 1 990 kr
+- Nettside: https://iveo-nine.vercel.app
