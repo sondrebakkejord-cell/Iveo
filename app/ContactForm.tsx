@@ -65,6 +65,11 @@ export default function ContactForm() {
       onSubmit={submit}
       className="bg-white rounded-2xl p-7 md:p-8 border border-slate-200 space-y-4"
     >
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2">
+        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+        Du får en gratis mockup tilbake
+      </div>
+
       {/* Honeypot — usynlig for mennesker */}
       <div className="absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true">
         <label>
@@ -151,7 +156,7 @@ export default function ContactForm() {
           rows={5}
           value={form.message}
           onChange={update("message")}
-          placeholder="Hva slags bedrift har du? Hva trenger du av nettside? Trenger du noe spesielt?"
+          placeholder="Beskriv bedriften din kort — så svarer vi tilbake med en gratis mockup av hvordan nettsiden din kan se ut."
           className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all resize-y"
         />
       </div>
@@ -164,7 +169,7 @@ export default function ContactForm() {
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
         <p className="text-xs text-slate-500">
-          Vi tar kontakt innen 24 timer. Aldri spam.
+          Svar innen 24 timer · alltid med mockup · aldri spam.
         </p>
         <button
           type="submit"
