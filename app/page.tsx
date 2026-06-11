@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LogoFull } from "./Logo";
+import ContactForm from "./ContactForm";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -120,7 +121,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-36 pb-20 px-6">
+      <section id="main" className="relative pt-36 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 mb-8 animate-fade-up">
             <span className="relative flex h-2 w-2">
@@ -449,49 +450,50 @@ export default function Home() {
 
       {/* Contact */}
       <section id="kontakt" className="relative py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="max-w-2xl mb-14">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-10">
+          <div className="lg:col-span-2">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
               Snakk med oss.
             </h2>
-            <p className="text-lg text-slate-600">
-              Du får svar samme dag på telefon eller e-post. Eller bruk chatboten — den
-              svarer på sekunder.
+            <p className="text-lg text-slate-600 mb-8">
+              Fyll ut skjemaet, eller ring direkte. Du får svar samme dag.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <a
-              href="tel:+4748472586"
-              className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-colors"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+            <div className="space-y-4">
+              <a
+                href="tel:+4748472586"
+                className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200 hover:border-slate-300 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span className="text-sm text-slate-500 font-medium">Ring oss</span>
-              </div>
-              <p className="text-2xl font-bold text-slate-900">+47 484 72 586</p>
-              <p className="text-sm text-slate-500 mt-1">man–fre · 09–17</p>
-            </a>
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Telefon</p>
+                  <p className="font-bold text-slate-900">+47 484 72 586</p>
+                </div>
+              </a>
 
-            <a
-              href="mailto:sondrebakkejord@gmail.com"
-              className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-colors"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+              <a
+                href="mailto:sondrebakkejord@gmail.com"
+                className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200 hover:border-slate-300 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="text-sm text-slate-500 font-medium">Send e-post</span>
-              </div>
-              <p className="text-xl font-bold text-slate-900 break-all">sondrebakkejord@gmail.com</p>
-              <p className="text-sm text-slate-500 mt-1">svar samme dag</p>
-            </a>
+                <div className="min-w-0">
+                  <p className="text-xs text-slate-500 font-medium">E-post</p>
+                  <p className="font-bold text-slate-900 text-sm break-all">sondrebakkejord@gmail.com</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div className="lg:col-span-3">
+            <ContactForm />
           </div>
         </div>
       </section>
