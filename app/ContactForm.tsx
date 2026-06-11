@@ -135,12 +135,8 @@ export default function ContactForm() {
             className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
           >
             <option value="">Velg…</option>
-            <option value="Ny nettside">Ny nettside</option>
-            <option value="Redesign av eksisterende">Redesign av eksisterende</option>
-            <option value="E-handel">E-handel / nettbutikk</option>
-            <option value="Hosting / vedlikehold">Bare hosting / vedlikehold</option>
-            <option value="AI-løsning">AI-løsning</option>
-            <option value="Annet">Annet</option>
+            <option value="Nettside">Nettside</option>
+            <option value="Nettside + hosting">Nettside + hosting</option>
           </select>
         </div>
       </div>
