@@ -332,23 +332,22 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-3">
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                Et team på to.
+                Bakkejord
                 <br />
-                Pappa og sønn.
+                &amp; Bakkejord.
               </h2>
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
                 <p>
-                  Iveo er drevet av Sondre og hans far. Vi startet fordi vi var lei av å se
-                  norske bedrifter betale 80&nbsp;000 kr for nettsider som ser ut som de er
-                  fra 2015.
+                  Vi er to. Sondre og pappa — begge Bakkejord, begge fra Norge. Iveo er et
+                  prosjekt vi har startet sammen, fordi vi liker å bygge ting som funker.
                 </p>
                 <p>
-                  Vi designer og koder hver eneste side fra bunnen av — ingen ferdige maler,
-                  ingen byrå-tull. Du får oss direkte på telefonen, ikke en kundetjeneste i
-                  tre ledd.
+                  Sondre tar designet og kodingen, pappa har lang erfaring fra arbeidslivet
+                  og hjelper på det praktiske og forretningsmessige. Sammen håndterer vi
+                  hele prosessen selv — fra første samtale til ferdig nettside.
                 </p>
                 <p className="text-slate-900 font-semibold">
-                  Vi skriver koden. Vi tar telefonen. Det er det.
+                  Vi tar telefonen. Vi skriver koden. Ingen mellommenn.
                 </p>
               </div>
             </div>
