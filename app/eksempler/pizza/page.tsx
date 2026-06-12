@@ -29,7 +29,7 @@ export default function PizzaSite() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=2000&q=85"
-          alt="Italiensk pizza"
+          alt="Nybakt napolitansk pizza fra steinovn hos Bakkejord Pizza"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/50 to-transparent" />
@@ -109,26 +109,22 @@ export default function PizzaSite() {
             Alle pizzaer bakes i steinovn ved 450°C i 90 sekunder.
           </p>
 
-          {/* Pizza of the week */}
-          <div className="mt-16 bg-red-700 text-amber-50 rounded-3xl p-8 md:p-10 grid md:grid-cols-3 gap-6 items-center">
+          {/* Pizza of the week — dempet, premium-følelse */}
+          <div className="mt-16 bg-amber-100/60 border border-amber-300 rounded-2xl p-8 md:p-10 grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2">
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-300 mb-2">— Ukens pizza —</p>
-              <h3 className="text-3xl md:text-4xl font-bold mb-3" style={{ letterSpacing: "-0.02em" }}>Pera e Gorgonzola</h3>
-              <p className="text-amber-100 leading-relaxed mb-4">
-                Karamellisert pære, gorgonzola dolce, valnøtt, honning og fersk timian. Vår
-                signaturpizza denne uken — kun 50 om dagen.
+              <p className="text-xs uppercase tracking-[0.3em] text-red-700 font-semibold mb-3">— Ukens pizza —</p>
+              <h3 className="text-3xl md:text-4xl font-bold mb-3 text-amber-950" style={{ letterSpacing: "-0.02em" }}>Pera e Gorgonzola</h3>
+              <p className="text-amber-900/80 leading-relaxed italic">
+                Karamellisert pære, gorgonzola dolce, valnøtt, honning og fersk timian.
+                Vår signaturpizza denne uken.
               </p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold">249</span>
-                <span className="text-amber-200">kr — bestill før den tar slutt</span>
-              </div>
             </div>
-            <div className="text-center">
-              <div className="inline-block bg-amber-50 text-red-700 rounded-2xl p-6">
-                <p className="text-xs uppercase tracking-widest mb-1">Uke 23</p>
-                <p className="text-5xl font-bold">28</p>
-                <p className="text-sm">pizzaer igjen i dag</p>
+            <div className="md:text-right">
+              <div className="inline-flex items-baseline gap-2">
+                <span className="text-4xl font-bold text-red-700">249</span>
+                <span className="text-amber-900/60">kr</span>
               </div>
+              <p className="text-sm text-amber-900/70 mt-1 italic">tilgjengelig tirsdag–søndag</p>
             </div>
           </div>
         </div>

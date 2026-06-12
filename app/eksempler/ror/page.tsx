@@ -111,7 +111,7 @@ export default function RorSite() {
             <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1000&q=85"
-                alt="Knut og Magnus Bakkejord på jobb"
+                alt="Mesterrørlegger Knut og Magnus Bakkejord — far og sønn — på jobb hos kunde"
                 className="w-full aspect-[4/5] object-cover"
                 loading="eager"
               />

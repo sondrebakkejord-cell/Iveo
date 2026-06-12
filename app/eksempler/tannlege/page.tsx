@@ -66,7 +66,7 @@ export default function TannlegeSite() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=85"
-              alt="Tannlegekontor"
+              alt="Lyst, moderne tannlegekontor med behandlingsstol — Tannlege Bakkejord på Frogner"
               className="rounded-3xl shadow-2xl shadow-teal-900/10"
             />
           </div>
@@ -133,19 +133,20 @@ export default function TannlegeSite() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {[
-              { label: "Tannverk", time: "I dag", urgent: true },
-              { label: "Sjekk og rens", time: "Innen 2 uker" },
-              { label: "Synlig hull", time: "Innen uka" },
-              { label: "Mistet fylling", time: "Innen 3 dager" },
-              { label: "Sensitive tenner", time: "Innen 2 uker" },
-              { label: "Hvitere tenner", time: "Når du vil" },
-              { label: "Skadet tann", time: "I dag", urgent: true },
-              { label: "Tannkjøtt blør", time: "Innen uka" },
-              { label: "Vurderer implantat", time: "Konsultasjon" },
-              { label: "Bare en sjekk", time: "Innen 2 uker" },
+              { label: "Tannverk", time: "I dag", urgent: true, href: "tel:+4722448811" },
+              { label: "Sjekk og rens", time: "Innen 2 uker", href: "#bestill" },
+              { label: "Synlig hull", time: "Innen uka", href: "#bestill" },
+              { label: "Mistet fylling", time: "Innen 3 dager", href: "#bestill" },
+              { label: "Sensitive tenner", time: "Innen 2 uker", href: "#bestill" },
+              { label: "Hvitere tenner", time: "Når du vil", href: "#bestill" },
+              { label: "Skadet tann", time: "I dag", urgent: true, href: "tel:+4722448811" },
+              { label: "Tannkjøtt blør", time: "Innen uka", href: "#bestill" },
+              { label: "Vurderer implantat", time: "Konsultasjon", href: "#bestill" },
+              { label: "Bare en sjekk", time: "Innen 2 uker", href: "#bestill" },
             ].map((s) => (
-              <button
+              <a
                 key={s.label}
+                href={s.href}
                 className={`text-left p-4 rounded-xl border transition-all hover:-translate-y-0.5 ${
                   s.urgent
                     ? "bg-orange-50 border-orange-200 hover:border-orange-400 hover:shadow-md"
@@ -154,7 +155,7 @@ export default function TannlegeSite() {
               >
                 <p className={`font-bold text-sm mb-1 ${s.urgent ? "text-orange-700" : "text-slate-900"}`}>{s.label}</p>
                 <p className={`text-xs ${s.urgent ? "text-orange-600" : "text-slate-500"}`}>{s.time}</p>
-              </button>
+              </a>
             ))}
           </div>
         </div>

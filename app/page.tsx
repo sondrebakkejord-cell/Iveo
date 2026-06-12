@@ -122,73 +122,135 @@ export default function Home() {
 
       {/* Hero */}
       <section id="main" className="relative pt-36 pb-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 mb-8 animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-xs font-medium text-slate-700">Tar imot nye prosjekter</span>
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 mb-8 animate-fade-up">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-xs font-medium text-slate-700">Tar imot nye prosjekter</span>
+            </div>
+
+            <h1
+              className="font-bold text-slate-900 mb-7 animate-fade-up"
+              style={{
+                fontSize: "clamp(2.75rem, 6vw, 5rem)",
+                lineHeight: 0.96,
+                letterSpacing: "-0.035em",
+                animationDelay: "0.08s",
+              }}
+            >
+              Nettsider som faktisk
+              <br />
+              jobber for deg.
+            </h1>
+
+            <p
+              className="text-slate-600 max-w-2xl mb-8 animate-fade-up"
+              style={{
+                fontSize: "clamp(1.05rem, 1.5vw, 1.25rem)",
+                lineHeight: 1.55,
+                animationDelay: "0.16s",
+              }}
+            >
+              Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for
+              små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.
+            </p>
+
+            {/* Pris-anker */}
+            <div
+              className="inline-flex items-baseline gap-2 mb-8 animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <span className="text-sm font-medium text-slate-500">Fra</span>
+              <span className="text-3xl font-bold text-slate-900" style={{ letterSpacing: "-0.02em" }}>
+                1 990 kr
+              </span>
+              <span className="text-sm text-slate-500">engangs · 99 kr/mnd hosting</span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
+              <a
+                href="#kontakt"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
+              >
+                Send skjema
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <a
+                href="#hva-vi-gjor"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white border border-slate-200 text-slate-900 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-colors"
+              >
+                Se hva vi tilbyr
+              </a>
+            </div>
           </div>
 
-          <h1
-            className="font-bold text-slate-900 mb-7 animate-fade-up"
-            style={{
-              fontSize: "clamp(2.75rem, 7vw, 5.5rem)",
-              lineHeight: 0.96,
-              letterSpacing: "-0.035em",
-              animationDelay: "0.08s",
-            }}
-          >
-            Nettsider som faktisk
-            <br />
-            jobber for deg.
-          </h1>
-
-          <p
-            className="text-slate-600 max-w-2xl mb-10 animate-fade-up"
-            style={{
-              fontSize: "clamp(1.05rem, 1.5vw, 1.25rem)",
-              lineHeight: 1.55,
-              animationDelay: "0.16s",
-            }}
-          >
-            Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for
-            små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
-            <a
-              href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
-            >
-              Send skjema
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
-            <a
-              href="#hva-vi-gjor"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white border border-slate-200 text-slate-900 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-colors"
-            >
-              Se hva vi tilbyr
-            </a>
+          {/* Visuell støtte — abstrakt nettside-mockup */}
+          <div className="lg:col-span-5 hidden lg:block animate-fade-up" style={{ animationDelay: "0.32s" }}>
+            <div className="relative">
+              <div className="absolute -inset-6 bg-gradient-to-br from-indigo-200/40 via-cyan-200/30 to-purple-200/30 rounded-3xl blur-3xl" />
+              <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+                {/* Browser bar */}
+                <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-100 bg-slate-50">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                  <div className="ml-3 flex-1 bg-white border border-slate-200 rounded text-[10px] px-2 py-1 text-slate-500 font-mono">
+                    dinbedrift.no
+                  </div>
+                </div>
+                {/* Mockup body */}
+                <div className="p-6 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500" />
+                    <div className="h-3 w-20 bg-slate-200 rounded" />
+                  </div>
+                  <div className="space-y-2 pt-4">
+                    <div className="h-4 w-3/4 bg-slate-900 rounded" />
+                    <div className="h-4 w-2/3 bg-slate-900 rounded" />
+                    <div className="h-2 w-full bg-slate-200 rounded mt-3" />
+                    <div className="h-2 w-5/6 bg-slate-200 rounded" />
+                    <div className="h-2 w-4/6 bg-slate-200 rounded" />
+                  </div>
+                  <div className="flex gap-2 pt-3">
+                    <div className="h-7 px-5 bg-slate-900 rounded-md flex items-center">
+                      <div className="h-2 w-12 bg-white/40 rounded" />
+                    </div>
+                    <div className="h-7 px-5 border border-slate-200 rounded-md flex items-center">
+                      <div className="h-2 w-10 bg-slate-300 rounded" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 pt-4">
+                    {[0, 1, 2].map((i) => (
+                      <div key={i} className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-slate-900 text-white px-3 py-1.5 rounded-lg text-xs font-semibold rotate-3 shadow-lg">
+                Levert på 7 dager
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What we do — two-up, not 3-card grid */}
+      {/* What we do */}
       <section id="hva-vi-gjor" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              To tjenester. Begge gjort skikkelig.
+              Slik kan vi hjelpe deg.
             </h2>
             <p className="text-lg text-slate-600">
-              Vi har bevisst valgt å holde tilbudet smalt. Du får full oppmerksomhet på det vi
-              faktisk er gode på — ikke en menypakke med ti halvgode produkter.
+              Vi holder tilbudet smalt fordi vi gjør det vi er gode på skikkelig. Ingen
+              menypakke med ti halvgode produkter — bare det du faktisk trenger.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-5">
             {/* Service 1 */}
             <article className="relative bg-white rounded-2xl p-8 md:p-10 border border-slate-200 hover:border-slate-300 transition-colors">
               <div className="flex items-start justify-between mb-6">
@@ -222,38 +284,26 @@ export default function Home() {
               </ul>
             </article>
 
-            {/* Service 2 — visually distinct, not a clone */}
-            <article className="relative bg-slate-900 rounded-2xl p-8 md:p-10 border border-slate-800 text-white overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/30 rounded-full blur-3xl" />
-              <div className="relative">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            {/* AI banner — kompakt "kommer snart" */}
+            <article className="relative bg-slate-900 rounded-2xl p-6 md:p-7 border border-slate-800 text-white overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl" />
+              <div className="relative flex flex-col md:flex-row md:items-center gap-5">
+                <div className="flex items-center gap-4 flex-shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <span className="text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2.5 py-1 rounded-full">Snart</span>
+                  <div>
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <h3 className="text-lg font-bold">AI-løsninger</h3>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded-full">Snart</span>
+                    </div>
+                    <p className="text-sm text-slate-400">
+                      Chatboter, AI-resepsjonister og lead-automatisering. Vi varsler kunder først.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">AI-løsninger</h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Snart kommer skreddersydde AI-produkter — chatboter som svarer kunder hele
-                  døgnet, AI-resepsjonister som tar telefonen, og automatisering av
-                  rutineoppgaver. Vi varsler kunder først.
-                </p>
-                <ul className="space-y-2.5 text-sm text-slate-300">
-                  {[
-                    "Chatboter trent på din bedrift",
-                    "AI som tar telefoner som resepsjonist",
-                    "Automatisering av leads og e-post",
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <svg className="w-4 h-4 text-cyan-300 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </article>
           </div>
@@ -344,6 +394,64 @@ export default function Home() {
           <p className="text-sm text-slate-500 text-center mt-10">
             Dette er reelle design — bygget på faktisk kode, ikke statiske bilder. Akkurat slik vi bygger nettsiden din.
           </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
+              Det folk lurer på.
+            </h2>
+            <p className="text-lg text-slate-600">
+              Spørsmål vi får ofte. Mangler det noe — send en melding, så svarer vi raskt.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: "Hva koster en nettside hos dere?",
+                a: "Fra 1 990 kr engangs for en komplett nettside, pluss 99 kr i måneden for hosting og småjusteringer. Større prosjekter (e-handel, booking, mye innhold) får eget tilbud. Vi gir alltid fast pris før vi starter — ingen åpne timepriser.",
+              },
+              {
+                q: "Hvor lang tid tar det?",
+                a: "Innen én uke fra du har sagt ja til tilbudet vårt. Større prosjekter kan ta 2–3 uker. Du får et utkast etter 2–3 dager som du kan kommentere på, så justerer vi til siden er ferdig.",
+              },
+              {
+                q: "Eier jeg selve nettsiden?",
+                a: "Ja, du eier alt innhold og design. Hvis du noen gang vil bytte leverandør, gir vi deg alt — kode, design og innhold — uten ekstra kostnad. Vi tror på å fortjene tilliten din, ikke binde deg.",
+              },
+              {
+                q: "Hva er inkludert i de 99 kr per måned?",
+                a: "Hosting på Vercel, SSL/HTTPS, daglig backup, 99,9 % oppetid, og småjusteringer (åpningstider, priser, nye ansatte osv.) opp til 30 min i måneden. Større endringer faktureres etter avtale med fast pris på forhånd.",
+              },
+              {
+                q: "Hvilke bedrifter passer dere for?",
+                a: "Små og mellomstore bedrifter som vil ha en profesjonell nettside uten å bruke 50 000 kr på et byrå. Restauranter, håndverkere, klinikker, kaféer, konsulenter, butikker — alt der nettsiden er ansiktet ditt utad.",
+              },
+              {
+                q: "Hva skjer etter at jeg sender skjemaet?",
+                a: "Vi svarer innen 24 timer med en gratis mockup — en visuell skisse av hvordan vi tenker nettsiden din kan se ut. Hvis du liker det, sender vi skriftlig tilbud. Hvis ikke, koster det deg ingenting. Helt risikofritt.",
+              },
+            ].map((item) => (
+              <details
+                key={item.q}
+                className="group bg-white border border-slate-200 rounded-xl overflow-hidden"
+              >
+                <summary className="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-50 transition-colors flex items-center justify-between gap-4 list-none">
+                  <span>{item.q}</span>
+                  <svg className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -484,7 +592,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-10 px-6 border-t border-slate-200/60">
+      <footer className="relative py-10 px-6 pb-28 md:pb-10 border-t border-slate-200/60">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <LogoFull size={28} />
           <div className="text-sm text-slate-500">
@@ -492,6 +600,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky mobile CTA */}
+      <a
+        href="#kontakt"
+        className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-slate-900 text-white text-center py-3.5 rounded-full font-semibold shadow-2xl shadow-slate-900/30 flex items-center justify-center gap-2"
+      >
+        Få gratis mockup
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
   );
 }

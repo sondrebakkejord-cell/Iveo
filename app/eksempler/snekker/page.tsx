@@ -28,7 +28,7 @@ export default function SnekkerSite() {
       <section className="relative h-[75vh] min-h-[600px] flex items-end overflow-hidden bg-stone-900">
         <img
           src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=2000&q=85"
-          alt="Snekker som jobber med tre"
+          alt="Snekker som måler opp og jobber med massiv tre i Bakkejords verksted"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
         />
@@ -75,8 +75,8 @@ export default function SnekkerSite() {
       {/* Prosjekter */}
       <section id="prosjekter" className="py-24 px-6 bg-stone-900 text-amber-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Utvalgte prosjekter</h2>
-          <p className="text-lg text-stone-300 mb-16 max-w-2xl">Nylige arbeider.</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-3" style={{ letterSpacing: "-0.025em" }}>Typiske prosjekter</h2>
+          <p className="text-lg text-stone-300 mb-16 max-w-2xl">Eksempler på prosjekter vi tar — fra kjøkken og bad til anneks og restaurering.</p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[

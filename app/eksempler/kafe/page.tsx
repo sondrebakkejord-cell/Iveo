@@ -53,7 +53,7 @@ export default function KafeSite() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85"
-              alt="Latte med hjerte"
+              alt="Latte med hjerte-mønster i melkeskum — Bakkejord Kafé på Grünerløkka"
               className="rounded-3xl shadow-xl"
               style={{ transform: "rotate(2deg)" }}
             />
@@ -116,19 +116,28 @@ export default function KafeSite() {
               <h3 className="text-3xl font-medium mb-6 text-rose-900 italic text-center">Lunsj — 11 til 15</h3>
               <ul className="grid md:grid-cols-2 gap-x-16 gap-y-4">
                 {[
-                  ["Avocado toast m/posjert egg", "139"],
-                  ["Open sandwich m/laks", "149"],
-                  ["Tomatsuppe m/grillet ost", "129"],
-                  ["Mormors vafler m/syltetøy", "89"],
-                  ["Grønn salat m/feta", "129"],
-                  ["Bagel m/kremost og laks", "139"],
-                ].map(([item, p]) => (
-                  <li key={item} className="flex justify-between border-b border-rose-200 pb-2 text-lg">
-                    <span>{item}</span>
+                  { item: "Avocado toast m/posjert egg", p: "139", tags: ["V"] },
+                  { item: "Open sandwich m/laks", p: "149", tags: [] },
+                  { item: "Tomatsuppe m/grillet ost", p: "129", tags: ["V"] },
+                  { item: "Mormors vafler m/syltetøy", p: "89", tags: ["V"] },
+                  { item: "Grønn salat m/feta", p: "129", tags: ["V", "GF"] },
+                  { item: "Bagel m/kremost og laks", p: "139", tags: [] },
+                ].map(({ item, p, tags }) => (
+                  <li key={item} className="flex justify-between border-b border-rose-200 pb-2 text-lg gap-3">
+                    <span className="flex items-baseline gap-2">
+                      <span>{item}</span>
+                      {tags.includes("V") && <span className="text-[9px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded" style={{ fontFamily: "system-ui, sans-serif" }}>V</span>}
+                      {tags.includes("GF") && <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded" style={{ fontFamily: "system-ui, sans-serif" }}>GF</span>}
+                    </span>
                     <span className="text-rose-900 font-medium">{p}</span>
                   </li>
                 ))}
               </ul>
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-sm text-rose-900/65" style={{ fontFamily: "system-ui, sans-serif" }}>
+                <span className="flex items-center gap-1.5"><span className="text-[9px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded">V</span> Vegetar</span>
+                <span className="flex items-center gap-1.5"><span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded">GF</span> Glutenfri</span>
+                <span>Vegansk/laktosefri på forespørsel</span>
+              </div>
             </div>
           </div>
         </div>
