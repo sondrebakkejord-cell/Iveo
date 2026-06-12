@@ -3,71 +3,13 @@
 import { useState } from "react";
 import { LogoFull } from "./Logo";
 import ContactForm from "./ContactForm";
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hva koster en nettside hos Iveo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "En komplett nettside hos Iveo starter fra 1 990 kr engangs, pluss 99 kr i måneden for hosting og småjusteringer. Større endringer faktureres etter avtale.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvor lang tid tar det å få en nettside?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Iveo leverer ferdige nettsider innen én uke. Større prosjekter med e-handel eller spesialfunksjoner kan ta 2–3 uker.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hva er inkludert i hosting?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Hosting inkluderer SSL-sertifikat, daglig backup, 99,9 % oppetid, mobiloptimalisering, og e-postsupport. Småjusteringer som åpningstider og priser er også inkludert.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvilken teknologi bruker Iveo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Iveo bygger med Next.js, React og Tailwind CSS — samme stack som Netflix, TikTok og Vercel. Dette gir lynraske sider med god SEO.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Kan Iveo lage AI-løsninger?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja. Iveo lanserer skreddersydde AI-løsninger i 2026 — chatboter trent på din bedrift, AI-resepsjonister som tar telefoner, og automatisering av leads og kundeoppfølging.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvem står bak Iveo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Iveo er et far-og-sønn-team etablert i 2026. Sondre Bakkejord og hans far driver firmaet sammen fra Norge.",
-      },
-    },
-  ],
-};
+import ReviewForm from "./ReviewForm";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {/* Background effects — restrained, mask-faded */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 grid-pattern" />
@@ -397,64 +339,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
-        <div className="max-w-3xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              Det folk lurer på.
-            </h2>
-            <p className="text-lg text-slate-600">
-              Spørsmål vi får ofte. Mangler det noe — send en melding, så svarer vi raskt.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {[
-              {
-                q: "Hva koster en nettside hos dere?",
-                a: "Fra 1 990 kr engangs for en komplett nettside, pluss 99 kr i måneden for hosting og småjusteringer. Større prosjekter (e-handel, booking, mye innhold) får eget tilbud. Vi gir alltid fast pris før vi starter — ingen åpne timepriser.",
-              },
-              {
-                q: "Hvor lang tid tar det?",
-                a: "Innen én uke fra du har sagt ja til tilbudet vårt. Større prosjekter kan ta 2–3 uker. Du får et utkast etter 2–3 dager som du kan kommentere på, så justerer vi til siden er ferdig.",
-              },
-              {
-                q: "Eier jeg selve nettsiden?",
-                a: "Ja, du eier alt innhold og design. Hvis du noen gang vil bytte leverandør, gir vi deg alt — kode, design og innhold — uten ekstra kostnad. Vi tror på å fortjene tilliten din, ikke binde deg.",
-              },
-              {
-                q: "Hva er inkludert i de 99 kr per måned?",
-                a: "Hosting på Vercel, SSL/HTTPS, daglig backup, 99,9 % oppetid, og småjusteringer (åpningstider, priser, nye ansatte osv.) opp til 30 min i måneden. Større endringer faktureres etter avtale med fast pris på forhånd.",
-              },
-              {
-                q: "Hvilke bedrifter passer dere for?",
-                a: "Små og mellomstore bedrifter som vil ha en profesjonell nettside uten å bruke 50 000 kr på et byrå. Restauranter, håndverkere, klinikker, kaféer, konsulenter, butikker — alt der nettsiden er ansiktet ditt utad.",
-              },
-              {
-                q: "Hva skjer etter at jeg sender skjemaet?",
-                a: "Vi svarer innen 24 timer med en gratis mockup — en visuell skisse av hvordan vi tenker nettsiden din kan se ut. Hvis du liker det, sender vi skriftlig tilbud. Hvis ikke, koster det deg ingenting. Helt risikofritt.",
-              },
-            ].map((item) => (
-              <details
-                key={item.q}
-                className="group bg-white border border-slate-200 rounded-xl overflow-hidden"
-              >
-                <summary className="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-50 transition-colors flex items-center justify-between gap-4 list-none">
-                  <span>{item.q}</span>
-                  <svg className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                  {item.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Who we are — narrative, not card */}
       <section id="hvem-vi-er" className="relative py-24 px-6">
         <div className="max-w-4xl mx-auto">
@@ -587,6 +471,36 @@ export default function Home() {
 
           <div className="lg:col-span-3">
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Anmeldelser / Tilbakemelding */}
+      <section id="tilbakemelding" className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-10">
+          <div className="lg:col-span-2">
+            <p className="text-sm uppercase tracking-[0.25em] text-slate-500 font-semibold mb-4">— Tilbakemelding —</p>
+            <h2
+              className="text-4xl md:text-5xl font-bold text-slate-900 mb-5"
+              style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}
+            >
+              Hvordan var
+              <br />
+              opplevelsen?
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Vi er i en tidlig fase og vil bli bedre — fort. Si fra hva som funket, og hva
+              som kunne vært gjort annerledes.
+            </p>
+            <div className="flex items-center gap-3 text-sm text-slate-500">
+              <svg className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Anonym er helt fint — vi leser alt selv.</span>
+            </div>
+          </div>
+          <div className="lg:col-span-3">
+            <ReviewForm />
           </div>
         </div>
       </section>
