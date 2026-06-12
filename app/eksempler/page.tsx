@@ -46,6 +46,15 @@ const examples = [
     bg: "bg-rose-200",
     text: "text-stone-900",
   },
+  {
+    slug: "frisor",
+    name: "Bakkejord Hair Studio",
+    industry: "Frisør & beauty",
+    desc: "Premium og rolig. Tjenester med pris, team, galleri og online-bestilling.",
+    img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=80",
+    bg: "bg-stone-800",
+    text: "text-stone-50",
+  },
 ];
 
 export default function ExamplesIndex() {
@@ -54,7 +63,7 @@ export default function ExamplesIndex() {
       <div className="max-w-6xl mx-auto">
         <Link href="/" className="text-slate-600 hover:text-slate-900 text-sm mb-8 inline-block">← Tilbake til Iveo</Link>
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-          Fem eksempler.<br />Fem bransjer.
+          Seks eksempler.<br />Seks bransjer.
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl mb-14">
           Slik kan Iveo skreddersy nettsiden til akkurat din bedrift. Klikk på et eksempel for å

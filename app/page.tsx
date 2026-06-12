@@ -249,18 +249,18 @@ export default function Home() {
                 Se eksempler på hva vi kan bygge.
               </h2>
               <p className="text-lg text-slate-600">
-                Fem eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.
+                Seks eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.
               </p>
             </div>
             <a
               href="/eksempler"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors whitespace-nowrap"
             >
-              Se alle fem →
+              Se alle seks →
             </a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               {
                 slug: "pizza",
@@ -291,6 +291,12 @@ export default function Home() {
                 name: "Bakkejord Kafé",
                 industry: "Kafé",
                 img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                slug: "frisor",
+                name: "Bakkejord Hair Studio",
+                industry: "Frisør",
+                img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=80",
               },
             ].map((e) => (
               <a
