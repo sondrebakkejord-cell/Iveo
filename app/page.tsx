@@ -100,18 +100,6 @@ export default function Home() {
               små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.
             </p>
 
-            {/* Pris-anker */}
-            <div
-              className="inline-flex items-baseline gap-2 mb-8 animate-fade-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <span className="text-sm font-medium text-slate-500">Fra</span>
-              <span className="text-3xl font-bold text-slate-900" style={{ letterSpacing: "-0.02em" }}>
-                1 990 kr
-              </span>
-              <span className="text-sm text-slate-500">engangs · 99 kr/mnd hosting</span>
-            </div>
-
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
               <a
                 href="#kontakt"
