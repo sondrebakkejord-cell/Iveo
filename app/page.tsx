@@ -338,16 +338,12 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
                 <p>
-                  Iveo er drevet av Sondre og Tony Bakkejord — far og sønn, begge fra Norge.
-                  Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk
-                  liker å bruke.
+                  Iveo er drevet av Sondre og Tony Bakkejord — far og sønn. Vi har gått
+                  sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.
                 </p>
                 <p>
                   Vi tar oss av hele veien — fra første idé til ferdig nettside, med drift og
                   support i etterkant. Snart kommer også egne AI-løsninger.
-                </p>
-                <p className="text-slate-900 font-semibold">
-                  Tar du kontakt, snakker du med en av oss. Det er hele tanken.
                 </p>
               </div>
             </div>
