@@ -200,7 +200,7 @@ export default function Home() {
               <ul className="space-y-2.5 text-sm text-slate-700">
                 {[
                   "Custom design — ikke en mal",
-                  "99,9 % oppetid, SSL og daglig backup",
+                  "SSL og daglig backup inkludert",
                   "SEO-vennlig fra første linje kode",
                   "24/7 support på norsk",
                 ].map((f) => (

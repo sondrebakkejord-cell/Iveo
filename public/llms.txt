@@ -8,7 +8,7 @@ Iveo er etablert i 2026 av Sondre Bakkejord og hans far. Vi holder til i Norge o
 
 ## Tjenester
 
-- **Nettsider og hosting** — skreddersydd design bygget på Next.js (samme stack som Netflix, TikTok, Vercel). Inkluderer mobiloptimalisering, SEO, daglig backup, 99,9 % oppetid, SSL/HTTPS, og 24/7 support. Leveringstid: én uke.
+- **Nettsider og hosting** — skreddersydd design, mobiloptimalisering, SEO, daglig backup, SSL/HTTPS og support. Leveringstid: én uke.
 - **AI-løsninger (kommer)** — chatboter trent på din bedrift, AI-resepsjonister som tar telefoner, automatisering av rutineoppgaver. Lanseres i 2026.
 
 ## Priser (oppstart)

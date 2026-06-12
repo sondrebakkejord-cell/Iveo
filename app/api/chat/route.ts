@@ -24,7 +24,7 @@ const SYSTEM_PROMPT = `Du er "Iver" — den vennlige, smarte AI-assistenten på 
 - Custom design tilpasset bedriften
 - Mobiloptimalisert (alle skjermstørrelser)
 - SEO-vennlig (Google-vennlig)
-- 99.9% oppetid
+- Pålitelig hosting
 - SSL/HTTPS inkludert
 - Daglig backup
 - 24/7 support
