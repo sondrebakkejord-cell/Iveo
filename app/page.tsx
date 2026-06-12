@@ -246,11 +246,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                Slik ser det ut hos kundene våre.
+                Se eksempler på hva vi kan bygge.
               </h2>
               <p className="text-lg text-slate-600">
-                Fem ekte eksempler på nettsider vi kan bygge — én for hver bransje. Klikk på et
-                eksempel for å se hele siden.
+                Fem eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.
               </p>
             </div>
             <a
@@ -322,7 +321,7 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-slate-500 text-center mt-10">
-            Dette er reelle design — bygget på faktisk kode, ikke statiske bilder. Akkurat slik vi bygger nettsiden din.
+            Eksemplene er bygget på samme måte som nettsiden vi ville laget til deg.
           </p>
         </div>
       </section>
