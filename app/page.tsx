@@ -338,16 +338,15 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
                 <p>
-                  Vi er to. Sondre og pappa — begge Bakkejord, begge fra Norge. Iveo er et
+                  Vi er to. Sondre og Tony — begge Bakkejord, begge fra Norge. Iveo er et
                   prosjekt vi har startet sammen, fordi vi liker å bygge ting som funker.
                 </p>
                 <p>
-                  Sondre tar designet og kodingen, pappa har lang erfaring fra arbeidslivet
-                  og hjelper på det praktiske og forretningsmessige. Sammen håndterer vi
-                  hele prosessen selv — fra første samtale til ferdig nettside.
+                  Vi håndterer hele prosessen selv — fra første samtale til ferdig nettside.
+                  Ingen byrå, ingen mellommenn, ingen som blir kastet videre.
                 </p>
                 <p className="text-slate-900 font-semibold">
-                  Vi tar telefonen. Vi skriver koden. Ingen mellommenn.
+                  Vi tar telefonen. Vi skriver koden. Det er det.
                 </p>
               </div>
             </div>
