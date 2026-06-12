@@ -153,17 +153,17 @@ export default function Home() {
               animationDelay: "0.16s",
             }}
           >
-            Et far-og-sønn-team i Norge som designer og hoster nettsider med samme stack som
-            Netflix og TikTok. Levert på en uke. AI-løsninger kommer rett bak.
+            Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for
+            små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
             <a
-              href="tel:+4748472586"
+              href="#kontakt"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              Ring +47 484 72 586
+              Send skjema
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
             <a
               href="#hva-vi-gjor"
@@ -171,22 +171,6 @@ export default function Home() {
             >
               Se hva vi tilbyr
             </a>
-          </div>
-
-          {/* Inline social proof — replaces hero-metric template */}
-          <div className="mt-16 animate-fade-up" style={{ animationDelay: "0.32s" }}>
-            <p className="text-xs uppercase tracking-widest text-slate-500 mb-4 font-semibold">Bygget med</p>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-600">
-              <span className="font-semibold">Next.js</span>
-              <span className="text-slate-300">·</span>
-              <span className="font-semibold">React</span>
-              <span className="text-slate-300">·</span>
-              <span className="font-semibold">Tailwind</span>
-              <span className="text-slate-300">·</span>
-              <span className="font-semibold">Vercel</span>
-              <span className="text-slate-300">·</span>
-              <span className="font-semibold">Claude AI</span>
-            </div>
           </div>
         </div>
       </section>
@@ -217,8 +201,8 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-3">Nettsider og hosting</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Skreddersydd nettside bygget på Next.js, hostet på Vercel. Vi leverer på en uke
-                og tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne en
+                Skreddersydd nettside designet og kodet fra bunnen av. Vi leverer på en uke og
+                tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne et
                 kontrollpanel.
               </p>
               <ul className="space-y-2.5 text-sm text-slate-700">
@@ -254,7 +238,7 @@ export default function Home() {
                 <p className="text-slate-300 mb-6 leading-relaxed">
                   Snart kommer skreddersydde AI-produkter — chatboter som svarer kunder hele
                   døgnet, AI-resepsjonister som tar telefonen, og automatisering av
-                  rutineoppgaver. Prøv chatboten nede til høyre. Den lever allerede.
+                  rutineoppgaver. Vi varsler kunder først.
                 </p>
                 <ul className="space-y-2.5 text-sm text-slate-300">
                   {[
@@ -376,13 +360,13 @@ export default function Home() {
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
                 <p>
                   Iveo er drevet av Sondre og hans far. Vi startet fordi vi var lei av å se
-                  norske bedrifter betale 80&nbsp;000 kr for nettsider som ser ut som de er fra
-                  2015.
+                  norske bedrifter betale 80&nbsp;000 kr for nettsider som ser ut som de er
+                  fra 2015.
                 </p>
                 <p>
-                  Vi bygger med Next.js, React og Tailwind — samme stack som Netflix, TikTok
-                  og Vercel. Forskjellen er at du får oss direkte på telefonen, ikke en
-                  kundetjeneste i tre ledd.
+                  Vi designer og koder hver eneste side fra bunnen av — ingen ferdige maler,
+                  ingen byrå-tull. Du får oss direkte på telefonen, ikke en kundetjeneste i
+                  tre ledd.
                 </p>
                 <p className="text-slate-900 font-semibold">
                   Vi skriver koden. Vi tar telefonen. Det er det.
