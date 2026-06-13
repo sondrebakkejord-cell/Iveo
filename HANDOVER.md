@@ -194,6 +194,18 @@ Brukeren er **veldig sensitiv på klisjeer og overselling**. Følg disse strengt
 2. Lese `SKILL.md` for instruksjoner
 3. Følge skill-spesifikke skript (f.eks. `impeccable/scripts/detect.mjs`)
 
+### 📋 Komplett oversikt over alle 791 skills
+
+Se **`SKILLS.md`** i samme mappe (`/Users/sondrebakkejord/Documents/test-nettside/SKILLS.md`).
+
+Filen lister hver eneste installerte skill, sortert etter kategori. Når du er usikker på om en spesifikk skill finnes, sjekk SKILLS.md først.
+
+**Snarvei for å sjekke en spesifikk skill:**
+```bash
+ls /Users/sondrebakkejord/Documents/test-nettside/.agents/skills/[skill-navn]
+cat /Users/sondrebakkejord/Documents/test-nettside/.agents/skills/[skill-navn]/SKILL.md
+```
+
 ---
 
 ## 🔍 Lead-generering — Den vi har funnet ut
