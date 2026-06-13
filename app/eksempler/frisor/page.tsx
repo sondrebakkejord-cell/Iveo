@@ -207,7 +207,7 @@ export default function FrisorSite() {
                 name: "Marius",
                 role: "Senior stylist",
                 bio: "Spesialist på herreklipp og presisjon. Klassisk og moderne uttrykk.",
-                img: "https://images.unsplash.com/photo-1587397845856-e6cf49176c70?auto=format&fit=crop&w=700&q=80",
+                img: "/marius.jpg",
               },
               {
                 name: "Anna",
