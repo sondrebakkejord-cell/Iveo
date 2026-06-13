@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Bakkejord Kafé — Eksempel på kafé-nettside",
+  description:
+    "Slik kan en lokal kafé-nettside se ut — meny, leverandører og åpningstider. Eksempel laget av Iveo.",
+  keywords: ["nettside kafé", "kafé Norge", "mockup kafé", "lage nettside kafé"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/kafe" },
+  openGraph: { title: "Bakkejord Kafé — Eksempel | Iveo", description: "Eksempel på kafé-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/kafe", type: "website" },
+};
 
 export default function KafeSite() {
   return (
     <div className="min-h-screen bg-rose-50 text-rose-950" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Kafé", url: "/eksempler/kafe" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-rose-50" style={{ fontFamily: "system-ui, sans-serif" }}>
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>

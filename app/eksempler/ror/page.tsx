@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Bakkejord Rør — Eksempel på rørlegger-nettside",
+  description:
+    "Eksempel på nettside for rørlegger — med tjenester, kontakt og vakttid. Mockup laget av Iveo.",
+  keywords: ["nettside rørlegger", "rørlegger Norge", "mockup rørlegger", "lage nettside rørlegger"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/ror" },
+  openGraph: { title: "Bakkejord Rør — Eksempel | Iveo", description: "Eksempel på rørlegger-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/ror", type: "website" },
+};
 
 export default function RorSite() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Rørlegger", url: "/eksempler/ror" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>

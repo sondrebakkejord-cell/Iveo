@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Bakkejord Pizza — Eksempel på restaurant-nettside",
+  description:
+    "Eksempel på en moderne nettside for italiensk restaurant — med meny, historien bak og online-bestilling. Bygget av Iveo som mockup.",
+  keywords: ["nettside restaurant", "nettside pizzeria", "mockup restaurant", "lage nettside restaurant"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/pizza" },
+  openGraph: { title: "Bakkejord Pizza — Eksempel | Iveo", description: "Eksempel på restaurant-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/pizza", type: "website" },
+};
 
 export default function PizzaSite() {
   return (
     <div className="min-h-screen bg-amber-50 text-amber-950" style={{ fontFamily: "'Georgia', serif" }}>
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Pizza", url: "/eksempler/pizza" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-amber-50">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>

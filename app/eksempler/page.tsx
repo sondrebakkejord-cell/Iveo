@@ -1,4 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "./Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Eksempler — Slik kan nettsiden din se ut",
+  description:
+    "Seks eksempler på nettsider Iveo kan bygge for små og mellomstore norske bedrifter — restaurant, rørlegger, snekker, tannlege, kafé og frisør. Klikk for å se hver side.",
+  keywords: [
+    "eksempel nettside",
+    "mockup nettside",
+    "lage nettside bedrift",
+    "nettside restaurant",
+    "nettside frisør",
+    "nettside rørlegger",
+    "nettside snekker",
+    "nettside tannlege",
+    "nettside kafé",
+  ],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler" },
+  openGraph: {
+    title: "Eksempler — Slik kan nettsiden din se ut | Iveo",
+    description: "Seks eksempler på nettsider Iveo kan bygge for norske bedrifter.",
+    url: "https://iveo-nine.vercel.app/eksempler",
+    type: "website",
+  },
+};
 
 const examples = [
   {
@@ -60,6 +86,12 @@ const examples = [
 export default function ExamplesIndex() {
   return (
     <div className="min-h-screen bg-slate-50 px-6 py-16">
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Iveo", url: "/" },
+          { name: "Eksempler", url: "/eksempler" },
+        ]}
+      />
       <div className="max-w-6xl mx-auto">
         <Link href="/" className="text-slate-600 hover:text-slate-900 text-sm mb-8 inline-block">← Tilbake til Iveo</Link>
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>

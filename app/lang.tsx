@@ -97,6 +97,19 @@ type Strings = {
   };
   footer: string;
   mobileCta: string;
+  define: { eyebrow: string; line: string };
+  pricing: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    plans: { name: string; price: string; unit: string; features: string[] }[];
+    note: string;
+  };
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: { q: string; a: string }[];
+  };
 };
 
 const dict: Record<Lang, Strings> = {
@@ -204,6 +217,74 @@ const dict: Record<Lang, Strings> = {
     },
     footer: "Laget i Norge.",
     mobileCta: "Få gratis mockup",
+    define: {
+      eyebrow: "Kort fortalt",
+      line: "Iveo er et norsk far-og-sønn-team som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på én uke, fra 1 990 kr, med hosting og support inkludert.",
+    },
+    pricing: {
+      eyebrow: "Priser",
+      title: "Hva koster en nettside hos Iveo?",
+      body: "Vi setter pris etter prosjektets omfang. Her er utgangspunktet — vi avtaler eksakt pris etter at du har sett mockupen.",
+      plans: [
+        {
+          name: "Komplett nettside",
+          price: "Fra 1 990 kr",
+          unit: "engangs",
+          features: ["Skreddersydd design", "Levert på 7 dager", "SSL og daglig backup", "SEO-optimalisert"],
+        },
+        {
+          name: "Hosting og småjusteringer",
+          price: "99 kr",
+          unit: "per måned",
+          features: ["Fri hosting på rask server", "Daglig backup", "Småjusteringer inkludert", "Support på norsk"],
+        },
+        {
+          name: "Større endringer",
+          price: "Etter avtale",
+          unit: "fast pris",
+          features: ["Ny seksjon eller side", "Nye funksjoner", "Redesign", "Du vet alltid prisen før vi starter"],
+        },
+      ],
+      note: "Vi lover aldri fast pris uten å se prosjektet. Be om en gratis mockup, så får du et eksakt tilbud.",
+    },
+    faq: {
+      eyebrow: "Vanlige spørsmål",
+      title: "Det folk lurer på.",
+      items: [
+        {
+          q: "Hva koster en nettside hos Iveo?",
+          a: "Komplett nettside starter på 1 990 kr engangs. Hosting med support koster 99 kr per måned. Eksakt pris settes etter at du har sett mockupen — vi lover aldri fast pris uten å se prosjektet.",
+        },
+        {
+          q: "Hvor lang tid tar det å lage nettsiden?",
+          a: "Vi leverer komplett nettside på 7 dager fra du godkjenner mockupen. Mockupen sender vi vanligvis innen 24 timer etter at du har sendt skjema.",
+        },
+        {
+          q: "Hva er inkludert i hosting?",
+          a: "Hosting på rask server hos Vercel, SSL/HTTPS, daglig backup, småjusteringer og support på norsk — alt for 99 kr/mnd.",
+        },
+        {
+          q: "Eier jeg domenet og innholdet?",
+          a: "Ja. Du kjøper og eier domenet ditt selv. Vi hoster nettsiden, men du eier all design, kode og innhold.",
+        },
+        {
+          q: "Hvem er Iveo?",
+          a: "Iveo er drevet av Sondre og Tony Bakkejord — far og sønn, med base i Norge. Vi designer, koder og hoster nettsider for små og mellomstore norske bedrifter.",
+        },
+        {
+          q: "Hva slags bedrifter jobber dere med?",
+          a: "Vi jobber med små og mellomstore norske bedrifter — restauranter, frisører, rørleggere, snekkere, tannleger, kaféer og andre lokale virksomheter.",
+        },
+        {
+          q: "Hva med AI-løsninger?",
+          a: "Vi lanserer AI-løsninger i 2026 — chatboter trent på din bedrift, AI-resepsjonister som svarer på telefon, og automatisering av rutineoppgaver. Eksisterende kunder får tilgang først.",
+        },
+        {
+          q: "Hva skiller dere fra et webbyrå?",
+          a: "Vi er et lite far-og-sønn-team uten mellomledd. Du snakker direkte med oss som koder nettsiden, og vi tar både design, utvikling, hosting og support selv.",
+        },
+      ],
+    },
   },
   en: {
     nav: { whatWeDo: "What we do", examples: "Examples", whoWeAre: "Who we are", contact: "Contact", openMenu: "Open menu" },
@@ -309,6 +390,74 @@ const dict: Record<Lang, Strings> = {
     },
     footer: "Made in Norway.",
     mobileCta: "Get free mockup",
+    define: {
+      eyebrow: "In short",
+      line: "Iveo is a Norwegian father-and-son team that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in one week, from 1,990 NOK, with hosting and support included.",
+    },
+    pricing: {
+      eyebrow: "Pricing",
+      title: "What does an Iveo website cost?",
+      body: "We price by project scope. Here's the starting point — we set the exact price after you've seen the mockup.",
+      plans: [
+        {
+          name: "Complete website",
+          price: "From 1,990 NOK",
+          unit: "one-time",
+          features: ["Custom design", "Delivered in 7 days", "SSL and daily backups", "SEO-optimized"],
+        },
+        {
+          name: "Hosting and small fixes",
+          price: "99 NOK",
+          unit: "per month",
+          features: ["Hosting on a fast server", "Daily backups", "Small fixes included", "Support"],
+        },
+        {
+          name: "Bigger changes",
+          price: "By agreement",
+          unit: "fixed price",
+          features: ["New section or page", "New features", "Redesign", "You always know the price before we start"],
+        },
+      ],
+      note: "We never promise a fixed price without seeing the project. Ask for a free mockup, and you'll get an exact quote.",
+    },
+    faq: {
+      eyebrow: "Frequently asked",
+      title: "What people ask.",
+      items: [
+        {
+          q: "What does an Iveo website cost?",
+          a: "A complete website starts at 1,990 NOK one-time. Hosting with support is 99 NOK per month. The exact price is set after you've seen the mockup — we never promise a fixed price without seeing the project.",
+        },
+        {
+          q: "How long does it take to build the site?",
+          a: "We deliver a complete website in 7 days once you've approved the mockup. The mockup is usually sent within 24 hours of you submitting the form.",
+        },
+        {
+          q: "What's included in hosting?",
+          a: "Hosting on a fast Vercel server, SSL/HTTPS, daily backups, small fixes and support — all for 99 NOK/month.",
+        },
+        {
+          q: "Do I own the domain and content?",
+          a: "Yes. You buy and own your own domain. We host the site, but you own all design, code and content.",
+        },
+        {
+          q: "Who is Iveo?",
+          a: "Iveo is run by Sondre and Tony Bakkejord — father and son, based in Norway. We design, code and host websites for small and medium-sized Norwegian businesses.",
+        },
+        {
+          q: "What kind of businesses do you work with?",
+          a: "We work with small and medium-sized Norwegian businesses — restaurants, hairdressers, plumbers, carpenters, dentists, cafés and other local businesses.",
+        },
+        {
+          q: "What about AI solutions?",
+          a: "We're launching AI solutions in 2026 — chatbots trained on your business, AI receptionists that handle phone calls, and automation of routine tasks. Existing customers get access first.",
+        },
+        {
+          q: "How are you different from an agency?",
+          a: "We're a small father-and-son team with no middlemen. You talk directly to the people coding your site, and we handle design, development, hosting and support ourselves.",
+        },
+      ],
+    },
   },
 };
 

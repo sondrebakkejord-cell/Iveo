@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Bakkejord Snekker — Eksempel på snekker-nettside",
+  description:
+    "Slik kan en snekker-nettside se ut — med portefølje, materialer og prisindikator. Eksempel laget av Iveo.",
+  keywords: ["nettside snekker", "snekker Norge", "mockup snekker", "lage nettside snekker"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/snekker" },
+  openGraph: { title: "Bakkejord Snekker — Eksempel | Iveo", description: "Eksempel på snekker-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/snekker", type: "website" },
+};
 
 export default function SnekkerSite() {
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900">
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Snekker", url: "/eksempler/snekker" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-amber-50">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>

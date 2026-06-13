@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   publisher: "Iveo",
   alternates: {
     canonical: BASE_URL,
+    languages: {
+      "nb-NO": BASE_URL,
+      "en-US": BASE_URL,
+      "x-default": BASE_URL,
+    },
   },
   openGraph: {
     title: "Iveo — Moderne nettsider og hosting i Norge",
@@ -108,7 +113,53 @@ const organizationSchema = {
     availableLanguage: ["Norwegian", "English"],
     areaServed: "NO",
   },
-  sameAs: [],
+  sameAs: [
+    "https://github.com/sondrebakkejord-cell",
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}#service-website`,
+  serviceType: "Website design and hosting",
+  name: "Nettsider og hosting",
+  description:
+    "Skreddersydd nettside designet og kodet fra bunnen av, levert på én uke. Inkluderer SSL, daglig backup, SEO-optimalisering og support.",
+  provider: {
+    "@type": "Organization",
+    name: "Iveo",
+    url: BASE_URL,
+  },
+  areaServed: { "@type": "Country", name: "Norway" },
+  audience: { "@type": "BusinessAudience", audienceType: "Small and medium-sized businesses" },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Komplett nettside",
+      description: "Skreddersydd nettside med design, koding og levering på 1 uke.",
+      price: "1990",
+      priceCurrency: "NOK",
+      availability: "https://schema.org/InStock",
+      url: BASE_URL,
+    },
+    {
+      "@type": "Offer",
+      name: "Hosting og småjusteringer",
+      description: "Månedlig hosting med SSL, backup, support og småjusteringer.",
+      price: "99",
+      priceCurrency: "NOK",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "99",
+        priceCurrency: "NOK",
+        unitCode: "MON",
+        billingDuration: "P1M",
+      },
+      availability: "https://schema.org/InStock",
+      url: BASE_URL,
+    },
+  ],
 };
 
 const localBusinessSchema = {
@@ -168,6 +219,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">

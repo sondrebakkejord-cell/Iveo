@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Bakkejord Hair Studio — Eksempel på frisør-nettside",
+  description:
+    "Premium frisør-nettside som mockup — bygget av Iveo. Kan tilpasses din salong.",
+  keywords: ["nettside frisør", "frisør Norge", "mockup frisør", "lage nettside frisør", "frisørsalong nettside"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/frisor" },
+  openGraph: { title: "Bakkejord Hair Studio — Eksempel | Iveo", description: "Eksempel på frisør-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/frisor", type: "website" },
+};
 
 export default function FrisorSite() {
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Frisør", url: "/eksempler/frisor" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-stone-50">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>

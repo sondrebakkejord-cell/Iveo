@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "../Breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Tannlege Bakkejord — Eksempel på tannlege-nettside",
+  description:
+    "Eksempel på nettside for privat tannklinikk — med symptom-finner, team og booking. Bygget av Iveo.",
+  keywords: ["nettside tannlege", "tannklinikk Norge", "mockup tannlege", "lage nettside tannlege"],
+  alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/tannlege" },
+  openGraph: { title: "Tannlege Bakkejord — Eksempel | Iveo", description: "Eksempel på tannlege-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/tannlege", type: "website" },
+};
 
 export default function TannlegeSite() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <BreadcrumbSchema crumbs={[{ name: "Iveo", url: "/" }, { name: "Eksempler", url: "/eksempler" }, { name: "Tannlege", url: "/eksempler/tannlege" }]} />
       <div className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white">
         <Link href="/eksempler" className="hover:opacity-80">← Tilbake</Link>
         <span className="mx-2 opacity-50">·</span>
