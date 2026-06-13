@@ -16,7 +16,6 @@ export default function Home() {
     { slug: "snekker", name: "Bakkejord Snekker", industry: t.examples.industries.carpenter, img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80" },
     { slug: "tannlege", name: "Tannlege Bakkejord", industry: t.examples.industries.dentist, img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80" },
     { slug: "kafe", name: "Bakkejord Kafé", industry: t.examples.industries.cafe, img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" },
-    { slug: "frisor", name: "Bakkejord Hair Studio", industry: t.examples.industries.hairdresser, img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=80" },
   ];
 
   return (

@@ -143,8 +143,8 @@ const dict: Record<Lang, Strings> = {
     },
     examples: {
       title: "Se eksempler på hva vi kan bygge.",
-      body: "Seks eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.",
-      seeAll: "Se alle seks →",
+      body: "Fem eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.",
+      seeAll: "Se alle fem →",
       seeExample: "Se eksempel",
       footnote: "Eksemplene er bygget på samme måte som nettsiden vi ville laget til deg.",
       industries: { restaurant: "Restaurant", plumber: "Rørlegger", carpenter: "Snekker", dentist: "Tannlege", cafe: "Kafé", hairdresser: "Frisør" },
@@ -316,8 +316,8 @@ const dict: Record<Lang, Strings> = {
     },
     examples: {
       title: "See examples of what we can build.",
-      body: "Six examples of websites we can build — one per industry. Click to see the full site.",
-      seeAll: "See all six →",
+      body: "Five examples of websites we can build — one per industry. Click to see the full site.",
+      seeAll: "See all five →",
       seeExample: "See example",
       footnote: "The examples are built the same way as the website we'd make for you.",
       industries: { restaurant: "Restaurant", plumber: "Plumber", carpenter: "Carpenter", dentist: "Dentist", cafe: "Café", hairdresser: "Hairdresser" },

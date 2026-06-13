@@ -5,7 +5,7 @@ import BreadcrumbSchema from "./Breadcrumb";
 export const metadata: Metadata = {
   title: "Eksempler — Slik kan nettsiden din se ut",
   description:
-    "Seks eksempler på nettsider Iveo kan bygge for små og mellomstore norske bedrifter — restaurant, rørlegger, snekker, tannlege, kafé og frisør. Klikk for å se hver side.",
+    "Fem eksempler på nettsider Iveo kan bygge for små og mellomstore norske bedrifter — restaurant, rørlegger, snekker, tannlege og kafé. Klikk for å se hver side.",
   keywords: [
     "eksempel nettside",
     "mockup nettside",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler" },
   openGraph: {
     title: "Eksempler — Slik kan nettsiden din se ut | Iveo",
-    description: "Seks eksempler på nettsider Iveo kan bygge for norske bedrifter.",
+    description: "Fem eksempler på nettsider Iveo kan bygge for norske bedrifter.",
     url: "https://iveo-nine.vercel.app/eksempler",
     type: "website",
   },
@@ -72,15 +72,6 @@ const examples = [
     bg: "bg-rose-200",
     text: "text-stone-900",
   },
-  {
-    slug: "frisor",
-    name: "Bakkejord Hair Studio",
-    industry: "Frisør & beauty",
-    desc: "Premium og rolig. Tjenester med pris, team, galleri og online-bestilling.",
-    img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=80",
-    bg: "bg-stone-800",
-    text: "text-stone-50",
-  },
 ];
 
 export default function ExamplesIndex() {
@@ -95,7 +86,7 @@ export default function ExamplesIndex() {
       <div className="max-w-6xl mx-auto">
         <Link href="/" className="text-slate-600 hover:text-slate-900 text-sm mb-8 inline-block">← Tilbake til Iveo</Link>
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-          Seks eksempler.<br />Seks bransjer.
+          Fem eksempler.<br />Fem bransjer.
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl mb-14">
           Slik kan Iveo skreddersy nettsiden til akkurat din bedrift. Klikk på et eksempel for å
