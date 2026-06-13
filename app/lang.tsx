@@ -350,17 +350,46 @@ export function useT() {
 
 export function LanguageToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useT();
-  const next: Lang = lang === "no" ? "en" : "no";
+  const base =
+    "px-2.5 py-1 rounded-full text-xs font-semibold transition-colors";
+  const active = "bg-white text-slate-900 shadow-sm";
+  const inactive = "text-slate-500 hover:text-slate-800";
   return (
-    <button
-      type="button"
-      onClick={() => setLang(next)}
-      aria-label={lang === "no" ? "Switch to English" : "Bytt til norsk"}
-      className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md border border-slate-200 bg-white/70 hover:bg-white text-xs font-semibold text-slate-700 hover:text-slate-900 transition-colors ${className}`}
+    <div
+      role="group"
+      aria-label={lang === "no" ? "Språkvalg" : "Language"}
+      className={`inline-flex items-center gap-1.5 p-1 rounded-full bg-slate-100 border border-slate-200 ${className}`}
     >
-      <span className={lang === "no" ? "text-slate-900" : "text-slate-400"}>NO</span>
-      <span className="text-slate-300">·</span>
-      <span className={lang === "en" ? "text-slate-900" : "text-slate-400"}>EN</span>
-    </button>
+      <svg
+        className="w-3.5 h-3.5 ml-1.5 text-slate-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 010 18M12 3a14 14 0 000 18"
+        />
+      </svg>
+      <button
+        type="button"
+        onClick={() => setLang("no")}
+        aria-pressed={lang === "no"}
+        className={`${base} ${lang === "no" ? active : inactive}`}
+      >
+        NO
+      </button>
+      <button
+        type="button"
+        onClick={() => setLang("en")}
+        aria-pressed={lang === "en"}
+        className={`${base} ${lang === "en" ? active : inactive}`}
+      >
+        EN
+      </button>
+    </div>
   );
 }
