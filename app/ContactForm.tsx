@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "./lang";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
+  const { t } = useT();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const [form, setForm] = useState({
@@ -31,12 +33,12 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Kunne ikke sende.");
+      if (!res.ok) throw new Error(data.error || t.contact.errorCouldntSend);
       setStatus("sent");
       setForm({ name: "", email: "", phone: "", project: "", message: "", honeypot: "" });
     } catch (err) {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Noe gikk galt.");
+      setError(err instanceof Error ? err.message : t.contact.errorGeneric);
     }
   };
 
@@ -48,13 +50,13 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">Takk for meldingen!</h3>
-        <p className="text-slate-600 mb-6">Vi tar kontakt så snart som mulig, vanligvis innen 24 timer.</p>
+        <h3 className="text-2xl font-bold text-slate-900 mb-2">{t.contact.sentTitle}</h3>
+        <p className="text-slate-600 mb-6">{t.contact.sentBody}</p>
         <button
           onClick={() => setStatus("idle")}
           className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
         >
-          Send en til
+          {t.contact.sentAgain}
         </button>
       </div>
     );
@@ -67,7 +69,7 @@ export default function ContactForm() {
     >
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2">
         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-        Du får en gratis mockup tilbake
+        {t.contact.badge}
       </div>
 
       {/* Honeypot — usynlig for mennesker */}
@@ -87,7 +89,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            Navn <span className="text-red-500">*</span>
+            {t.contact.name} <span className="text-red-500">*</span>
           </label>
           <input
             id="name"
@@ -95,13 +97,13 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={update("name")}
-            placeholder="Ola Nordmann"
+            placeholder={t.contact.namePlaceholder}
             className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
           />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            E-post <span className="text-red-500">*</span>
+            {t.contact.emailLabel} <span className="text-red-500">*</span>
           </label>
           <input
             id="email"
@@ -109,7 +111,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={update("email")}
-            placeholder="ola@bedrift.no"
+            placeholder={t.contact.emailPlaceholder}
             className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
           />
         </div>
@@ -118,20 +120,20 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            Telefon
+            {t.contact.phoneLabel}
           </label>
           <input
             id="phone"
             type="tel"
             value={form.phone}
             onChange={update("phone")}
-            placeholder="+47 412 34 567"
+            placeholder={t.contact.phonePlaceholder}
             className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
           />
         </div>
         <div>
           <label htmlFor="project" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            Type prosjekt
+            {t.contact.projectType}
           </label>
           <select
             id="project"
@@ -139,16 +141,16 @@ export default function ContactForm() {
             onChange={update("project")}
             className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
           >
-            <option value="">Velg…</option>
-            <option value="Nettside">Nettside</option>
-            <option value="Nettside + hosting">Nettside + hosting</option>
+            <option value="">{t.contact.projectChoose}</option>
+            <option value="Nettside">{t.contact.projectWebsite}</option>
+            <option value="Nettside + hosting">{t.contact.projectWebsiteHosting}</option>
           </select>
         </div>
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-1.5">
-          Fortell oss om prosjektet <span className="text-red-500">*</span>
+          {t.contact.message} <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
@@ -156,7 +158,7 @@ export default function ContactForm() {
           rows={5}
           value={form.message}
           onChange={update("message")}
-          placeholder="Beskriv bedriften din kort — så svarer vi tilbake med en gratis mockup av hvordan nettsiden din kan se ut."
+          placeholder={t.contact.messagePlaceholder}
           className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all resize-y"
         />
       </div>
@@ -169,7 +171,7 @@ export default function ContactForm() {
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
         <p className="text-xs text-slate-500">
-          Svar innen 24 timer · alltid med mockup · aldri spam.
+          {t.contact.promise}
         </p>
         <button
           type="submit"
@@ -179,11 +181,11 @@ export default function ContactForm() {
           {status === "sending" ? (
             <>
               <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" /></svg>
-              Sender…
+              {t.contact.sending}
             </>
           ) : (
             <>
-              Send melding
+              {t.contact.submit}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </>
           )}

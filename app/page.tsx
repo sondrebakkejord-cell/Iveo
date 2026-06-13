@@ -4,9 +4,20 @@ import { useState } from "react";
 import { LogoFull } from "./Logo";
 import ContactForm from "./ContactForm";
 import ReviewForm from "./ReviewForm";
+import { useT, LanguageToggle } from "./lang";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useT();
+
+  const examples = [
+    { slug: "pizza", name: "Bakkejord Pizza", industry: t.examples.industries.restaurant, img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" },
+    { slug: "ror", name: "Bakkejord Rør", industry: t.examples.industries.plumber, img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" },
+    { slug: "snekker", name: "Bakkejord Snekker", industry: t.examples.industries.carpenter, img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80" },
+    { slug: "tannlege", name: "Tannlege Bakkejord", industry: t.examples.industries.dentist, img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80" },
+    { slug: "kafe", name: "Bakkejord Kafé", industry: t.examples.industries.cafe, img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" },
+    { slug: "frisor", name: "Bakkejord Hair Studio", industry: t.examples.industries.hairdresser, img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=80" },
+  ];
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -24,10 +35,11 @@ export default function Home() {
             <LogoFull size={38} />
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#hva-vi-gjor" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hva vi gjør</a>
-            <a href="#eksempler" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Eksempler</a>
-            <a href="#hvem-vi-er" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Hvem vi er</a>
-            <a href="#kontakt" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Kontakt</a>
+            <a href="#hva-vi-gjor" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">{t.nav.whatWeDo}</a>
+            <a href="#eksempler" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">{t.nav.examples}</a>
+            <a href="#hvem-vi-er" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">{t.nav.whoWeAre}</a>
+            <a href="#kontakt" className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">{t.nav.contact}</a>
+            <LanguageToggle />
             <a
               href="tel:+4748472586"
               className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
@@ -36,25 +48,28 @@ export default function Home() {
               +47 484 72 586
             </a>
           </div>
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Åpne meny"
-            aria-expanded={menuOpen}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 w-full bg-slate-900 transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`h-0.5 w-full bg-slate-900 transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`h-0.5 w-full bg-slate-900 transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-            </div>
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageToggle />
+            <button
+              className="p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={t.nav.openMenu}
+              aria-expanded={menuOpen}
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 w-full bg-slate-900 transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                <span className={`h-0.5 w-full bg-slate-900 transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+                <span className={`h-0.5 w-full bg-slate-900 transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              </div>
+            </button>
+          </div>
         </div>
         {menuOpen && (
           <div className="md:hidden glass border-t border-slate-200/40 px-6 py-4 flex flex-col gap-4">
-            <a href="#hva-vi-gjor" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hva vi gjør</a>
-            <a href="#eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Eksempler</a>
-            <a href="#hvem-vi-er" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Hvem vi er</a>
-            <a href="#kontakt" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">Kontakt</a>
+            <a href="#hva-vi-gjor" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">{t.nav.whatWeDo}</a>
+            <a href="#eksempler" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">{t.nav.examples}</a>
+            <a href="#hvem-vi-er" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">{t.nav.whoWeAre}</a>
+            <a href="#kontakt" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-slate-700">{t.nav.contact}</a>
             <a href="tel:+4748472586" onClick={() => setMenuOpen(false)} className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold text-center">
               +47 484 72 586
             </a>
@@ -71,7 +86,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-xs font-medium text-slate-700">Tar imot nye prosjekter</span>
+              <span className="text-xs font-medium text-slate-700">{t.hero.badge}</span>
             </div>
 
             <h1
@@ -83,9 +98,9 @@ export default function Home() {
                 animationDelay: "0.08s",
               }}
             >
-              Nettsider som faktisk
+              {t.hero.titleLine1}
               <br />
-              jobber for deg.
+              {t.hero.titleLine2}
             </h1>
 
             <p
@@ -96,8 +111,7 @@ export default function Home() {
                 animationDelay: "0.16s",
               }}
             >
-              Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for
-              små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.
+              {t.hero.body}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.24s" }}>
@@ -105,14 +119,14 @@ export default function Home() {
                 href="#kontakt"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
               >
-                Send skjema
+                {t.hero.primaryCta}
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
               <a
                 href="#hva-vi-gjor"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white border border-slate-200 text-slate-900 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-colors"
               >
-                Se hva vi tilbyr
+                {t.hero.secondaryCta}
               </a>
             </div>
           </div>
@@ -160,7 +174,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-slate-900 text-white px-3 py-1.5 rounded-lg text-xs font-semibold rotate-3 shadow-lg">
-                Levert på 7 dager
+                {t.hero.deliveredBadge}
               </div>
             </div>
           </div>
@@ -172,11 +186,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              Slik kan vi hjelpe deg.
+              {t.what.title}
             </h2>
             <p className="text-lg text-slate-600">
-              Vi holder tilbudet smalt fordi vi gjør det vi er gode på skikkelig. Ingen
-              menypakke med ti halvgode produkter — bare det du faktisk trenger.
+              {t.what.body}
             </p>
           </div>
 
@@ -189,21 +202,14 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Tilgjengelig nå</span>
+                <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">{t.what.availableNow}</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Nettsider og hosting</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">{t.what.websiteTitle}</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Skreddersydd nettside designet og kodet fra bunnen av. Vi leverer på en uke og
-                tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne et
-                kontrollpanel.
+                {t.what.websiteBody}
               </p>
               <ul className="space-y-2.5 text-sm text-slate-700">
-                {[
-                  "Custom design — ikke en mal",
-                  "SSL og daglig backup inkludert",
-                  "SEO-vennlig fra første linje kode",
-                  "24/7 support på norsk",
-                ].map((f) => (
+                {t.what.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <svg className="w-4 h-4 text-slate-900 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -226,11 +232,11 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
-                      <h3 className="text-lg font-bold">AI-løsninger</h3>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded-full">Snart</span>
+                      <h3 className="text-lg font-bold">{t.what.aiTitle}</h3>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded-full">{t.what.aiSoon}</span>
                     </div>
                     <p className="text-sm text-slate-400">
-                      Chatboter, AI-resepsjonister og lead-automatisering. Vi varsler kunder først.
+                      {t.what.aiBody}
                     </p>
                   </div>
                 </div>
@@ -246,59 +252,22 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                Se eksempler på hva vi kan bygge.
+                {t.examples.title}
               </h2>
               <p className="text-lg text-slate-600">
-                Seks eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.
+                {t.examples.body}
               </p>
             </div>
             <a
               href="/eksempler"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors whitespace-nowrap"
             >
-              Se alle seks →
+              {t.examples.seeAll}
             </a>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              {
-                slug: "pizza",
-                name: "Bakkejord Pizza",
-                industry: "Restaurant",
-                img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
-              },
-              {
-                slug: "ror",
-                name: "Bakkejord Rør",
-                industry: "Rørlegger",
-                img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80",
-              },
-              {
-                slug: "snekker",
-                name: "Bakkejord Snekker",
-                industry: "Snekker",
-                img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80",
-              },
-              {
-                slug: "tannlege",
-                name: "Tannlege Bakkejord",
-                industry: "Tannlege",
-                img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80",
-              },
-              {
-                slug: "kafe",
-                name: "Bakkejord Kafé",
-                industry: "Kafé",
-                img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
-              },
-              {
-                slug: "frisor",
-                name: "Bakkejord Hair Studio",
-                industry: "Frisør",
-                img: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=80",
-              },
-            ].map((e) => (
+            {examples.map((e) => (
               <a
                 key={e.slug}
                 href={`/eksempler/${e.slug}`}
@@ -317,7 +286,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="px-3 py-2.5 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-slate-700 group-hover:text-indigo-600 transition-colors">Se eksempel</span>
+                  <span className="text-xs font-semibold text-slate-700 group-hover:text-indigo-600 transition-colors">{t.examples.seeExample}</span>
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
@@ -327,7 +296,7 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-slate-500 text-center mt-10">
-            Eksemplene er bygget på samme måte som nettsiden vi ville laget til deg.
+            {t.examples.footnote}
           </p>
         </div>
       </section>
@@ -338,35 +307,29 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-3">
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                Bakkejord
+                {t.who.title1}
                 <br />
-                &amp; Bakkejord.
+                {t.who.title2}
               </h2>
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
-                <p>
-                  Iveo er drevet av Sondre og Tony Bakkejord — far og sønn. Vi har gått
-                  sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.
-                </p>
-                <p>
-                  Vi tar oss av hele veien — fra første idé til ferdig nettside, med drift og
-                  support i etterkant. Snart kommer også egne AI-løsninger.
-                </p>
+                <p>{t.who.p1}</p>
+                <p>{t.who.p2}</p>
               </div>
             </div>
 
             <div className="md:col-span-2">
               <dl className="space-y-5 border-l border-slate-200 pl-6">
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">Etablert</dt>
+                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">{t.who.established}</dt>
                   <dd className="text-2xl font-bold text-slate-900">2026</dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">Lokasjon</dt>
-                  <dd className="text-2xl font-bold text-slate-900">Norge</dd>
+                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">{t.who.location}</dt>
+                  <dd className="text-2xl font-bold text-slate-900">{t.who.locationValue}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">Leveringstid</dt>
-                  <dd className="text-2xl font-bold text-slate-900">Innen 1 uke</dd>
+                  <dt className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-1">{t.who.deliveryTime}</dt>
+                  <dd className="text-2xl font-bold text-slate-900">{t.who.deliveryValue}</dd>
                 </div>
               </dl>
             </div>
@@ -383,13 +346,12 @@ export default function Home() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-                  Få en gratis
+                  {t.book.title1}
                   <br />
-                  mockup.
+                  {t.book.title2}
                 </h2>
                 <p className="text-slate-300 text-lg leading-relaxed">
-                  Beskriv bedriften din kort, så svarer vi tilbake med en visuell skisse
-                  av hvordan nettsiden din kan se ut. Ingen forpliktelse.
+                  {t.book.body}
                 </p>
               </div>
               <div className="flex flex-col gap-3">
@@ -397,7 +359,7 @@ export default function Home() {
                   href="#kontakt"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-colors"
                 >
-                  Send skjema
+                  {t.book.sendForm}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </a>
                 <a
@@ -405,7 +367,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/15 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  Eller ring +47 484 72 586
+                  {t.book.orCall}
                 </a>
               </div>
             </div>
@@ -418,10 +380,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              Snakk med oss.
+              {t.contact.title}
             </h2>
             <p className="text-lg text-slate-600 mb-8">
-              Fyll ut skjemaet, eller ring direkte. Du får svar samme dag.
+              {t.contact.body}
             </p>
 
             <div className="space-y-4">
@@ -435,7 +397,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500 font-medium">Telefon</p>
+                  <p className="text-xs text-slate-500 font-medium">{t.contact.phone}</p>
                   <p className="font-bold text-slate-900">+47 484 72 586</p>
                 </div>
               </a>
@@ -450,7 +412,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs text-slate-500 font-medium">E-post</p>
+                  <p className="text-xs text-slate-500 font-medium">{t.contact.email}</p>
                   <p className="font-bold text-slate-900 text-sm break-all">sondrebakkejord@gmail.com</p>
                 </div>
               </a>
@@ -467,24 +429,23 @@ export default function Home() {
       <section id="tilbakemelding" className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
-            <p className="text-sm uppercase tracking-[0.25em] text-slate-500 font-semibold mb-4">— Tilbakemelding —</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-slate-500 font-semibold mb-4">{t.feedback.eyebrow}</p>
             <h2
               className="text-4xl md:text-5xl font-bold text-slate-900 mb-5"
               style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}
             >
-              Hvordan var
+              {t.feedback.title1}
               <br />
-              opplevelsen?
+              {t.feedback.title2}
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Vi er i en tidlig fase og vil bli bedre — fort. Si fra hva som funket, og hva
-              som kunne vært gjort annerledes.
+              {t.feedback.body}
             </p>
             <div className="flex items-center gap-3 text-sm text-slate-500">
               <svg className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>Anonym er helt fint — vi leser alt selv.</span>
+              <span>{t.feedback.anon}</span>
             </div>
           </div>
           <div className="lg:col-span-3">
@@ -498,7 +459,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <LogoFull size={28} />
           <div className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Iveo. Laget i Norge.
+            © {new Date().getFullYear()} Iveo. {t.footer}
           </div>
         </div>
       </footer>
@@ -508,7 +469,7 @@ export default function Home() {
         href="#kontakt"
         className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-slate-900 text-white text-center py-3.5 rounded-full font-semibold shadow-2xl shadow-slate-900/30 flex items-center justify-center gap-2"
       >
-        Få gratis mockup
+        {t.mobileCta}
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>

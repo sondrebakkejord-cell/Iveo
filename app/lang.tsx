@@ -1,0 +1,366 @@
+"use client";
+
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+
+export type Lang = "no" | "en";
+
+const STORAGE_KEY = "iveo-lang";
+
+type Strings = {
+  nav: { whatWeDo: string; examples: string; whoWeAre: string; contact: string; openMenu: string };
+  hero: {
+    badge: string;
+    titleLine1: string;
+    titleLine2: string;
+    body: string;
+    primaryCta: string;
+    secondaryCta: string;
+    deliveredBadge: string;
+  };
+  what: {
+    title: string;
+    body: string;
+    availableNow: string;
+    websiteTitle: string;
+    websiteBody: string;
+    features: string[];
+    aiTitle: string;
+    aiSoon: string;
+    aiBody: string;
+  };
+  examples: {
+    title: string;
+    body: string;
+    seeAll: string;
+    seeExample: string;
+    footnote: string;
+    industries: { restaurant: string; plumber: string; carpenter: string; dentist: string; cafe: string; hairdresser: string };
+  };
+  who: {
+    title1: string;
+    title2: string;
+    p1: string;
+    p2: string;
+    established: string;
+    location: string;
+    locationValue: string;
+    deliveryTime: string;
+    deliveryValue: string;
+  };
+  book: { title1: string; title2: string; body: string; sendForm: string; orCall: string };
+  contact: {
+    title: string;
+    body: string;
+    phone: string;
+    email: string;
+    badge: string;
+    name: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    projectType: string;
+    projectChoose: string;
+    projectWebsite: string;
+    projectWebsiteHosting: string;
+    message: string;
+    messagePlaceholder: string;
+    promise: string;
+    submit: string;
+    sending: string;
+    sentTitle: string;
+    sentBody: string;
+    sentAgain: string;
+    errorGeneric: string;
+    errorCouldntSend: string;
+  };
+  feedback: {
+    eyebrow: string;
+    title1: string;
+    title2: string;
+    body: string;
+    anon: string;
+    howSatisfied: string;
+    starsLabel: (n: number) => string;
+    name: string;
+    nameOptional: string;
+    namePlaceholder: string;
+    thoughts: string;
+    thoughtsPlaceholder: string;
+    notePublic: string;
+    submit: string;
+    sending: string;
+    sentTitle: string;
+    sentBody: string;
+    writeAbout: string;
+  };
+  footer: string;
+  mobileCta: string;
+};
+
+const dict: Record<Lang, Strings> = {
+  no: {
+    nav: { whatWeDo: "Hva vi gjør", examples: "Eksempler", whoWeAre: "Hvem vi er", contact: "Kontakt", openMenu: "Åpne meny" },
+    hero: {
+      badge: "Tar imot nye prosjekter",
+      titleLine1: "Nettsider som faktisk",
+      titleLine2: "jobber for deg.",
+      body: "Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.",
+      primaryCta: "Send skjema",
+      secondaryCta: "Se hva vi tilbyr",
+      deliveredBadge: "Levert på 7 dager",
+    },
+    what: {
+      title: "Slik kan vi hjelpe deg.",
+      body: "Vi holder tilbudet smalt fordi vi gjør det vi er gode på skikkelig. Ingen menypakke med ti halvgode produkter — bare det du faktisk trenger.",
+      availableNow: "Tilgjengelig nå",
+      websiteTitle: "Nettsider og hosting",
+      websiteBody:
+        "Skreddersydd nettside designet og kodet fra bunnen av. Vi leverer på en uke og tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne et kontrollpanel.",
+      features: [
+        "Custom design — ikke en mal",
+        "SSL og daglig backup inkludert",
+        "SEO-vennlig fra første linje kode",
+        "24/7 support på norsk",
+      ],
+      aiTitle: "AI-løsninger",
+      aiSoon: "Snart",
+      aiBody: "Chatboter, AI-resepsjonister og lead-automatisering. Vi varsler kunder først.",
+    },
+    examples: {
+      title: "Se eksempler på hva vi kan bygge.",
+      body: "Seks eksempler på nettsider vi kan bygge — én for hver bransje. Klikk for å se hele siden.",
+      seeAll: "Se alle seks →",
+      seeExample: "Se eksempel",
+      footnote: "Eksemplene er bygget på samme måte som nettsiden vi ville laget til deg.",
+      industries: { restaurant: "Restaurant", plumber: "Rørlegger", carpenter: "Snekker", dentist: "Tannlege", cafe: "Kafé", hairdresser: "Frisør" },
+    },
+    who: {
+      title1: "Bakkejord",
+      title2: "& Bakkejord.",
+      p1: "Iveo er drevet av Sondre og Tony Bakkejord — far og sønn. Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.",
+      p2: "Vi tar oss av hele veien — fra første idé til ferdig nettside, med drift og support i etterkant. Snart kommer også egne AI-løsninger.",
+      established: "Etablert",
+      location: "Lokasjon",
+      locationValue: "Norge",
+      deliveryTime: "Leveringstid",
+      deliveryValue: "Innen 1 uke",
+    },
+    book: {
+      title1: "Få en gratis",
+      title2: "mockup.",
+      body: "Beskriv bedriften din kort, så svarer vi tilbake med en visuell skisse av hvordan nettsiden din kan se ut. Ingen forpliktelse.",
+      sendForm: "Send skjema",
+      orCall: "Eller ring +47 484 72 586",
+    },
+    contact: {
+      title: "Snakk med oss.",
+      body: "Fyll ut skjemaet, eller ring direkte. Du får svar samme dag.",
+      phone: "Telefon",
+      email: "E-post",
+      badge: "Du får en gratis mockup tilbake",
+      name: "Navn",
+      namePlaceholder: "Ola Nordmann",
+      emailLabel: "E-post",
+      emailPlaceholder: "ola@bedrift.no",
+      phoneLabel: "Telefon",
+      phonePlaceholder: "+47 412 34 567",
+      projectType: "Type prosjekt",
+      projectChoose: "Velg…",
+      projectWebsite: "Nettside",
+      projectWebsiteHosting: "Nettside + hosting",
+      message: "Fortell oss om prosjektet",
+      messagePlaceholder:
+        "Beskriv bedriften din kort — så svarer vi tilbake med en gratis mockup av hvordan nettsiden din kan se ut.",
+      promise: "Svar innen 24 timer · alltid med mockup · aldri spam.",
+      submit: "Send melding",
+      sending: "Sender…",
+      sentTitle: "Takk for meldingen!",
+      sentBody: "Vi tar kontakt så snart som mulig, vanligvis innen 24 timer.",
+      sentAgain: "Send en til",
+      errorGeneric: "Noe gikk galt.",
+      errorCouldntSend: "Kunne ikke sende.",
+    },
+    feedback: {
+      eyebrow: "— Tilbakemelding —",
+      title1: "Hvordan var",
+      title2: "opplevelsen?",
+      body: "Vi er i en tidlig fase og vil bli bedre — fort. Si fra hva som funket, og hva som kunne vært gjort annerledes.",
+      anon: "Anonym er helt fint — vi leser alt selv.",
+      howSatisfied: "Hvor fornøyd er du?",
+      starsLabel: (n) => `${n} av 5 stjerner`,
+      name: "Navn",
+      nameOptional: "(valgfritt)",
+      namePlaceholder: "Anonym er også fint",
+      thoughts: "Hva tenker du?",
+      thoughtsPlaceholder: "Hva likte du? Hva kunne vært bedre? Vi tar imot alt — ros, ris, ideer.",
+      notePublic: "Vi leser alt selv. Aldri publisert uten lov.",
+      submit: "Send tilbakemelding",
+      sending: "Sender…",
+      sentTitle: "Takk for tilbakemeldingen!",
+      sentBody: "Vi leser alt, og bruker det til å bli bedre.",
+      writeAbout: "Skriv litt om opplevelsen din.",
+    },
+    footer: "Laget i Norge.",
+    mobileCta: "Få gratis mockup",
+  },
+  en: {
+    nav: { whatWeDo: "What we do", examples: "Examples", whoWeAre: "Who we are", contact: "Contact", openMenu: "Open menu" },
+    hero: {
+      badge: "Taking on new projects",
+      titleLine1: "Websites that actually",
+      titleLine2: "work for you.",
+      body: "A father-and-son team in Norway designing, coding and hosting modern websites for small and medium businesses. Delivered in one week, with support when you need it.",
+      primaryCta: "Send a message",
+      secondaryCta: "See what we offer",
+      deliveredBadge: "Delivered in 7 days",
+    },
+    what: {
+      title: "How we can help.",
+      body: "We keep the offering narrow because we do what we're good at properly. No package menu with ten mediocre products — just what you actually need.",
+      availableNow: "Available now",
+      websiteTitle: "Websites and hosting",
+      websiteBody:
+        "Custom website designed and coded from scratch. We deliver in a week and handle operations, updates and support after. You never need to open a control panel.",
+      features: [
+        "Custom design — not a template",
+        "SSL and daily backups included",
+        "SEO-friendly from line one",
+        "24/7 support",
+      ],
+      aiTitle: "AI solutions",
+      aiSoon: "Soon",
+      aiBody: "Chatbots, AI receptionists and lead automation. Existing customers get first access.",
+    },
+    examples: {
+      title: "See examples of what we can build.",
+      body: "Six examples of websites we can build — one per industry. Click to see the full site.",
+      seeAll: "See all six →",
+      seeExample: "See example",
+      footnote: "The examples are built the same way as the website we'd make for you.",
+      industries: { restaurant: "Restaurant", plumber: "Plumber", carpenter: "Carpenter", dentist: "Dentist", cafe: "Café", hairdresser: "Hairdresser" },
+    },
+    who: {
+      title1: "Bakkejord",
+      title2: "& Bakkejord.",
+      p1: "Iveo is run by Sondre and Tony Bakkejord — father and son. We joined forces to build a company that makes websites people actually enjoy using.",
+      p2: "We handle the whole journey — from first idea to finished site, with operations and support after. Our own AI solutions are coming next.",
+      established: "Established",
+      location: "Location",
+      locationValue: "Norway",
+      deliveryTime: "Delivery time",
+      deliveryValue: "Within 1 week",
+    },
+    book: {
+      title1: "Get a free",
+      title2: "mockup.",
+      body: "Describe your business briefly, and we'll send back a visual sketch of what your website could look like. No commitment.",
+      sendForm: "Send a message",
+      orCall: "Or call +47 484 72 586",
+    },
+    contact: {
+      title: "Talk to us.",
+      body: "Fill out the form, or call directly. You'll get a reply the same day.",
+      phone: "Phone",
+      email: "Email",
+      badge: "You'll get a free mockup back",
+      name: "Name",
+      namePlaceholder: "Jane Doe",
+      emailLabel: "Email",
+      emailPlaceholder: "jane@company.com",
+      phoneLabel: "Phone",
+      phonePlaceholder: "+47 412 34 567",
+      projectType: "Project type",
+      projectChoose: "Choose…",
+      projectWebsite: "Website",
+      projectWebsiteHosting: "Website + hosting",
+      message: "Tell us about the project",
+      messagePlaceholder:
+        "Describe your business briefly — we'll send back a free mockup of what your site could look like.",
+      promise: "Reply within 24 hours · always with a mockup · never spam.",
+      submit: "Send message",
+      sending: "Sending…",
+      sentTitle: "Thanks for the message!",
+      sentBody: "We'll be in touch as soon as possible, usually within 24 hours.",
+      sentAgain: "Send another",
+      errorGeneric: "Something went wrong.",
+      errorCouldntSend: "Couldn't send.",
+    },
+    feedback: {
+      eyebrow: "— Feedback —",
+      title1: "How was the",
+      title2: "experience?",
+      body: "We're early and want to get better — fast. Tell us what worked and what could have been done differently.",
+      anon: "Anonymous is fine — we read everything ourselves.",
+      howSatisfied: "How satisfied are you?",
+      starsLabel: (n) => `${n} out of 5 stars`,
+      name: "Name",
+      nameOptional: "(optional)",
+      namePlaceholder: "Anonymous is fine too",
+      thoughts: "What do you think?",
+      thoughtsPlaceholder: "What did you like? What could be better? We welcome anything — praise, criticism, ideas.",
+      notePublic: "We read everything ourselves. Never published without permission.",
+      submit: "Send feedback",
+      sending: "Sending…",
+      sentTitle: "Thanks for the feedback!",
+      sentBody: "We read everything and use it to improve.",
+      writeAbout: "Write a bit about your experience.",
+    },
+    footer: "Made in Norway.",
+    mobileCta: "Get free mockup",
+  },
+};
+
+type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: Strings };
+const LanguageContext = createContext<Ctx | null>(null);
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [lang, setLangState] = useState<Lang>("no");
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY) as Lang | null;
+      if (saved === "no" || saved === "en") setLangState(saved);
+    } catch {}
+  }, []);
+
+  const setLang = (l: Lang) => {
+    setLangState(l);
+    try {
+      localStorage.setItem(STORAGE_KEY, l);
+    } catch {}
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = l === "no" ? "nb" : "en";
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ lang, setLang, t: dict[lang] }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useT() {
+  const ctx = useContext(LanguageContext);
+  if (!ctx) throw new Error("useT must be used inside <LanguageProvider>");
+  return ctx;
+}
+
+export function LanguageToggle({ className = "" }: { className?: string }) {
+  const { lang, setLang } = useT();
+  const next: Lang = lang === "no" ? "en" : "no";
+  return (
+    <button
+      type="button"
+      onClick={() => setLang(next)}
+      aria-label={lang === "no" ? "Switch to English" : "Bytt til norsk"}
+      className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md border border-slate-200 bg-white/70 hover:bg-white text-xs font-semibold text-slate-700 hover:text-slate-900 transition-colors ${className}`}
+    >
+      <span className={lang === "no" ? "text-slate-900" : "text-slate-400"}>NO</span>
+      <span className="text-slate-300">·</span>
+      <span className={lang === "en" ? "text-slate-900" : "text-slate-400"}>EN</span>
+    </button>
+  );
+}

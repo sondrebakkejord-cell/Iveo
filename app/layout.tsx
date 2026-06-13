@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CookieBanner from "./CookieBanner";
+import { LanguageProvider } from "./lang";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -176,7 +177,7 @@ export default function RootLayout({
         >
           Hopp til hovedinnhold
         </a>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <CookieBanner />
         <Analytics />
         <SpeedInsights />
