@@ -10,16 +10,6 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useT();
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: t.faq.items.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
-
   const examples = [
     { slug: "pizza", name: "Bakkejord Pizza", industry: t.examples.industries.restaurant, img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" },
     { slug: "ror", name: "Bakkejord Rør", industry: t.examples.industries.plumber, img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" },
@@ -31,10 +21,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {/* Background effects — restrained, mask-faded */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 grid-pattern" />
@@ -195,18 +181,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Definition — explicit for AI search citation */}
-      <section className="relative py-12 px-6 -mt-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200 p-7 md:p-9">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.define.eyebrow}</p>
-            <p className="text-lg md:text-xl text-slate-800 leading-relaxed">
-              {t.define.line}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* What we do */}
       <section id="hva-vi-gjor" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
@@ -324,77 +298,6 @@ export default function Home() {
           <p className="text-sm text-slate-500 text-center mt-10">
             {t.examples.footnote}
           </p>
-        </div>
-      </section>
-
-      {/* Pricing — explicit for AI citation + Google "Hva koster" queries */}
-      <section id="priser" className="relative py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl mb-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.pricing.eyebrow}</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              {t.pricing.title}
-            </h2>
-            <p className="text-lg text-slate-600">{t.pricing.body}</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            {t.pricing.plans.map((plan, i) => (
-              <article
-                key={plan.name}
-                className={`relative rounded-2xl p-7 border transition-colors ${
-                  i === 0 ? "bg-slate-900 text-white border-slate-800" : "bg-white border-slate-200 hover:border-slate-300"
-                }`}
-              >
-                <h3 className={`text-lg font-bold mb-1 ${i === 0 ? "text-white" : "text-slate-900"}`}>{plan.name}</h3>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className={`text-3xl font-bold ${i === 0 ? "text-white" : "text-slate-900"}`}>{plan.price}</span>
-                  <span className={`text-sm ${i === 0 ? "text-slate-300" : "text-slate-500"}`}>{plan.unit}</span>
-                </div>
-                <ul className="space-y-2.5 text-sm">
-                  {plan.features.map((f) => (
-                    <li key={f} className={`flex items-start gap-2.5 ${i === 0 ? "text-slate-200" : "text-slate-700"}`}>
-                      <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? "text-cyan-300" : "text-slate-900"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-
-          <p className="text-sm text-slate-500 mt-8 max-w-2xl">{t.pricing.note}</p>
-        </div>
-      </section>
-
-      {/* FAQ — AI Overviews loves FAQPage schema + visible Q&A */}
-      <section id="faq" className="relative py-24 px-6 bg-slate-50/60 border-y border-slate-200/60">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.faq.eyebrow}</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
-              {t.faq.title}
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {t.faq.items.map((item) => (
-              <details
-                key={item.q}
-                className="group bg-white rounded-xl border border-slate-200 hover:border-slate-300 transition-colors"
-              >
-                <summary className="cursor-pointer list-none px-5 py-4 flex items-start justify-between gap-4">
-                  <span className="font-semibold text-slate-900 text-base">{item.q}</span>
-                  <svg className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-5 pb-5 -mt-1 text-slate-700 leading-relaxed">{item.a}</div>
-              </details>
-            ))}
-          </div>
         </div>
       </section>
 
