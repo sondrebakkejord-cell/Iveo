@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Iveo",
   },
   description:
-    "Iveo lager skreddersydde nettsider for norske bedrifter. Far-og-sønn-team. Levert på én uke fra 1 990 kr. Hosting og support inkludert. AI-løsninger kommer 2026.",
+    "Iveo lager skreddersydde nettsider for norske bedrifter. Liten familiebedrift. Levert på én uke fra 1 990 kr. Hosting og support inkludert. AI-løsninger kommer 2026.",
   keywords: [
     "nettside",
     "webdesign",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Iveo — Moderne nettsider og hosting i Norge",
     description:
-      "Far-og-sønn-team som lager nettsider. Levert på én uke fra 1 990 kr. Hosting inkludert.",
+      "Liten familiebedrift som lager nettsider. Levert på én uke fra 1 990 kr. Hosting inkludert.",
     type: "website",
     locale: "nb_NO",
     url: BASE_URL,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Iveo — Moderne nettsider og hosting i Norge",
     description:
-      "Far-og-sønn-team som lager nettsider. Levert på én uke fra 1 990 kr.",
+      "Liten familiebedrift som lager nettsider. Levert på én uke fra 1 990 kr.",
     images: ["/og-image.png"],
   },
   robots: {

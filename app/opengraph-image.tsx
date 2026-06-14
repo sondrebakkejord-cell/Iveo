@@ -84,7 +84,7 @@ export default async function Image() {
             maxWidth: "900px",
           }}
         >
-          Far-og-sønn-team i Norge. Levert på én uke fra 1 990 kr.
+          Liten familiebedrift i Norge. Levert på én uke fra 1 990 kr.
         </div>
       </div>
     ),

@@ -342,7 +342,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-slate-900 leading-tight">Sondre &amp; Tony Bakkejord</p>
-                  <p className="text-xs text-slate-500">Far og sønn · Iveo</p>
+                  <p className="text-xs text-slate-500">Liten familiebedrift · Iveo</p>
                 </div>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>

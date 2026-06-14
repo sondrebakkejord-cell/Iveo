@@ -7,7 +7,7 @@
 ## 👤 Hvem brukeren er
 
 - **Navn:** Sondre Bakkejord
-- **Bedrift:** Iveo (far-og-sønn-team)
+- **Bedrift:** Iveo (liten familiebedrift — Sondre + pappa Tony)
 - **Pappa:** Tony Bakkejord
 - **Bor i:** Bodø-området (adresse Prestmarkveien 162, 8073 Bodø)
 - **GitHub:** [@sondrebakkejord-cell](https://github.com/sondrebakkejord-cell)
@@ -24,7 +24,7 @@
 
 ### Posisjonering
 - **Verdiøkning, IKKE billig** — vi nevner ikke pris i hero
-- Liten familiebedrift, personlig service
+- Liten familiebedrift (Sondre + Tony Bakkejord) — personlig service
 - Levert på 1 uke
 - Ingen byrå-tull, ingen mellommenn
 
@@ -133,7 +133,7 @@ Brukeren er **veldig sensitiv på klisjeer og overselling**. Følg disse strengt
 - Korte setninger
 - Konkrete tall (1 uke, ikke "rask")
 - "Sondre og Tony" eller "Bakkejord & Bakkejord"
-- "Far og sønn"
+- "Liten familiebedrift" (IKKE "far-og-sønn-team" lenger — endret juni 2026)
 - Ikke nevne roller hvem-gjør-hva
 - Eksempler er **EKSEMPLER**, ikke ekte kunder
 
@@ -143,7 +143,7 @@ Brukeren er **veldig sensitiv på klisjeer og overselling**. Følg disse strengt
 ### "Hvem vi er" — gjeldende tekst
 > Bakkejord & Bakkejord.
 >
-> Iveo er drevet av Sondre og Tony Bakkejord — far og sønn. Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.
+> Iveo er en liten familiebedrift drevet av Sondre og Tony Bakkejord. Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.
 >
 > Vi tar oss av hele veien — fra første idé til ferdig nettside, med drift og support i etterkant. Snart kommer også egne AI-løsninger.
 

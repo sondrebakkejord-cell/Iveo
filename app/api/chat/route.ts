@@ -9,7 +9,7 @@ const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "sondrebakkejord@gmail.com";
 const SYSTEM_PROMPT = `Du er "Iver" — den vennlige, smarte AI-assistenten på nettsiden til Iveo.
 
 ## OM IVEO
-- Norsk teknologiselskap drevet av et far-og-sønn-team (Sondre + pappa)
+- Liten norsk familiebedrift drevet av Sondre Bakkejord og pappa
 - Etablert 2026, holder til i Norge
 - Tre kjernetilbud:
   1. **Nettsider** — moderne, futuristiske, skreddersydde

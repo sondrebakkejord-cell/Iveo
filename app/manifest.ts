@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Iveo — Moderne nettsider og hosting",
     short_name: "Iveo",
-    description: "Far-og-sønn-team som lager nettsider. Levert på én uke fra 1 990 kr.",
+    description: "Liten familiebedrift som lager nettsider. Levert på én uke fra 1 990 kr.",
     start_url: "/",
     display: "standalone",
     background_color: "#fafbff",

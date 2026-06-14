@@ -131,7 +131,7 @@ const dict: Record<Lang, Strings> = {
       badge: "Tar 2-3 nye prosjekter denne måneden",
       titleLine1: "Nettsider som faktisk",
       titleLine2: "jobber for deg.",
-      body: "Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider. Beskriv bedriften din i skjemaet — så har du en demo i innboksen innen 24 timer.",
+      body: "En liten familiebedrift som designer, koder og hoster moderne nettsider. Beskriv bedriften din i skjemaet — så har du en demo i innboksen innen 24 timer.",
       primaryCta: "Få demoen min",
       secondaryCta: "Se hva vi tilbyr",
       deliveredBadge: "Ferdig på 7 dager",
@@ -164,7 +164,7 @@ const dict: Record<Lang, Strings> = {
     who: {
       title1: "Bakkejord",
       title2: "& Bakkejord.",
-      p1: "Iveo er drevet av Sondre og Tony Bakkejord — far og sønn. Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.",
+      p1: "Iveo er en liten familiebedrift drevet av Sondre og Tony Bakkejord. Vi har gått sammen om å bygge et selskap som lager nettsider folk faktisk liker å bruke.",
       p2: "Vi tar oss av hele veien — fra første idé til ferdig nettside, med drift og support i etterkant. Snart kommer også egne AI-løsninger.",
       established: "Etablert",
       location: "Lokasjon",
@@ -251,7 +251,7 @@ const dict: Record<Lang, Strings> = {
     scarcity: "Vi tar 2-3 prosjekter i måneden for å levere skikkelig.",
     define: {
       eyebrow: "Kort fortalt",
-      line: "Iveo er et norsk far-og-sønn-team som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på én uke, fra 1 990 kr, med hosting og support inkludert.",
+      line: "Iveo er en liten norsk familiebedrift som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på én uke, fra 1 990 kr, med hosting og support inkludert.",
     },
     pricing: {
       eyebrow: "Priser",
@@ -301,7 +301,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "Hvem er Iveo?",
-          a: "Iveo er drevet av Sondre og Tony Bakkejord — far og sønn, med base i Norge. Vi designer, koder og hoster nettsider for små og mellomstore norske bedrifter.",
+          a: "Iveo er en liten familiebedrift drevet av Sondre og Tony Bakkejord, med base i Norge. Vi designer, koder og hoster nettsider for små og mellomstore norske bedrifter.",
         },
         {
           q: "Hva slags bedrifter jobber dere med?",
@@ -313,7 +313,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "Hva skiller dere fra et webbyrå?",
-          a: "Vi er et lite far-og-sønn-team uten mellomledd. Du snakker direkte med oss som koder nettsiden, og vi tar både design, utvikling, hosting og support selv.",
+          a: "Vi er en liten familiebedrift uten mellomledd. Du snakker direkte med oss som koder nettsiden, og vi tar både design, utvikling, hosting og support selv.",
         },
       ],
     },
@@ -324,7 +324,7 @@ const dict: Record<Lang, Strings> = {
       badge: "Taking 2-3 new projects this month",
       titleLine1: "Websites that actually",
       titleLine2: "work for you.",
-      body: "A father-and-son team in Norway designing, coding and hosting modern websites. Describe your business in the form — and you'll have a demo in your inbox within 24 hours.",
+      body: "A small family business designing, coding and hosting modern websites. Describe your business in the form — and you'll have a demo in your inbox within 24 hours.",
       primaryCta: "Get my demo",
       secondaryCta: "See what we offer",
       deliveredBadge: "Live in 7 days",
@@ -357,7 +357,7 @@ const dict: Record<Lang, Strings> = {
     who: {
       title1: "Bakkejord",
       title2: "& Bakkejord.",
-      p1: "Iveo is run by Sondre and Tony Bakkejord — father and son. We joined forces to build a company that makes websites people actually enjoy using.",
+      p1: "Iveo is a small family business run by Sondre and Tony Bakkejord. We joined forces to build a company that makes websites people actually enjoy using.",
       p2: "We handle the whole journey — from first idea to finished site, with operations and support after. Our own AI solutions are coming next.",
       established: "Established",
       location: "Location",
@@ -444,7 +444,7 @@ const dict: Record<Lang, Strings> = {
     scarcity: "We take 2-3 projects a month to deliver properly.",
     define: {
       eyebrow: "In short",
-      line: "Iveo is a Norwegian father-and-son team that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in one week, from 1,990 NOK, with hosting and support included.",
+      line: "Iveo is a small Norwegian family business that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in one week, from 1,990 NOK, with hosting and support included.",
     },
     pricing: {
       eyebrow: "Pricing",
@@ -494,7 +494,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "Who is Iveo?",
-          a: "Iveo is run by Sondre and Tony Bakkejord — father and son, based in Norway. We design, code and host websites for small and medium-sized Norwegian businesses.",
+          a: "Iveo is a small family business run by Sondre and Tony Bakkejord, based in Norway. We design, code and host websites for small and medium-sized Norwegian businesses.",
         },
         {
           q: "What kind of businesses do you work with?",
@@ -506,7 +506,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "How are you different from an agency?",
-          a: "We're a small father-and-son team with no middlemen. You talk directly to the people coding your site, and we handle design, development, hosting and support ourselves.",
+          a: "We're a small family business with no middlemen. You talk directly to the people coding your site, and we handle design, development, hosting and support ourselves.",
         },
       ],
     },
