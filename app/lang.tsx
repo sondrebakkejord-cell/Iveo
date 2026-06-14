@@ -197,7 +197,7 @@ const dict: Record<Lang, Strings> = {
       projectWebsiteHosting: "Nettside + hosting",
       message: "Fortell oss om prosjektet",
       messagePlaceholder:
-        "Beskriv bedriften din kort — så svarer vi tilbake med en gratis mockup av hvordan nettsiden din kan se ut.",
+        "Bransje, sted, og kort om hva du ønsker med nettsiden. F.eks. «Bakkejord pizza i Bodø — vil ha menyen, åpningstider og noen fine bilder på forsiden.»",
       promise: "Svar innen 24 timer · alltid med mockup · aldri spam.",
       submit: "Få demoen min",
       sending: "Sender…",
@@ -390,7 +390,7 @@ const dict: Record<Lang, Strings> = {
       projectWebsiteHosting: "Website + hosting",
       message: "Tell us about the project",
       messagePlaceholder:
-        "Describe your business briefly — we'll send back a free mockup of what your site could look like.",
+        "Industry, location, and what you want the site to do. E.g. 'Bakkejord pizza in Bodø — want the menu, opening hours, and some nice photos on the front page.'",
       promise: "Reply within 24 hours · always with a mockup · never spam.",
       submit: "Get my demo",
       sending: "Sending…",
