@@ -97,6 +97,18 @@ type Strings = {
   };
   footer: string;
   mobileCta: string;
+  process: {
+    eyebrow: string;
+    title: string;
+    steps: { step: string; title: string; body: string }[];
+  };
+  trust: {
+    eyebrow: string;
+    title: string;
+    items: { title: string; body: string }[];
+  };
+  riskReversal: string;
+  scarcity: string;
   define: { eyebrow: string; line: string };
   pricing: {
     eyebrow: string;
@@ -116,13 +128,13 @@ const dict: Record<Lang, Strings> = {
   no: {
     nav: { whatWeDo: "Hva vi gjør", examples: "Eksempler", whoWeAre: "Hvem vi er", contact: "Kontakt", openMenu: "Åpne meny" },
     hero: {
-      badge: "Tar imot nye prosjekter",
+      badge: "Tar 2-3 nye prosjekter denne måneden",
       titleLine1: "Nettsider som faktisk",
       titleLine2: "jobber for deg.",
-      body: "Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Levert på én uke, med support når du trenger det.",
-      primaryCta: "Send skjema",
+      body: "Et far-og-sønn-team i Norge som designer, koder og hoster moderne nettsider. Beskriv bedriften din i skjemaet — så har du en demo i innboksen innen 24 timer.",
+      primaryCta: "Få demoen min",
       secondaryCta: "Se hva vi tilbyr",
-      deliveredBadge: "Levert på 7 dager",
+      deliveredBadge: "Ferdig på 7 dager",
     },
     what: {
       title: "Slik kan vi hjelpe deg.",
@@ -187,10 +199,10 @@ const dict: Record<Lang, Strings> = {
       messagePlaceholder:
         "Beskriv bedriften din kort — så svarer vi tilbake med en gratis mockup av hvordan nettsiden din kan se ut.",
       promise: "Svar innen 24 timer · alltid med mockup · aldri spam.",
-      submit: "Send melding",
+      submit: "Få demoen min",
       sending: "Sender…",
       sentTitle: "Takk for meldingen!",
-      sentBody: "Vi tar kontakt så snart som mulig, vanligvis innen 24 timer.",
+      sentBody: "Du får demoen i innboksen innen 24 timer.",
       sentAgain: "Send en til",
       errorGeneric: "Noe gikk galt.",
       errorCouldntSend: "Kunne ikke sende.",
@@ -216,7 +228,27 @@ const dict: Record<Lang, Strings> = {
       writeAbout: "Skriv litt om opplevelsen din.",
     },
     footer: "Laget i Norge.",
-    mobileCta: "Få gratis mockup",
+    mobileCta: "Få demoen min",
+    process: {
+      eyebrow: "Slik fungerer det",
+      title: "Tre steg, ingen forpliktelse.",
+      steps: [
+        { step: "1", title: "Send skjema", body: "Beskriv bedriften din kort. Tar to minutter." },
+        { step: "2", title: "Demo i innboksen", body: "Innen 24 timer får du en demo av hvordan nettsiden din kan se ut." },
+        { step: "3", title: "Vi bygger", body: "Liker du det, har du en ferdig nettside live på 7 dager. Hvis ikke — bare slett oss." },
+      ],
+    },
+    trust: {
+      eyebrow: "Ingen overraskelser",
+      title: "Du eier alt.",
+      items: [
+        { title: "Du eier domenet", body: "Vi setter aldri navnet ditt på vår faktura. Du kjøper domenet selv og eier det 100 %." },
+        { title: "Du eier designet og koden", body: "Vil du bytte leverandør senere, får du alt med deg. Ingen låst inn." },
+        { title: "Ingen kontrakter", body: "Hosting er 99 kr/mnd uten bindingstid. Si opp når du vil." },
+      ],
+    },
+    riskReversal: "Liker du ikke demoen? Slett oss — vi følger ikke opp.",
+    scarcity: "Vi tar 2-3 prosjekter i måneden for å levere skikkelig.",
     define: {
       eyebrow: "Kort fortalt",
       line: "Iveo er et norsk far-og-sønn-team som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på én uke, fra 1 990 kr, med hosting og support inkludert.",
@@ -289,13 +321,13 @@ const dict: Record<Lang, Strings> = {
   en: {
     nav: { whatWeDo: "What we do", examples: "Examples", whoWeAre: "Who we are", contact: "Contact", openMenu: "Open menu" },
     hero: {
-      badge: "Taking on new projects",
+      badge: "Taking 2-3 new projects this month",
       titleLine1: "Websites that actually",
       titleLine2: "work for you.",
-      body: "A father-and-son team in Norway designing, coding and hosting modern websites for small and medium businesses. Delivered in one week, with support when you need it.",
-      primaryCta: "Send a message",
+      body: "A father-and-son team in Norway designing, coding and hosting modern websites. Describe your business in the form — and you'll have a demo in your inbox within 24 hours.",
+      primaryCta: "Get my demo",
       secondaryCta: "See what we offer",
-      deliveredBadge: "Delivered in 7 days",
+      deliveredBadge: "Live in 7 days",
     },
     what: {
       title: "How we can help.",
@@ -360,10 +392,10 @@ const dict: Record<Lang, Strings> = {
       messagePlaceholder:
         "Describe your business briefly — we'll send back a free mockup of what your site could look like.",
       promise: "Reply within 24 hours · always with a mockup · never spam.",
-      submit: "Send message",
+      submit: "Get my demo",
       sending: "Sending…",
       sentTitle: "Thanks for the message!",
-      sentBody: "We'll be in touch as soon as possible, usually within 24 hours.",
+      sentBody: "You'll get the demo in your inbox within 24 hours.",
       sentAgain: "Send another",
       errorGeneric: "Something went wrong.",
       errorCouldntSend: "Couldn't send.",
@@ -389,7 +421,27 @@ const dict: Record<Lang, Strings> = {
       writeAbout: "Write a bit about your experience.",
     },
     footer: "Made in Norway.",
-    mobileCta: "Get free mockup",
+    mobileCta: "Get my demo",
+    process: {
+      eyebrow: "How it works",
+      title: "Three steps. No commitment.",
+      steps: [
+        { step: "1", title: "Send the form", body: "Briefly describe your business. Takes two minutes." },
+        { step: "2", title: "Demo in your inbox", body: "Within 24 hours you'll have a demo of what your site could look like." },
+        { step: "3", title: "We build it", body: "If you like it, your site is live in 7 days. If not — just delete us." },
+      ],
+    },
+    trust: {
+      eyebrow: "No surprises",
+      title: "You own everything.",
+      items: [
+        { title: "You own the domain", body: "We never put our name on the invoice. You buy and own the domain 100 %." },
+        { title: "You own the design and code", body: "If you ever switch providers, you take everything with you. No lock-in." },
+        { title: "No contracts", body: "Hosting is 99 NOK/mo, cancel anytime. No commitment." },
+      ],
+    },
+    riskReversal: "Don't like the demo? Just delete us — we won't follow up.",
+    scarcity: "We take 2-3 projects a month to deliver properly.",
     define: {
       eyebrow: "In short",
       line: "Iveo is a Norwegian father-and-son team that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in one week, from 1,990 NOK, with hosting and support included.",

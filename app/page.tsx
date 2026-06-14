@@ -180,6 +180,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Process — 3 steps to remove "what happens next" friction */}
+      <section className="relative py-20 px-6 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.process.eyebrow}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900" style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              {t.process.title}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {t.process.steps.map((s, i) => (
+              <div key={s.step} className="relative bg-white rounded-2xl p-6 border border-slate-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm">
+                    {s.step}
+                  </div>
+                  <h3 className="font-bold text-slate-900">{s.title}</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
+                {i < t.process.steps.length - 1 && (
+                  <svg className="hidden md:block absolute -right-3 top-10 text-slate-300 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* What we do */}
       <section id="hva-vi-gjor" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
@@ -300,11 +330,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust — "Du eier alt" */}
+      <section className="relative py-20 px-6 bg-slate-50/60 border-y border-slate-200/60">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.trust.eyebrow}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900" style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              {t.trust.title}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {t.trust.items.map((item) => (
+              <div key={item.title} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Who we are — narrative, not card */}
       <section id="hvem-vi-er" className="relative py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-3">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex -space-x-2">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center text-sm font-bold border-2 border-white shadow-sm">SB</div>
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-500 to-emerald-500 text-white flex items-center justify-center text-sm font-bold border-2 border-white shadow-sm">TB</div>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900 leading-tight">Sondre &amp; Tony Bakkejord</p>
+                  <p className="text-xs text-slate-500">Far og sønn · Iveo</p>
+                </div>
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6" style={{ letterSpacing: "-0.025em", lineHeight: 1.05 }}>
                 {t.who.title1}
                 <br />
