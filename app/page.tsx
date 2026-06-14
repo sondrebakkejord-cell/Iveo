@@ -330,31 +330,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust — "Du eier alt" */}
-      <section className="relative py-20 px-6 bg-slate-50/60 border-y border-slate-200/60">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">{t.trust.eyebrow}</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900" style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-              {t.trust.title}
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {t.trust.items.map((item) => (
-              <div key={item.title} className="bg-white rounded-2xl p-6 border border-slate-200">
-                <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Who we are — narrative, not card */}
       <section id="hvem-vi-er" className="relative py-24 px-6">
         <div className="max-w-4xl mx-auto">
