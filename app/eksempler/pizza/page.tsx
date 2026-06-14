@@ -5,8 +5,8 @@ import BreadcrumbSchema from "../Breadcrumb";
 export const metadata: Metadata = {
   title: "Bakkejord Pizza — Eksempel på restaurant-nettside",
   description:
-    "Eksempel på en moderne nettside for italiensk restaurant — med meny, historien bak og online-bestilling. Bygget av Iveo som mockup.",
-  keywords: ["nettside restaurant", "nettside pizzeria", "mockup restaurant", "lage nettside restaurant"],
+    "Eksempel på en moderne nettside for italiensk restaurant — med meny, historien bak og online-bestilling. Bygget av Iveo som demo.",
+  keywords: ["nettside restaurant", "nettside pizzeria", "demo restaurant", "lage nettside restaurant"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/pizza" },
   openGraph: { title: "Bakkejord Pizza — Eksempel | Iveo", description: "Eksempel på restaurant-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/pizza", type: "website" },
 };

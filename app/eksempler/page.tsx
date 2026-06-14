@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Fem eksempler på nettsider Iveo kan bygge for små og mellomstore norske bedrifter — restaurant, rørlegger, snekker, tannlege og kafé. Klikk for å se hver side.",
   keywords: [
     "eksempel nettside",
-    "mockup nettside",
+    "demo nettside",
     "lage nettside bedrift",
     "nettside restaurant",
     "nettside frisør",

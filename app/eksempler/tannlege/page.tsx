@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Tannlege Bakkejord — Eksempel på tannlege-nettside",
   description:
     "Eksempel på nettside for privat tannklinikk — med symptom-finner, team og booking. Bygget av Iveo.",
-  keywords: ["nettside tannlege", "tannklinikk Norge", "mockup tannlege", "lage nettside tannlege"],
+  keywords: ["nettside tannlege", "tannklinikk Norge", "demo tannlege", "lage nettside tannlege"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/tannlege" },
   openGraph: { title: "Tannlege Bakkejord — Eksempel | Iveo", description: "Eksempel på tannlege-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/tannlege", type: "website" },
 };

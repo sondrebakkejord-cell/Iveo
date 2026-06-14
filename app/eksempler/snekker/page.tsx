@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Bakkejord Snekker — Eksempel på snekker-nettside",
   description:
     "Slik kan en snekker-nettside se ut — med portefølje, materialer og prisindikator. Eksempel laget av Iveo.",
-  keywords: ["nettside snekker", "snekker Norge", "mockup snekker", "lage nettside snekker"],
+  keywords: ["nettside snekker", "snekker Norge", "demo snekker", "lage nettside snekker"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/snekker" },
   openGraph: { title: "Bakkejord Snekker — Eksempel | Iveo", description: "Eksempel på snekker-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/snekker", type: "website" },
 };

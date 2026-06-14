@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Bakkejord Kafé — Eksempel på kafé-nettside",
   description:
     "Slik kan en lokal kafé-nettside se ut — meny, leverandører og åpningstider. Eksempel laget av Iveo.",
-  keywords: ["nettside kafé", "kafé Norge", "mockup kafé", "lage nettside kafé"],
+  keywords: ["nettside kafé", "kafé Norge", "demo kafé", "lage nettside kafé"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/kafe" },
   openGraph: { title: "Bakkejord Kafé — Eksempel | Iveo", description: "Eksempel på kafé-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/kafe", type: "website" },
 };

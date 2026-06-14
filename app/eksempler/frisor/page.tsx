@@ -5,8 +5,8 @@ import BreadcrumbSchema from "../Breadcrumb";
 export const metadata: Metadata = {
   title: "Bakkejord Hair Studio — Eksempel på frisør-nettside",
   description:
-    "Premium frisør-nettside som mockup — bygget av Iveo. Kan tilpasses din salong.",
-  keywords: ["nettside frisør", "frisør Norge", "mockup frisør", "lage nettside frisør", "frisørsalong nettside"],
+    "Premium frisør-nettside som demo — bygget av Iveo. Kan tilpasses din salong.",
+  keywords: ["nettside frisør", "frisør Norge", "demo frisør", "lage nettside frisør", "frisørsalong nettside"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/frisor" },
   openGraph: { title: "Bakkejord Hair Studio — Eksempel | Iveo", description: "Eksempel på frisør-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/frisor", type: "website" },
 };

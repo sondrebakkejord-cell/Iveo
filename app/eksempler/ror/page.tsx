@@ -5,8 +5,8 @@ import BreadcrumbSchema from "../Breadcrumb";
 export const metadata: Metadata = {
   title: "Bakkejord Rør — Eksempel på rørlegger-nettside",
   description:
-    "Eksempel på nettside for rørlegger — med tjenester, kontakt og vakttid. Mockup laget av Iveo.",
-  keywords: ["nettside rørlegger", "rørlegger Norge", "mockup rørlegger", "lage nettside rørlegger"],
+    "Eksempel på nettside for rørlegger — med tjenester, kontakt og vakttid. Demo laget av Iveo.",
+  keywords: ["nettside rørlegger", "rørlegger Norge", "demo rørlegger", "lage nettside rørlegger"],
   alternates: { canonical: "https://iveo-nine.vercel.app/eksempler/ror" },
   openGraph: { title: "Bakkejord Rør — Eksempel | Iveo", description: "Eksempel på rørlegger-nettside bygget av Iveo.", url: "https://iveo-nine.vercel.app/eksempler/ror", type: "website" },
 };
