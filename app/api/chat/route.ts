@@ -179,7 +179,7 @@ export async function POST(req: Request) {
     const trimmedMessages = messages.slice(-20);
 
     const response = await anthropic.messages.create({
-      model: "claude-sonnet-4-5",
+      model: "claude-haiku-4-5",
       max_tokens: 600,
       // Prompt caching cuts cost ~90% on repeat conversations within 5 min
       system: [
@@ -218,7 +218,12 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply });
   } catch (error) {
-    console.error("Chat error:", error);
+    // Log full error details to Vercel logs for debugging
+    if (error instanceof Error) {
+      console.error("[CHAT ERROR]", error.message, error.stack);
+    } else {
+      console.error("[CHAT ERROR] Unknown error type:", error);
+    }
     return NextResponse.json(
       { reply: "Beklager, noe gikk galt på min side. Ring +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com." },
       { status: 500 }
