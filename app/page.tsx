@@ -4,6 +4,7 @@ import { useState } from "react";
 import { LogoFull } from "./Logo";
 import ContactForm from "./ContactForm";
 import ReviewForm from "./ReviewForm";
+import Chatbot from "./Chatbot";
 import { useT, LanguageToggle } from "./lang";
 
 export default function Home() {
@@ -513,6 +514,9 @@ export default function Home() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </a>
+
+      {/* AI chatbot — floating widget */}
+      <Chatbot />
     </div>
   );
 }

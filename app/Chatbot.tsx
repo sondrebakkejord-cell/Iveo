@@ -6,7 +6,7 @@ type Message = { role: "bot" | "user"; text: string };
 
 const WELCOME: Message = {
   role: "bot",
-  text: "Hei! 👋 Jeg er Iver, AI-assistenten til Iveo. Jeg kan svare på spørsmål om tjenestene våre, hjelpe deg booke møte, eller bare prate om hva slags nettside du drømmer om. Hva er på sinnet?",
+  text: "Hei! Jeg er Iver, AI-chatten på Iveo. Spør om priser, leveringstid, eller hva som er mulig for bedriften din.",
 };
 
 const QUICK_REPLIES = [
@@ -118,7 +118,7 @@ export default function Chatbot() {
           }}
         >
           <div className="text-sm font-medium">Snakk med Iver 💬</div>
-          <div className="text-xs text-gray-500 mt-0.5">AI-assistent · svarer 24/7</div>
+          <div className="text-xs text-gray-500 mt-0.5">AI-assistent · svarer på sekunder</div>
           <div className="absolute -bottom-2 right-6 w-4 h-4 glass border-r border-b border-white/60 rotate-45" />
         </div>
       )}
