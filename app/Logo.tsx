@@ -21,8 +21,8 @@ export function LogoFull({ size = 36 }: { size?: number }) {
     <div className="flex items-center gap-2.5">
       <LogoMark size={size} />
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-extrabold tracking-tight text-slate-900">iveo</span>
-        <span className="text-[8px] font-semibold tracking-[0.28em] text-slate-500 mt-0.5">N · O · R · W · A · Y</span>
+        <span className="text-xl font-extrabold tracking-tight" style={{ color: "var(--ink)" }}>iveo</span>
+        <span className="text-[8px] font-semibold tracking-[0.28em] mt-0.5" style={{ color: "var(--ink-mute)" }}>N · O · R · W · A · Y</span>
       </div>
     </div>
   );

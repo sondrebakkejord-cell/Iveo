@@ -551,35 +551,24 @@ export function useT() {
 
 export function LanguageToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useT();
-  const base =
-    "px-2.5 py-1 rounded-full text-xs font-semibold transition-colors";
-  const active = "bg-white text-slate-900 shadow-sm";
-  const inactive = "text-slate-500 hover:text-slate-800";
+  const base = "px-2.5 py-1 rounded-full text-[11px] tracking-[0.1em] font-medium transition-colors";
   return (
     <div
       role="group"
       aria-label={lang === "no" ? "Språkvalg" : "Language"}
-      className={`inline-flex items-center gap-1.5 p-1 rounded-full bg-slate-100 border border-slate-200 ${className}`}
+      className={`inline-flex items-center gap-1 p-1 rounded-full border ${className}`}
+      style={{ background: "var(--surface-2)", borderColor: "var(--border)" }}
     >
-      <svg
-        className="w-3.5 h-3.5 ml-1.5 text-slate-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 010 18M12 3a14 14 0 000 18"
-        />
-      </svg>
       <button
         type="button"
         onClick={() => setLang("no")}
         aria-pressed={lang === "no"}
-        className={`${base} ${lang === "no" ? active : inactive}`}
+        className={base}
+        style={
+          lang === "no"
+            ? { background: "var(--accent)", color: "var(--background)" }
+            : { color: "var(--ink-soft)", background: "transparent" }
+        }
       >
         NO
       </button>
@@ -587,7 +576,12 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         type="button"
         onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
-        className={`${base} ${lang === "en" ? active : inactive}`}
+        className={base}
+        style={
+          lang === "en"
+            ? { background: "var(--accent)", color: "var(--background)" }
+            : { color: "var(--ink-soft)", background: "transparent" }
+        }
       >
         EN
       </button>

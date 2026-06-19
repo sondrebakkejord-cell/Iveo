@@ -4,6 +4,8 @@ import { useState } from "react";
 import ContactForm from "./ContactForm";
 import Chatbot from "./Chatbot";
 import ParticleHero from "./components/ParticleHero";
+import { LogoFull } from "./Logo";
+import { LanguageToggle } from "./lang";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,34 +14,40 @@ export default function Home() {
     <div className="relative min-h-screen" style={{ background: "var(--background)" }}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-dark border-b" style={{ borderColor: "var(--border)" }}>
-        <div className="max-w-6xl mx-auto px-7 py-4 flex items-center justify-between">
-          <a href="#" className="text-[15px] font-medium tracking-[0.12em]" style={{ color: "var(--ink)" }}>
-            IVEO
+        <div className="max-w-6xl mx-auto px-7 py-3.5 flex items-center justify-between gap-4">
+          <a href="#" className="flex items-center hover:opacity-90 transition-opacity">
+            <LogoFull size={34} />
           </a>
           <div className="hidden md:flex items-center gap-7 text-[11px] tracking-[0.15em]" style={{ color: "var(--ink-soft)" }}>
             <a href="#om-oss" className="hover:text-[var(--accent)] transition-colors">OM OSS</a>
             <a href="#tjenester" className="hover:text-[var(--accent)] transition-colors">TJENESTER</a>
             <a href="#kontakt" className="hover:text-[var(--accent)] transition-colors">KONTAKT</a>
           </div>
-          <a
-            href="#kontakt"
-            className="hidden md:inline-flex text-[11px] tracking-[0.1em] px-3 py-1.5 rounded-full border transition-colors"
-            style={{ color: "var(--accent)", borderColor: "var(--border-strong)" }}
-          >
-            BOOK
-          </a>
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Meny"
-            aria-expanded={menuOpen}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 w-full transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} style={{ background: "var(--ink)" }} />
-              <span className={`h-0.5 w-full transition-opacity ${menuOpen ? "opacity-0" : ""}`} style={{ background: "var(--ink)" }} />
-              <span className={`h-0.5 w-full transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} style={{ background: "var(--ink)" }} />
-            </div>
-          </button>
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle />
+            <a
+              href="#kontakt"
+              className="inline-flex text-[11px] tracking-[0.1em] px-3 py-1.5 rounded-full border transition-colors"
+              style={{ color: "var(--accent)", borderColor: "var(--border-strong)" }}
+            >
+              BOOK
+            </a>
+          </div>
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              className="p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Meny"
+              aria-expanded={menuOpen}
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 w-full transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} style={{ background: "var(--ink)" }} />
+                <span className={`h-0.5 w-full transition-opacity ${menuOpen ? "opacity-0" : ""}`} style={{ background: "var(--ink)" }} />
+                <span className={`h-0.5 w-full transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} style={{ background: "var(--ink)" }} />
+              </div>
+            </button>
+          </div>
         </div>
         {menuOpen && (
           <div className="md:hidden glass-dark border-t px-7 py-5 flex flex-col gap-4 text-[12px] tracking-[0.15em]" style={{ borderColor: "var(--border)", color: "var(--ink-soft)" }}>
