@@ -187,7 +187,7 @@ export async function POST(req: Request) {
     const trimmedMessages = messages.slice(-20);
 
     const response = await anthropic.messages.create({
-      model: "claude-haiku-4-5",
+      model: "claude-sonnet-4-6",
       max_tokens: 600,
       // Prompt caching cuts cost ~90% on repeat conversations within 5 min
       system: [
