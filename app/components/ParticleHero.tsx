@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-// Light variant: indigo on near-white, normal blending
-const ACCENT = 0x4f46e5;
-const STAR = 0x8b8bdc;
+// Light variant: deep indigo on near-white for strong contrast
+const ACCENT = 0x1e1b4b;
+const STAR = 0xa5a3d8;
 
 const RECTS = [
   { x: 0, y: 0.85, w: 2.6, h: 0.14, weight: 0.6 },
@@ -85,7 +85,7 @@ export default function ParticleHero() {
       }
       const g = new THREE.BufferGeometry();
       g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      scene.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 0.01, color: 0x9fd8e3, transparent: true, opacity: 0.28, blending: THREE.NormalBlending })));
+      scene.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 0.012, color: STAR, transparent: true, opacity: 0.5, blending: THREE.NormalBlending })));
     }
 
     const formGroup = new THREE.Group();
@@ -117,7 +117,7 @@ export default function ParticleHero() {
     }
     const geom = new THREE.BufferGeometry();
     geom.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    const pointsMat = new THREE.PointsMaterial({ size: 0.012, color: ACCENT, transparent: true, opacity: 0.7, blending: THREE.NormalBlending, depthWrite: false });
+    const pointsMat = new THREE.PointsMaterial({ size: 0.018, color: ACCENT, transparent: true, opacity: 0.92, blending: THREE.NormalBlending, depthWrite: false });
     swayGroup.add(new THREE.Points(geom, pointsMat));
 
     const WAVE_LINES = 42, PTS_PER_LINE = 80;
@@ -126,7 +126,7 @@ export default function ParticleHero() {
       const pos = new Float32Array(PTS_PER_LINE * 3);
       const g = new THREE.BufferGeometry();
       g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      const mat = new THREE.LineBasicMaterial({ color: ACCENT, transparent: true, opacity: 0.08 + Math.random() * 0.18, blending: THREE.NormalBlending });
+      const mat = new THREE.LineBasicMaterial({ color: ACCENT, transparent: true, opacity: 0.25 + Math.random() * 0.30, blending: THREE.NormalBlending });
       formGroup.add(new THREE.Line(g, mat));
       waveLines.push({ geom: g, baseY: -1 + (i / WAVE_LINES) * 2, phase: Math.random() * Math.PI * 2, speed: 0.4 + Math.random() * 0.3 });
     }
@@ -140,7 +140,7 @@ export default function ParticleHero() {
     }
     const dustG = new THREE.BufferGeometry();
     dustG.setAttribute("position", new THREE.BufferAttribute(dustPos, 3));
-    formGroup.add(new THREE.Points(dustG, new THREE.PointsMaterial({ size: 0.008, color: ACCENT, transparent: true, opacity: 0.4, blending: THREE.NormalBlending, depthWrite: false })));
+    formGroup.add(new THREE.Points(dustG, new THREE.PointsMaterial({ size: 0.012, color: ACCENT, transparent: true, opacity: 0.7, blending: THREE.NormalBlending, depthWrite: false })));
 
     let mx = 0, my = 0, t = 0;
     function onMove(e: MouseEvent) {
