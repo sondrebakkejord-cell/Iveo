@@ -142,12 +142,12 @@ export default function Chatbot() {
         )}
         {!open && unread > 0 && (
           <span className="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full border-2 text-xs font-bold flex items-center justify-center animate-pulse"
-                style={{ background: "var(--accent)", color: "var(--background)", borderColor: "var(--background)" }}>
+                style={{ background: "var(--accent)", color: "var(--background)", borderColor: "var(--surface)" }}>
             {unread}
           </span>
         )}
         {!open && unread === 0 && (
-          <span className="absolute top-0 right-0 w-3 h-3 rounded-full border-2 animate-pulse" style={{ background: "var(--accent)", borderColor: "var(--background)" }} />
+          <span className="absolute top-0 right-0 w-3 h-3 rounded-full border-2 animate-pulse" style={{ background: "var(--accent)", borderColor: "var(--surface)" }} />
         )}
       </button>
 

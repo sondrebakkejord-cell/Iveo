@@ -6,17 +6,19 @@ html {
 }
 
 :root {
-  --background: #02060e;
-  --foreground: #e8f4f7;
-  --ink: #e8f4f7;
-  --ink-soft: rgba(232, 244, 247, 0.65);
-  --ink-mute: rgba(232, 244, 247, 0.6);
-  --surface: #07101a;
-  --surface-2: #0a141f;
-  --border: rgba(106, 217, 229, 0.12);
-  --border-strong: rgba(106, 217, 229, 0.28);
-  --accent: #6ad9e5;
-  --accent-soft: rgba(106, 217, 229, 0.08);
+  /* Light editorial — matcher DESIGN.md canon */
+  --background: #fafbff;
+  --foreground: #0a0e1a;
+  --ink: #0a0e1a;
+  --ink-soft: rgba(10, 14, 26, 0.62);
+  --ink-mute: rgba(10, 14, 26, 0.45);
+  --surface: #ffffff;
+  --surface-2: #f3f4fb;
+  --border: rgba(15, 23, 42, 0.10);
+  --border-strong: rgba(79, 70, 229, 0.25);
+  --accent: #4f46e5;
+  --accent-2: #06b6d4;
+  --accent-soft: rgba(79, 70, 229, 0.06);
 }
 
 @theme inline {
@@ -45,7 +47,7 @@ p {
 
 .serif {
   font-family: var(--font-serif);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 
@@ -60,7 +62,7 @@ p {
 }
 
 .glass-dark {
-  background: rgba(2, 6, 14, 0.72);
+  background: rgba(250, 251, 255, 0.78);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
@@ -87,5 +89,5 @@ p {
 }
 
 input, textarea, select {
-  color-scheme: dark;
+  color-scheme: light;
 }

@@ -77,7 +77,7 @@ export default function Home() {
         <div className="relative h-[560px] overflow-hidden">
           <ParticleHero />
           <div className="absolute left-7 top-[110px] right-7 pointer-events-none">
-            <div className="text-[11px] tracking-[0.25em] mb-4 animate-fade-up" style={{ color: "rgba(106,217,229,0.85)" }}>
+            <div className="text-[11px] tracking-[0.25em] mb-4 animate-fade-up" style={{ color: "var(--accent)" }}>
               {lang === "no" ? "LITEN NORSK FAMILIEBEDRIFT" : "SMALL NORWEGIAN FAMILY BUSINESS"}
             </div>
             <h1
@@ -134,7 +134,7 @@ export default function Home() {
       {/* 01 Om oss */}
       <section id="om-oss" className="px-7 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-10 max-w-6xl mx-auto">
         <div>
-          <div className="text-[11px] tracking-[0.25em]" style={{ color: "rgba(106,217,229,0.85)" }}>01</div>
+          <div className="text-[11px] tracking-[0.25em]" style={{ color: "var(--accent)" }}>01</div>
           <div className="text-[11px] tracking-[0.2em] mt-2" style={{ color: "var(--ink-mute)" }}>{lang === "no" ? "OM OSS" : "ABOUT"}</div>
         </div>
         <div>
@@ -186,7 +186,7 @@ export default function Home() {
         style={{ borderColor: "var(--border)" }}
       >
         <div>
-          <div className="text-[11px] tracking-[0.25em]" style={{ color: "rgba(106,217,229,0.85)" }}>02</div>
+          <div className="text-[11px] tracking-[0.25em]" style={{ color: "var(--accent)" }}>02</div>
           <div className="text-[11px] tracking-[0.2em] mt-2" style={{ color: "var(--ink-mute)" }}>{lang === "no" ? "TJENESTER" : "SERVICES"}</div>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
@@ -218,7 +218,7 @@ export default function Home() {
         style={{ borderColor: "var(--border)" }}
       >
         <div>
-          <div className="text-[11px] tracking-[0.25em]" style={{ color: "rgba(106,217,229,0.85)" }}>03</div>
+          <div className="text-[11px] tracking-[0.25em]" style={{ color: "var(--accent)" }}>03</div>
           <div className="text-[11px] tracking-[0.2em] mt-2" style={{ color: "var(--ink-mute)" }}>{lang === "no" ? "KONTAKT" : "CONTACT"}</div>
 
           <p className="mt-6 text-[14px] leading-[1.6]" style={{ color: "var(--ink-soft)" }}>
