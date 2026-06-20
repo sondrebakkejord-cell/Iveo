@@ -55,6 +55,8 @@ export default function ParticleHero() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     const scene = new THREE.Scene();
@@ -151,6 +153,28 @@ export default function ParticleHero() {
     let frame = 0;
     let stopped = false;
 
+    if (reduced) {
+      // Render once in formed state, skip animation loop
+      t = REVEAL + 2;
+      const pa = geom.attributes.position.array as Float32Array;
+      for (let i = 0; i < N; i++) {
+        pa[i * 3] = targets[i * 3];
+        pa[i * 3 + 1] = targets[i * 3 + 1];
+        pa[i * 3 + 2] = targets[i * 3 + 2];
+      }
+      geom.attributes.position.needsUpdate = true;
+      renderer.render(scene, cam);
+      return () => {
+        window.removeEventListener("resize", resize);
+        canvas.removeEventListener("mousemove", onMove);
+        renderer.dispose();
+        geom.dispose();
+        pointsMat.dispose();
+        dustG.dispose();
+        waveLines.forEach((wl) => wl.geom.dispose());
+      };
+    }
+
     function loop() {
       if (stopped) return;
       t += 0.016;
@@ -228,5 +252,5 @@ export default function ParticleHero() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block" aria-hidden="true" role="presentation" />;
 }

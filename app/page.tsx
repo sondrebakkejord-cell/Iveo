@@ -97,8 +97,8 @@ export default function Home() {
               )}
             </h1>
             <p
-              className="mt-4 text-[13px] leading-[1.6] animate-fade-up"
-              style={{ color: "var(--ink-soft)", maxWidth: "320px", animationDelay: "0.2s" }}
+              className="mt-4 text-[14px] leading-[1.65] animate-fade-up"
+              style={{ color: "var(--ink-soft)", maxWidth: "48ch", animationDelay: "0.2s" }}
             >
               {lang === "no"
                 ? "Skreddersøm for bedrifter. Du ser hva du får før du sier ja."
@@ -125,8 +125,8 @@ export default function Home() {
               )}
             </span>
           </div>
-          <span className="hidden md:inline text-[10px] tracking-[0.2em]" style={{ color: "var(--ink-soft)" }}>
-            {lang === "no" ? "INGEN BINDING" : "NO COMMITMENT"}
+          <span className="hidden md:inline text-[12px]" style={{ color: "var(--ink-soft)", fontStyle: "italic", fontFamily: "var(--font-serif)" }}>
+            {lang === "no" ? "Ingen binding." : "No commitment."}
           </span>
         </div>
       </section>
@@ -165,15 +165,15 @@ export default function Home() {
           <dl className="mt-8 grid grid-cols-3 gap-4 pt-6 border-t" style={{ borderColor: "var(--border)" }}>
             <div>
               <dt className="text-[10px] tracking-[0.2em] mb-1" style={{ color: "var(--ink-mute)" }}>{t.who.established}</dt>
-              <dd className="serif text-[22px]" style={{ color: "var(--ink)" }}>2026</dd>
+              <dd className="serif text-[22px]" style={{ color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>2026</dd>
             </div>
             <div>
               <dt className="text-[10px] tracking-[0.2em] mb-1" style={{ color: "var(--ink-mute)" }}>{t.who.location}</dt>
-              <dd className="serif text-[22px]" style={{ color: "var(--ink)" }}>{t.who.locationValue}</dd>
+              <dd className="serif text-[22px]" style={{ color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>{t.who.locationValue}</dd>
             </div>
             <div>
               <dt className="text-[10px] tracking-[0.2em] mb-1" style={{ color: "var(--ink-mute)" }}>{t.who.deliveryTime}</dt>
-              <dd className="serif text-[22px]" style={{ color: "var(--ink)" }}>{t.who.deliveryValue}</dd>
+              <dd className="serif text-[22px]" style={{ color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>{t.who.deliveryValue}</dd>
             </div>
           </dl>
         </div>
@@ -191,14 +191,14 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {(lang === "no" ? [
-            { name: "Strategi", body: "Vi finner ut hva som faktisk konverterer for din bransje." },
+            { name: "Strategi", body: "Vi finner ut hva siden faktisk skal gjøre for deg." },
             { name: "Design", body: "Skreddersydd visuell identitet. Ingen maler, ingen tema." },
-            { name: "Utvikling", body: "Rask, robust kode. SEO-klar fra dag én." },
+            { name: "Utvikling", body: "Rask, robust kode. Bygd så Google finner deg." },
             { name: "Lansering", body: "Vi tar oss av domene, hosting og overlevering." },
           ] : [
-            { name: "Strategy", body: "We figure out what actually converts for your industry." },
+            { name: "Strategy", body: "We figure out what the site should actually do for you." },
             { name: "Design", body: "Custom visual identity. No templates, no themes." },
-            { name: "Development", body: "Fast, robust code. SEO-ready from day one." },
+            { name: "Development", body: "Fast, robust code. Built so Google finds you." },
             { name: "Launch", body: "We handle domain, hosting, and delivery." },
           ]).map((s) => (
             <div key={s.name}>
@@ -259,11 +259,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="px-7 py-6 border-t flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] tracking-[0.2em]"
-        style={{ borderColor: "var(--border)", color: "var(--ink-mute)" }}
+        className="px-7 py-7 border-t flex flex-col md:flex-row items-center justify-between gap-3 text-[12px]"
+        style={{ borderColor: "var(--border)", color: "var(--ink-soft)" }}
       >
-        <span>© IVEO {new Date().getFullYear()} — {lang === "no" ? "NORGE" : "NORWAY"}</span>
-        <span>{EMAIL.toUpperCase()} · {PHONE_HUMAN}</span>
+        <span>© Iveo {new Date().getFullYear()} — {lang === "no" ? "Norge" : "Norway"}</span>
+        <span>{EMAIL} · {PHONE_HUMAN}</span>
       </footer>
 
       {/* Mobile sticky CTA */}
