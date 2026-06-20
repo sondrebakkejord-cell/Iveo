@@ -168,7 +168,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="nb"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <head>

@@ -1,24 +1,55 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useT, type Lang } from "./lang";
 
 type Message = { role: "bot" | "user"; text: string };
 
-const WELCOME: Message = {
-  role: "bot",
-  text: "Hei! Jeg er Iver, AI-chatten på Iveo. Spør om priser, leveringstid, eller hva som er mulig for bedriften din.",
+const STRINGS: Record<Lang, {
+  welcome: string;
+  quickReplies: string[];
+  bubbleTitle: string;
+  bubbleSub: string;
+  online: string;
+  newChat: string;
+  newChatTitle: string;
+  inputPlaceholder: string;
+  poweredBy: string;
+  errorFallback: string;
+}> = {
+  no: {
+    welcome: "Hei! Jeg er Iver, AI-chatten på Iveo. Spør om priser, leveringstid, eller hva som er mulig for bedriften din.",
+    quickReplies: ["Hva koster en nettside?", "Hvor lang tid tar det?", "Jeg vil booke et møte", "Hva er inkludert?"],
+    bubbleTitle: "Snakk med Iver",
+    bubbleSub: "AI-assistent · svarer på sekunder",
+    online: "Online · svarer på sekunder",
+    newChat: "Ny",
+    newChatTitle: "Start ny samtale",
+    inputPlaceholder: "Skriv en melding...",
+    poweredBy: "Drevet av AI · Svar kan inneholde feil",
+    errorFallback: "Beklager, noe gikk galt. Ring +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com.",
+  },
+  en: {
+    welcome: "Hi! I'm Iver, Iveo's AI chat. Ask about pricing, delivery time, or what's possible for your business.",
+    quickReplies: ["What does a website cost?", "How long does it take?", "I'd like to book a call", "What's included?"],
+    bubbleTitle: "Chat with Iver",
+    bubbleSub: "AI assistant · replies in seconds",
+    online: "Online · replies in seconds",
+    newChat: "New",
+    newChatTitle: "Start a new chat",
+    inputPlaceholder: "Type a message...",
+    poweredBy: "Powered by AI · Replies may contain errors",
+    errorFallback: "Sorry, something went wrong. Call +47 484 72 586 or email sondrebakkejord@gmail.com.",
+  },
 };
-
-const QUICK_REPLIES = [
-  "Hva koster en nettside?",
-  "Hvor lang tid tar det?",
-  "Jeg vil booke et møte",
-  "Hva er inkludert?",
-];
 
 const STORAGE_KEY = "iveo-chat-history";
 
 export default function Chatbot() {
+  const { lang } = useT();
+  const s = STRINGS[lang];
+  const WELCOME: Message = { role: "bot", text: s.welcome };
+
   const [open, setOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [input, setInput] = useState("");
@@ -27,6 +58,11 @@ export default function Chatbot() {
   const [unread, setUnread] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // If user switches language and chat hasn't started, refresh welcome
+  useEffect(() => {
+    setMessages((m) => (m.length === 1 && m[0].role === "bot" ? [{ role: "bot", text: s.welcome }] : m));
+  }, [lang, s.welcome]);
 
   // Load history from localStorage on mount
   useEffect(() => {
@@ -83,16 +119,13 @@ export default function Chatbot() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newMessages }),
+        body: JSON.stringify({ messages: newMessages, lang }),
       });
       const data = await res.json();
       setMessages((m) => [...m, { role: "bot", text: data.reply }]);
       if (!open) setUnread((u) => u + 1);
     } catch {
-      setMessages((m) => [
-        ...m,
-        { role: "bot", text: "Beklager, noe gikk galt 😕 Ring oss på +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com." },
-      ]);
+      setMessages((m) => [...m, { role: "bot", text: s.errorFallback }]);
     } finally {
       setLoading(false);
     }
@@ -118,8 +151,8 @@ export default function Chatbot() {
             setShowBubble(false);
           }}
         >
-          <div className="text-sm font-medium" style={{ color: "var(--ink)" }}>Snakk med Iver</div>
-          <div className="text-xs mt-0.5" style={{ color: "var(--ink-mute)" }}>AI-assistent · svarer på sekunder</div>
+          <div className="text-sm font-medium" style={{ color: "var(--ink)" }}>{s.bubbleTitle}</div>
+          <div className="text-xs mt-0.5" style={{ color: "var(--ink-mute)" }}>{s.bubbleSub}</div>
           <div className="absolute -bottom-2 right-6 w-4 h-4 rotate-45 border-r border-b" style={{ background: "var(--surface)", borderColor: "var(--border-strong)" }} />
         </div>
       )}
@@ -167,7 +200,7 @@ export default function Chatbot() {
                   <div className="font-semibold text-base" style={{ color: "var(--ink)" }}>Iver</div>
                   <div className="text-xs flex items-center gap-1.5" style={{ color: "var(--ink-soft)" }}>
                     <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--accent)" }} />
-                    Online · svarer på sekunder
+                    {s.online}
                   </div>
                 </div>
               </div>
@@ -175,9 +208,9 @@ export default function Chatbot() {
                 onClick={reset}
                 className="text-xs underline opacity-70 hover:opacity-100"
                 style={{ color: "var(--ink-soft)" }}
-                title="Start ny samtale"
+                title={s.newChatTitle}
               >
-                Ny
+                {s.newChat}
               </button>
             </div>
           </div>
@@ -213,7 +246,7 @@ export default function Chatbot() {
             {/* Quick reply chips */}
             {showQuickReplies && (
               <div className="flex flex-wrap gap-2 pt-2">
-                {QUICK_REPLIES.map((q) => (
+                {s.quickReplies.map((q) => (
                   <button
                     key={q}
                     onClick={() => send(q)}
@@ -238,7 +271,7 @@ export default function Chatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && send(input)}
-                placeholder="Skriv en melding..."
+                placeholder={s.inputPlaceholder}
                 disabled={loading}
                 className="flex-1 px-4 py-2.5 rounded-full text-sm focus:outline-none disabled:opacity-50 border"
                 style={{ background: "var(--surface-2)", borderColor: "var(--border)", color: "var(--ink)" }}
@@ -256,7 +289,7 @@ export default function Chatbot() {
               </button>
             </div>
             <div className="text-[10px] text-center mt-2" style={{ color: "var(--ink-mute)" }}>
-              Drevet av AI · Svar kan inneholde feil
+              {s.poweredBy}
             </div>
           </div>
         </div>
