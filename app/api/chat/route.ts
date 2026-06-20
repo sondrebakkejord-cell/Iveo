@@ -177,25 +177,33 @@ async function sendNotificationEmail(type: "LEAD" | "NOTIFY", info: string, mess
 
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    const { messages, lang } = await req.json();
+    const isEn = lang === "en";
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json({ reply: "Hei! Send meg en melding." });
+      return NextResponse.json({ reply: isEn ? "Hi! Send me a message." : "Hei! Send meg en melding." });
     }
 
     // Limit message history to last 20 messages
     const trimmedMessages = messages.slice(-20);
 
+    // Cached base prompt + small per-request language directive (kept short so cache still hits)
+    const languageDirective = isEn
+      ? "\n\n<language>Respond to the user in clear, natural English. Keep the same direct, plain tone — no marketing fluff. Preserve all facts, pricing, and the LEAD/NOTIFY tag format exactly as defined above.</language>"
+      : "";
+
     const response = await anthropic.messages.create({
       model: "claude-sonnet-4-6",
       max_tokens: 600,
-      // Prompt caching cuts cost ~90% on repeat conversations within 5 min
       system: [
         {
           type: "text",
           text: SYSTEM_PROMPT,
           cache_control: { type: "ephemeral" },
         },
+        ...(languageDirective
+          ? [{ type: "text" as const, text: languageDirective }]
+          : []),
       ],
       messages: trimmedMessages.map((m: Message) => ({
         role: m.role === "bot" ? "assistant" : "user",
@@ -233,7 +241,7 @@ export async function POST(req: Request) {
       console.error("[CHAT ERROR] Unknown error type:", error);
     }
     return NextResponse.json(
-      { reply: "Beklager, noe gikk galt på min side. Ring +47 484 72 586 eller send e-post til sondrebakkejord@gmail.com." },
+      { reply: "Sorry, something went wrong on my end. Call +47 484 72 586 or email sondrebakkejord@gmail.com." },
       { status: 500 }
     );
   }

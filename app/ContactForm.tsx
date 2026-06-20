@@ -44,17 +44,18 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="bg-white rounded-2xl p-8 border border-slate-200 text-center">
-        <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center mb-4">
+      <div className="rounded-2xl p-8 border text-center" style={{ background: "var(--surface)", borderColor: "var(--border-strong)" }}>
+        <div className="w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-4" style={{ background: "var(--accent-soft)", color: "var(--accent)" }}>
           <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">{t.contact.sentTitle}</h3>
-        <p className="text-slate-600 mb-6">{t.contact.sentBody}</p>
+        <h3 className="serif text-[26px] mb-2" style={{ color: "var(--ink)" }}>{t.contact.sentTitle}</h3>
+        <p className="mb-6 text-sm" style={{ color: "var(--ink-soft)" }}>{t.contact.sentBody}</p>
         <button
           onClick={() => setStatus("idle")}
-          className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+          className="text-sm font-semibold transition-colors"
+          style={{ color: "var(--accent)" }}
         >
           {t.contact.sentAgain}
         </button>
@@ -65,9 +66,11 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={submit}
-      className="bg-white rounded-2xl p-7 md:p-8 border border-slate-200 space-y-4"
+      className="rounded-2xl p-7 md:p-8 space-y-4 border"
+      style={{ background: "var(--surface)", borderColor: "var(--border)" }}
     >
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2">
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] tracking-[0.1em] border mb-2"
+           style={{ background: "var(--accent-soft)", color: "var(--accent)", borderColor: "var(--border-strong)" }}>
         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
         {t.contact.badge}
       </div>
@@ -88,8 +91,8 @@ export default function ContactForm() {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            {t.contact.name} <span className="text-red-500">*</span>
+          <label htmlFor="name" className="block text-[11px] tracking-[0.15em] mb-2" style={{ color: "var(--ink-soft)" }}>
+            {t.contact.name.toUpperCase()} <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="name"
@@ -98,12 +101,13 @@ export default function ContactForm() {
             value={form.name}
             onChange={update("name")}
             placeholder={t.contact.namePlaceholder}
-            className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
+            className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none transition-all border"
+            style={{ background: "var(--surface-2)", borderColor: "var(--border)", color: "var(--ink)" }}
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1.5">
-            {t.contact.emailLabel} <span className="text-red-500">*</span>
+          <label htmlFor="email" className="block text-[11px] tracking-[0.15em] mb-2" style={{ color: "var(--ink-soft)" }}>
+            {t.contact.emailLabel.toUpperCase()} <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="email"
@@ -112,14 +116,15 @@ export default function ContactForm() {
             value={form.email}
             onChange={update("email")}
             placeholder={t.contact.emailPlaceholder}
-            className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all"
+            className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none transition-all border"
+            style={{ background: "var(--surface-2)", borderColor: "var(--border)", color: "var(--ink)" }}
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-1.5">
-          {t.contact.message} <span className="text-red-500">*</span>
+        <label htmlFor="message" className="block text-[11px] tracking-[0.15em] mb-2" style={{ color: "var(--ink-soft)" }}>
+          {t.contact.message.toUpperCase()} <span style={{ color: "var(--accent)" }}>*</span>
         </label>
         <textarea
           id="message"
@@ -128,33 +133,35 @@ export default function ContactForm() {
           value={form.message}
           onChange={update("message")}
           placeholder={t.contact.messagePlaceholder}
-          className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 transition-all resize-y"
+          className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none transition-all resize-y border"
+          style={{ background: "var(--surface-2)", borderColor: "var(--border)", color: "var(--ink)" }}
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-600 bg-red-50 border border-red-200 px-4 py-3 rounded-lg">
+        <p className="text-sm px-4 py-3 rounded-lg border" style={{ background: "rgba(255,100,100,0.08)", borderColor: "rgba(255,100,100,0.3)", color: "#ff8a8a" }}>
           {error}
         </p>
       )}
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
-        <p className="text-xs text-slate-500 leading-relaxed">
+        <p className="text-xs leading-relaxed" style={{ color: "var(--ink-mute)" }}>
           {t.riskReversal}
         </p>
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[12px] tracking-[0.1em]"
+          style={{ background: "var(--accent)", color: "var(--background)" }}
         >
           {status === "sending" ? (
             <>
               <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" /></svg>
-              {t.contact.sending}
+              {t.contact.sending.toUpperCase()}
             </>
           ) : (
             <>
-              {t.contact.submit}
+              {t.contact.submit.toUpperCase()}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </>
           )}
