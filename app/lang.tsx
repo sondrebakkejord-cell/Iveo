@@ -131,10 +131,10 @@ const dict: Record<Lang, Strings> = {
       badge: "Tar 2-3 nye prosjekter denne måneden",
       titleLine1: "Nettsider som faktisk",
       titleLine2: "jobber for deg.",
-      body: "En liten familiebedrift som designer, koder og hoster moderne nettsider. Beskriv bedriften din i skjemaet — så har du en demo i innboksen innen 24 timer.",
+      body: "En liten familiebedrift som designer, koder og hoster moderne nettsider. Beskriv bedriften din i skjemaet — så har du en demo i innboksen innen 3 dager.",
       primaryCta: "Få demoen min",
       secondaryCta: "Se hva vi tilbyr",
-      deliveredBadge: "Ferdig på 7 dager",
+      deliveredBadge: "Ferdig på 3 dager",
     },
     what: {
       title: "Slik kan vi hjelpe deg.",
@@ -142,7 +142,7 @@ const dict: Record<Lang, Strings> = {
       availableNow: "Tilgjengelig nå",
       websiteTitle: "Nettsider og hosting",
       websiteBody:
-        "Skreddersydd nettside designet og kodet fra bunnen av. Vi leverer på en uke og tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne et kontrollpanel.",
+        "Skreddersydd nettside designet og kodet fra bunnen av. Vi leverer på rundt 3 dager og tar drift, oppdateringer og support etterpå. Du trenger aldri å åpne et kontrollpanel.",
       features: [
         "Custom design — ikke en mal",
         "SSL og daglig backup inkludert",
@@ -170,12 +170,12 @@ const dict: Record<Lang, Strings> = {
       location: "Lokasjon",
       locationValue: "Norge",
       deliveryTime: "Leveringstid",
-      deliveryValue: "Innen 1 uke",
+      deliveryValue: "Innen 3 dager",
     },
     book: {
       title1: "Få en gratis",
-      title2: "mockup.",
-      body: "Beskriv bedriften din kort, så svarer vi tilbake med en visuell skisse av hvordan nettsiden din kan se ut. Ingen forpliktelse.",
+      title2: "demo.",
+      body: "Beskriv bedriften din kort, så svarer vi tilbake med en demo-nettside. Ingen forpliktelse.",
       sendForm: "Send skjema",
       orCall: "Eller ring +47 484 72 586",
     },
@@ -184,7 +184,7 @@ const dict: Record<Lang, Strings> = {
       body: "Fyll ut skjemaet, eller ring direkte. Du får svar samme dag.",
       phone: "Telefon",
       email: "E-post",
-      badge: "Du får en gratis mockup tilbake",
+      badge: "Du får en gratis demo tilbake",
       name: "Navn",
       namePlaceholder: "Ola Nordmann",
       emailLabel: "E-post",
@@ -198,11 +198,11 @@ const dict: Record<Lang, Strings> = {
       message: "Fortell oss om prosjektet",
       messagePlaceholder:
         "Bransje, sted, og kort om hva du ønsker med nettsiden. F.eks. «Bakkejord pizza i Bodø — vil ha menyen, åpningstider og noen fine bilder på forsiden.»",
-      promise: "Svar innen 24 timer · alltid med mockup · aldri spam.",
+      promise: "Svar innen 3 dager · alltid med demo · aldri spam.",
       submit: "Få demoen min",
       sending: "Sender…",
       sentTitle: "Takk for meldingen!",
-      sentBody: "Du får demoen i innboksen innen 24 timer.",
+      sentBody: "Du får demoen i innboksen innen 3 dager.",
       sentAgain: "Send en til",
       errorGeneric: "Noe gikk galt.",
       errorCouldntSend: "Kunne ikke sende.",
@@ -234,8 +234,8 @@ const dict: Record<Lang, Strings> = {
       title: "Tre steg, ingen forpliktelse.",
       steps: [
         { step: "1", title: "Send skjema", body: "Beskriv bedriften din kort. Tar to minutter." },
-        { step: "2", title: "Demo i innboksen", body: "Innen 24 timer får du en demo av hvordan nettsiden din kan se ut." },
-        { step: "3", title: "Vi bygger", body: "Liker du det, har du en ferdig nettside live på 7 dager. Hvis ikke — bare slett oss." },
+        { step: "2", title: "Demo i innboksen", body: "Innen 3 dager får du en demo-nettside av hvordan siden din kan se ut." },
+        { step: "3", title: "Vi bygger", body: "Liker du det, har du en ferdig nettside live på rundt 3 dager. Hvis ikke — bare slett oss." },
       ],
     },
     trust: {
@@ -244,29 +244,29 @@ const dict: Record<Lang, Strings> = {
       items: [
         { title: "Du eier domenet", body: "Vi setter aldri navnet ditt på vår faktura. Du kjøper domenet selv og eier det 100 %." },
         { title: "Du eier designet og koden", body: "Vil du bytte leverandør senere, får du alt med deg. Ingen låst inn." },
-        { title: "Ingen kontrakter", body: "Hosting er 99 kr/mnd uten bindingstid. Si opp når du vil." },
+        { title: "Ingen kontrakter", body: "Hosting er 200 kr/mnd uten bindingstid. Si opp når du vil." },
       ],
     },
     riskReversal: "Liker du ikke demoen? Slett oss — vi følger ikke opp.",
     scarcity: "Vi tar 2-3 prosjekter i måneden for å levere skikkelig.",
     define: {
       eyebrow: "Kort fortalt",
-      line: "Iveo er en liten norsk familiebedrift som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på én uke, fra 1 990 kr, med hosting og support inkludert.",
+      line: "Iveo er en liten norsk familiebedrift som designer, koder og hoster moderne nettsider for små og mellomstore bedrifter. Vi leverer ferdig nettside på rundt 3 dager, fra 2 500 kr, med hosting og support inkludert.",
     },
     pricing: {
       eyebrow: "Priser",
       title: "Hva koster en nettside hos Iveo?",
-      body: "Vi setter pris etter prosjektets omfang. Her er utgangspunktet — vi avtaler eksakt pris etter at du har sett mockupen.",
+      body: "Vi setter pris etter prosjektets omfang. Her er utgangspunktet — vi avtaler eksakt pris etter at du har sett demoen.",
       plans: [
         {
           name: "Komplett nettside",
-          price: "Fra 1 990 kr",
+          price: "Fra 2 500 kr",
           unit: "engangs",
-          features: ["Skreddersydd design", "Levert på 7 dager", "SSL og daglig backup", "SEO-optimalisert"],
+          features: ["Skreddersydd design", "Levert på 3 dager", "SSL og daglig backup", "SEO-optimalisert"],
         },
         {
           name: "Hosting og småjusteringer",
-          price: "99 kr",
+          price: "200 kr",
           unit: "per måned",
           features: ["Fri hosting på rask server", "Daglig backup", "Småjusteringer inkludert", "Support på norsk"],
         },
@@ -277,7 +277,7 @@ const dict: Record<Lang, Strings> = {
           features: ["Ny seksjon eller side", "Nye funksjoner", "Redesign", "Du vet alltid prisen før vi starter"],
         },
       ],
-      note: "Vi lover aldri fast pris uten å se prosjektet. Be om en gratis mockup, så får du et eksakt tilbud.",
+      note: "Vi lover aldri fast pris uten å se prosjektet. Be om en gratis demo, så får du et eksakt tilbud.",
     },
     faq: {
       eyebrow: "Vanlige spørsmål",
@@ -285,15 +285,15 @@ const dict: Record<Lang, Strings> = {
       items: [
         {
           q: "Hva koster en nettside hos Iveo?",
-          a: "Komplett nettside starter på 1 990 kr engangs. Hosting med support koster 99 kr per måned. Eksakt pris settes etter at du har sett mockupen — vi lover aldri fast pris uten å se prosjektet.",
+          a: "Komplett nettside starter på 2 500 kr engangs. Hosting med support koster 200 kr per måned. Eksakt pris settes etter at du har sett demoen — vi lover aldri fast pris uten å se prosjektet.",
         },
         {
           q: "Hvor lang tid tar det å lage nettsiden?",
-          a: "Vi leverer komplett nettside på 7 dager fra du godkjenner mockupen. Mockupen sender vi vanligvis innen 24 timer etter at du har sendt skjema.",
+          a: "Demoen sender vi innen 3 dager. Godkjenner du den, er ferdig nettside klar på rundt 3 dager til.",
         },
         {
           q: "Hva er inkludert i hosting?",
-          a: "Hosting på rask server hos Vercel, SSL/HTTPS, daglig backup, småjusteringer og support på norsk — alt for 99 kr/mnd.",
+          a: "Hosting på rask server hos Vercel, SSL/HTTPS, daglig backup, småjusteringer og support på norsk — alt for 200 kr/mnd.",
         },
         {
           q: "Eier jeg domenet og innholdet?",
@@ -309,7 +309,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "Hva med AI-løsninger?",
-          a: "Vi lanserer AI-løsninger i 2026 — chatboter trent på din bedrift, AI-resepsjonister som svarer på telefon, og automatisering av rutineoppgaver. Eksisterende kunder får tilgang først.",
+          a: "AI-løsninger kommer snart — chatboter trent på din bedrift, AI-resepsjonister som svarer på telefon, og automatisering av rutineoppgaver. Eksisterende kunder får tilgang først.",
         },
         {
           q: "Hva skiller dere fra et webbyrå?",
@@ -324,10 +324,10 @@ const dict: Record<Lang, Strings> = {
       badge: "Taking 2-3 new projects this month",
       titleLine1: "Websites that actually",
       titleLine2: "work for you.",
-      body: "A small family business designing, coding and hosting modern websites. Describe your business in the form — and you'll have a demo in your inbox within 24 hours.",
+      body: "A small family business designing, coding and hosting modern websites. Describe your business in the form — and you'll have a demo in your inbox within 3 days.",
       primaryCta: "Get my demo",
       secondaryCta: "See what we offer",
-      deliveredBadge: "Live in 7 days",
+      deliveredBadge: "Live in 3 days",
     },
     what: {
       title: "How we can help.",
@@ -335,7 +335,7 @@ const dict: Record<Lang, Strings> = {
       availableNow: "Available now",
       websiteTitle: "Websites and hosting",
       websiteBody:
-        "Custom website designed and coded from scratch. We deliver in a week and handle operations, updates and support after. You never need to open a control panel.",
+        "Custom website designed and coded from scratch. We deliver in around 3 days and handle operations, updates and support after. You never need to open a control panel.",
       features: [
         "Custom design — not a template",
         "SSL and daily backups included",
@@ -363,12 +363,12 @@ const dict: Record<Lang, Strings> = {
       location: "Location",
       locationValue: "Norway",
       deliveryTime: "Delivery time",
-      deliveryValue: "Within 1 week",
+      deliveryValue: "Within 3 days",
     },
     book: {
       title1: "Get a free",
-      title2: "mockup.",
-      body: "Describe your business briefly, and we'll send back a visual sketch of what your website could look like. No commitment.",
+      title2: "demo.",
+      body: "Describe your business briefly, and we'll send back a demo website. No commitment.",
       sendForm: "Send a message",
       orCall: "Or call +47 484 72 586",
     },
@@ -377,7 +377,7 @@ const dict: Record<Lang, Strings> = {
       body: "Fill out the form, or call directly. You'll get a reply the same day.",
       phone: "Phone",
       email: "Email",
-      badge: "You'll get a free mockup back",
+      badge: "You'll get a free demo back",
       name: "Name",
       namePlaceholder: "Jane Doe",
       emailLabel: "Email",
@@ -391,11 +391,11 @@ const dict: Record<Lang, Strings> = {
       message: "Tell us about the project",
       messagePlaceholder:
         "Industry, location, and what you want the site to do. E.g. 'Bakkejord pizza in Bodø — want the menu, opening hours, and some nice photos on the front page.'",
-      promise: "Reply within 24 hours · always with a mockup · never spam.",
+      promise: "Reply within 3 days · always with a demo · never spam.",
       submit: "Get my demo",
       sending: "Sending…",
       sentTitle: "Thanks for the message!",
-      sentBody: "You'll get the demo in your inbox within 24 hours.",
+      sentBody: "You'll get the demo in your inbox within 3 days.",
       sentAgain: "Send another",
       errorGeneric: "Something went wrong.",
       errorCouldntSend: "Couldn't send.",
@@ -427,8 +427,8 @@ const dict: Record<Lang, Strings> = {
       title: "Three steps. No commitment.",
       steps: [
         { step: "1", title: "Send the form", body: "Briefly describe your business. Takes two minutes." },
-        { step: "2", title: "Demo in your inbox", body: "Within 24 hours you'll have a demo of what your site could look like." },
-        { step: "3", title: "We build it", body: "If you like it, your site is live in 7 days. If not — just delete us." },
+        { step: "2", title: "Demo in your inbox", body: "Within 3 days you'll have a demo website of what your site could look like." },
+        { step: "3", title: "We build it", body: "If you like it, your site is live in around 3 days. If not — just delete us." },
       ],
     },
     trust: {
@@ -437,29 +437,29 @@ const dict: Record<Lang, Strings> = {
       items: [
         { title: "You own the domain", body: "We never put our name on the invoice. You buy and own the domain 100 %." },
         { title: "You own the design and code", body: "If you ever switch providers, you take everything with you. No lock-in." },
-        { title: "No contracts", body: "Hosting is 99 NOK/mo, cancel anytime. No commitment." },
+        { title: "No contracts", body: "Hosting is $20/month, cancel anytime. No commitment." },
       ],
     },
     riskReversal: "Don't like the demo? Just delete us — we won't follow up.",
     scarcity: "We take 2-3 projects a month to deliver properly.",
     define: {
       eyebrow: "In short",
-      line: "Iveo is a small Norwegian family business that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in one week, from 1,990 NOK, with hosting and support included.",
+      line: "Iveo is a small Norwegian family business that designs, codes and hosts modern websites for small and medium-sized businesses. We deliver a finished site in around 3 days, from $250, with hosting and support included.",
     },
     pricing: {
       eyebrow: "Pricing",
       title: "What does an Iveo website cost?",
-      body: "We price by project scope. Here's the starting point — we set the exact price after you've seen the mockup.",
+      body: "We price by project scope. Here's the starting point — we set the exact price after you've seen the demo.",
       plans: [
         {
           name: "Complete website",
-          price: "From 1,990 NOK",
+          price: "From $250",
           unit: "one-time",
-          features: ["Custom design", "Delivered in 7 days", "SSL and daily backups", "SEO-optimized"],
+          features: ["Custom design", "Delivered in 3 days", "SSL and daily backups", "SEO-optimized"],
         },
         {
           name: "Hosting and small fixes",
-          price: "99 NOK",
+          price: "$20",
           unit: "per month",
           features: ["Hosting on a fast server", "Daily backups", "Small fixes included", "Support"],
         },
@@ -470,7 +470,7 @@ const dict: Record<Lang, Strings> = {
           features: ["New section or page", "New features", "Redesign", "You always know the price before we start"],
         },
       ],
-      note: "We never promise a fixed price without seeing the project. Ask for a free mockup, and you'll get an exact quote.",
+      note: "We never promise a fixed price without seeing the project. Ask for a free demo, and you'll get an exact quote.",
     },
     faq: {
       eyebrow: "Frequently asked",
@@ -478,15 +478,15 @@ const dict: Record<Lang, Strings> = {
       items: [
         {
           q: "What does an Iveo website cost?",
-          a: "A complete website starts at 1,990 NOK one-time. Hosting with support is 99 NOK per month. The exact price is set after you've seen the mockup — we never promise a fixed price without seeing the project.",
+          a: "A complete website starts at $250 one-time. Hosting with support is $20 per month. The exact price is set after you've seen the demo — we never promise a fixed price without seeing the project.",
         },
         {
           q: "How long does it take to build the site?",
-          a: "We deliver a complete website in 7 days once you've approved the mockup. The mockup is usually sent within 24 hours of you submitting the form.",
+          a: "We send the demo within 3 days. Once you approve it, the finished site is ready in around 3 more days.",
         },
         {
           q: "What's included in hosting?",
-          a: "Hosting on a fast Vercel server, SSL/HTTPS, daily backups, small fixes and support — all for 99 NOK/month.",
+          a: "Hosting on a fast Vercel server, SSL/HTTPS, daily backups, small fixes and support — all for $20/month.",
         },
         {
           q: "Do I own the domain and content?",
@@ -502,7 +502,7 @@ const dict: Record<Lang, Strings> = {
         },
         {
           q: "What about AI solutions?",
-          a: "We're launching AI solutions in 2026 — chatbots trained on your business, AI receptionists that handle phone calls, and automation of routine tasks. Existing customers get access first.",
+          a: "AI solutions are coming soon — chatbots trained on your business, AI receptionists that handle phone calls, and automation of routine tasks. Existing customers get access first.",
         },
         {
           q: "How are you different from an agency?",
