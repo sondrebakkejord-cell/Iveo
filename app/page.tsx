@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ContactForm from "./ContactForm";
 import Chatbot from "./Chatbot";
-import FlowFieldHero from "./components/FlowFieldHero";
+import GlassSiteHero from "./components/GlassSiteHero";
 import Reveal from "./components/Reveal";
 import Parallax from "./components/Parallax";
 import { LogoFull } from "./Logo";
@@ -72,7 +72,7 @@ export default function Home() {
       {/* ===================== HERO — cinematic, full height ===================== */}
       <section className="relative" style={{ minHeight: "100svh" }}>
         <div className="absolute inset-0 overflow-hidden">
-          <FlowFieldHero />
+          <GlassSiteHero />
         </div>
         {/* fade to bg at the bottom so the scene melts into the page */}
         <div className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
