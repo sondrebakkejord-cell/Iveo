@@ -74,6 +74,14 @@ export default function Home() {
         <div className="absolute inset-0 overflow-hidden">
           <GlassSiteHero />
         </div>
+        {/* readability scrim — keep the hero copy legible over the bright glass scene (desktop: dark on the left where the text sits) */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "linear-gradient(100deg, var(--background) 0%, rgba(2,6,14,0.92) 26%, rgba(2,6,14,0.6) 46%, rgba(2,6,14,0.2) 64%, transparent 80%)"
+        }} />
+        {/* extra top-down scrim on small screens, where the glass slab sits directly behind the copy */}
+        <div className="absolute inset-0 pointer-events-none md:hidden" style={{
+          background: "linear-gradient(to bottom, rgba(2,6,14,0.7) 0%, rgba(2,6,14,0.4) 42%, rgba(2,6,14,0.1) 70%, transparent 88%)"
+        }} />
         {/* fade to bg at the bottom so the scene melts into the page */}
         <div className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
              style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
